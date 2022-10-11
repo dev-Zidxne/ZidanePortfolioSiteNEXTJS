@@ -37,5 +37,4 @@ function ExperienceCard({}: Props) {
     </article>
   );
 }
-
 export default ExperienceCard;
