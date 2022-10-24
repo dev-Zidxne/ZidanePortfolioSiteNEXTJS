@@ -18,7 +18,7 @@ function About({}: Props) {
         }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
-        src="https://media-exp1.licdn.com/dms/image/C5603AQFwxOmluAqhbw/profile-displayphoto-shrink_800_800/0/1661888341256?e=1671062400&v=beta&t=822RToVHXbUMClvfhlLPasZKt51ZxQK9LXf0wIa1t1k"
+        src="https://media-exp1.licdn.com/dms/image/D4E03AQHdJZFLTFQDHQ/profile-displayphoto-shrink_800_800/0/1665970228383?e=1671667200&v=beta&t=wKKVw1mofVg899wMOc5pVB5suTg4nD0Vz8PWKdjtz6w"
         className="flex-shrink-0 object-cover w-56 h-56 rounded-full md:mb-0 md:rounded-lg md:w-64 md:h-96 xl:w-[500px] xl:h-[600px] mt-10"
       />
       <div className="px-0 space-y-10 md:px-10">
