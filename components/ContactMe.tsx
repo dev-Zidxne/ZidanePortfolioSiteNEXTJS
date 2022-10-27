@@ -1,4 +1,10 @@
-import React from "react";
+import React, {
+  ReactComponentElement,
+  ReactElement,
+  ReactEventHandler,
+  ReactHTML,
+  useRef,
+} from "react";
 import {
   DevicePhoneMobileIcon,
   MapPinIcon,
@@ -6,19 +12,32 @@ import {
 } from "@heroicons/react/24/solid";
 import { useForm, SubmitHandler } from "react-hook-form";
 
+import emailjs from "@emailjs/browser";
+
 type Props = {};
 
-type Inputs = {
-  name: string;
-  email: string;
-  subject: string;
-  message: string;
-};
-
 function ContactMe({}: Props) {
-  const { register, handleSubmit } = useForm<Inputs>();
-  const onSubmit: SubmitHandler<Inputs> = (formData) => {
-    window.location.href = `mailto:zidaneinnis@gmail?subject=${formData.subject}&body=Hi, my name is ${formData.name}. ${formData.message} (${formData.email})`;
+  const form = useRef();
+
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_c2i43fi",
+        "template_2hcql09",
+        e.currentTarget,
+        "tDGyBqf16EkmbUFVk"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    e.currentTarget.reset();
   };
 
   return (
@@ -46,31 +65,31 @@ function ContactMe({}: Props) {
           </div>
         </div>
         <form
-          onSubmit={handleSubmit(onSubmit)}
+          onSubmit={sendEmail}
           className="flex flex-col mx-auto space-y-2 w-fit"
         >
           <div className="flex space-x-2">
             <input
-              {...register("name")}
+              name="name"
               className="contactInput"
               placeholder="Name"
               type="text"
             />
             <input
-              {...register("email")}
+              name="email"
               className="contactInput"
               placeholder="Email"
               type="email"
             />
           </div>
           <input
-            {...register("subject")}
+            name="subject"
             className="contactInput"
             placeholder="Subject"
           ></input>
           <textarea
             className="contactInput"
-            name=""
+            name="message"
             placeholder="Message..."
           ></textarea>
           <button
