@@ -1,10 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Project } from "../typings";
+import { url } from "inspector";
+import { urlFor } from "../sanity";
 
-type Props = {};
+type Props = {
+  projects: Project[];
+};
 
-function Projects({}: Props) {
-  const projects = [1, 2, 3, 4, 5];
+export default function Projects({ projects }: Props) {
   return (
     <motion.div
       initial={{
@@ -33,18 +37,29 @@ function Projects({}: Props) {
               transition={{ duration: 1.2 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Gmail_EVO_Thumbnail_3.max-1300x1300.png"
+              src={urlFor(project?.image).url()}
               alt=""
+              className="flex-shrink-0 object-cover w-56 h-56  md:mb-0 md:rounded-lg md:w-64 md:h-96 xl:w-[500px] xl:h-[400px] mt-10"
             />
             <div className="max-w-6xl px-0 space-y-10 md:px-10">
               <h4 className="text-4xl font-semibold text-center">
                 <span className="underline decoration-[#F7AB0A]/50 ">
                   Case Study {i + 1} of {projects.length}:
                 </span>{" "}
-                Gmail Clone
+                {project?.title}
               </h4>{" "}
+              <div className="flex items-center justify-center space-x-2">
+                {project?.technologies.map((technology) => (
+                  <img
+                    className="h-10 m-1 rounded-full"
+                    key={technology._id}
+                    src={urlFor(technology.image).url()}
+                    alt=""
+                  />
+                ))}
+              </div>
               <p className="text-lg text-center md:text-left ">
-                GMAIL with React-Router, Redux & Firebase
+                {project?.summary}
               </p>
             </div>
           </div>
@@ -54,5 +69,3 @@ function Projects({}: Props) {
     </motion.div>
   );
 }
-
-export default Projects;

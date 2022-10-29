@@ -1,8 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
-type Props = {};
+import { PageInfo } from "../typings";
+import { urlFor } from "../sanity";
+type Props = { pageInfo: PageInfo };
 
-function About({}: Props) {
+function About({ pageInfo }: Props) {
   return (
     <motion.div className="relative flex flex-col items-center h-screen px-10 mx-auto md:text-left md:flex-row max-w-7xl justify-evenly">
       <h3 className="absolute top-16 ml-6 uppercase tracking-[20px] text-gray-500 text-2xl">
@@ -18,7 +20,7 @@ function About({}: Props) {
         }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
-        src="https://media-exp1.licdn.com/dms/image/D4E03AQHdJZFLTFQDHQ/profile-displayphoto-shrink_800_800/0/1665970228383?e=1671667200&v=beta&t=wKKVw1mofVg899wMOc5pVB5suTg4nD0Vz8PWKdjtz6w"
+        src={urlFor(pageInfo?.profilePic).url()}
         className="flex-shrink-0 object-cover w-56 h-56 rounded-full md:mb-0 md:rounded-lg md:w-64 md:h-96 xl:w-[500px] xl:h-[600px] mt-10"
       />
       <div className="px-0 space-y-10 md:px-10">
@@ -27,14 +29,7 @@ function About({}: Props) {
           <span className="underline decoration-white/50">little</span>{" "}
           background
         </h4>
-        <p className="text-base">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto magnam
-          non, minima modi dolores enim accusantium, nemo quo doloremque iste
-          sapiente tenetur tempore quia explicabo! Quas odio vitae explicabo
-          excepturi quae adipisci perspiciatis aspernatur repellat, officia ex
-          inventore reiciendis! Repellat nemo necessitatibus suscipit culpa
-          asperiores facilis aut ipsam totam dolor!
-        </p>
+        <p className="text-base">{pageInfo?.backgroundInformation}</p>
       </div>
     </motion.div>
   );

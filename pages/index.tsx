@@ -33,29 +33,30 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
         <title>Zidane's Portfolio</title>
       </Head>
       <Header socials={socials} />
-      <section id="hero" className="snap-center">
-        <Hero />
+
+      <section id="hero" className="snap-start">
+        <Hero pageInfo={pageInfo} />
       </section>
       <section id="about" className="snap-center">
-        <About />
+        <About pageInfo={pageInfo} />
       </section>
       <section id="experience" className="snap-center">
-        <WorkExperience />
+        <WorkExperience experiences={experiences} />
       </section>
       <section id="skills" className="snap-start">
-        <Skills />
+        <Skills skills={skills} />
       </section>
       <section id="projects" className="snap-start">
-        <Projects />
+        <Projects projects={projects} />
       </section>
       <section id="contact" className="snap-start">
-        <ContactMe />
+        <ContactMe pageInfo={pageInfo} />
       </section>
       <Link href="#hero">
         <footer className="sticky w-full cursor-pointer bottom-5">
-          <div>
+          <div className="flex items-center justify-center">
             <img
-              className="w-10 h-10 rounded-full cursor-pointer filter grayscale hover:grayscale-0"
+              className="w-10 h-10 rounded-full cursor-pointer filter grayscale hover:grayscale-0 "
               src="https://media-exp1.licdn.com/dms/image/D4E03AQHdJZFLTFQDHQ/profile-displayphoto-shrink_800_800/0/1665970228383?e=1671667200&v=beta&t=wKKVw1mofVg899wMOc5pVB5suTg4nD0Vz8PWKdjtz6w"
               alt=""
             ></img>

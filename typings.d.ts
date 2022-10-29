@@ -26,19 +26,22 @@ export interface PageInfo extends Sanitybody {
 }
 
 export interface Skill extends Sanitybody {
+  _id: Key | null | undefined;
   _type: "skill";
   image: Image;
   progress: number;
   title: string;
 }
 export interface Technology extends Sanitybody {
-  _type: "technology";
+  _id: Key | null | undefined;
+  _type: "skill";
   image: Image;
   progress: number;
   title: string;
 }
 
 export interface Experience extends Sanitybody {
+  _id: Key | null | undefined;
   _type: "experience";
   company: string;
   companyImage: Image;
@@ -58,6 +61,7 @@ export interface Project extends Sanitybody {
   technologies: Technology[];
 }
 export interface Social extends Sanitybody {
+  _id: Key | null | undefined;
   _type: "social";
   title: string;
   url: string;

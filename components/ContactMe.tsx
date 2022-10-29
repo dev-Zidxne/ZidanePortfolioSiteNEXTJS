@@ -11,12 +11,14 @@ import {
   EnvelopeIcon,
 } from "@heroicons/react/24/solid";
 import { useForm, SubmitHandler } from "react-hook-form";
-
+import { PageInfo } from "../typings";
 import emailjs from "@emailjs/browser";
 
-type Props = {};
+type Props = {
+  pageInfo: PageInfo;
+};
 
-function ContactMe({}: Props) {
+function ContactMe({ pageInfo }: Props) {
   const form = useRef();
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
@@ -53,7 +55,7 @@ function ContactMe({}: Props) {
         <div className="space-y-10">
           <div className="flex items-center space-x-5">
             <DevicePhoneMobileIcon className="h-7 w-7 text-[#F7AB0A] animate-pulse" />
-            <p className="text-2xl">+18763162975</p>
+            <p className="text-2xl">{pageInfo?.phoneNumber}</p>
           </div>
           <div className="flex items-center space-x-5">
             <EnvelopeIcon className="h-7 w-7 text-[#F7AB0A] animate-pulse" />
