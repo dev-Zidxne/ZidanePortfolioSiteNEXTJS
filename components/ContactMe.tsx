@@ -59,11 +59,11 @@ function ContactMe({ pageInfo }: Props) {
           </div>
           <div className="flex items-center space-x-5">
             <EnvelopeIcon className="h-7 w-7 text-[#F7AB0A] animate-pulse" />
-            <p className="text-2xl">Email Me</p>
+            <p className="text-2xl">{pageInfo?.email}</p>
           </div>
           <div className="flex items-center space-x-5">
             <MapPinIcon className="h-7 w-7 text-[#F7AB0A] animate-pulse" />
-            <p className="text-2xl">Montego Bay, Jamaica</p>
+            <p className="text-2xl">{pageInfo?.address}</p>
           </div>
         </div>
         <form
