@@ -3,6 +3,7 @@ import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Social } from "../typings";
+
 type Props = {
   socials: Social[];
 };
@@ -28,7 +29,8 @@ export default function Header({ socials }: Props) {
             key={social._id}
             url={social.url}
             bgColor="transparent"
-            fgColor="gray"
+            fgColor="currentColor"
+            className="text-[#808080ff] transition cursor-pointer hover:text-white"
           />
         ))}
       </motion.div>
@@ -45,12 +47,14 @@ export default function Header({ socials }: Props) {
           }}
           className="flex flex-row items-center text-gray-300 cursor-pointer "
         >
-          <SocialIcon
-            className="cursor-pointer"
-            network="email"
-            fgColor="gray"
-            bgColor="transparent"
-          />
+          <div className="tippy-tooltip">
+            <SocialIcon
+              className="text-[#808080ff] transition cursor-pointer hover:text-white "
+              network="email"
+              fgColor="currentColor"
+              bgColor="transparent"
+            />
+          </div>
           <p className="hidden text-sm text-gray-400 uppercase md:inline-flex">
             Get In Touch
           </p>
