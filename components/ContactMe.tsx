@@ -13,6 +13,7 @@ import {
 import { useForm, SubmitHandler } from "react-hook-form";
 import { PageInfo } from "../typings";
 import emailjs from "@emailjs/browser";
+import { useMediaQuery } from "react-responsive";
 
 type Props = {
   pageInfo: PageInfo;
@@ -20,6 +21,8 @@ type Props = {
 
 function ContactMe({ pageInfo }: Props) {
   const form = useRef();
+
+  const isTabletOrMobile = useMediaQuery({ maxWidth: 558 });
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -47,43 +50,81 @@ function ContactMe({ pageInfo }: Props) {
       <h3 className="absolute uppercase top-24 tracking-[20px] text-gray-500 text-2xl">
         Contact
       </h3>
-      <div className="flex flex-col space-y-10 ">
+      <div className="flex flex-col ">
         <h4 className="text-4xl font-semibold text-center">
-          I have just you need.{" "}
+          Get in Touch.{" "}
           <span className="decoration-[#F7AB0A]/50 underline">Lets Talk</span>
         </h4>
-        <div className="space-y-10">
-          <div className="flex items-center space-x-5">
-            <DevicePhoneMobileIcon className="h-7 w-7 text-[#F7AB0A] animate-pulse" />
-            <p className="text-2xl">{pageInfo?.phoneNumber}</p>
+        {isTabletOrMobile && (
+          <div className="p-5 space-y-10 ">
+            <div className="flex items-center space-x-5">
+              <DevicePhoneMobileIcon className="h-7 w-7 text-[#F7AB0A] animate-pulse" />
+              <p className="text-2xl">{pageInfo?.phoneNumber}</p>
+            </div>
+            <div className="flex items-center space-x-5">
+              <EnvelopeIcon className="h-7 w-7 text-[#F7AB0A] animate-pulse" />
+              <p className="text-2xl">{pageInfo?.email}</p>
+            </div>
+            <div className="flex items-center space-x-5">
+              <MapPinIcon className="h-7 w-7 text-[#F7AB0A] animate-pulse" />
+              <p className="text-2xl">{pageInfo?.address}</p>
+            </div>
           </div>
-          <div className="flex items-center space-x-5">
-            <EnvelopeIcon className="h-7 w-7 text-[#F7AB0A] animate-pulse" />
-            <p className="text-2xl">{pageInfo?.email}</p>
+        )}
+        {!isTabletOrMobile && (
+          <div className="p-5 space-y-10 ">
+            <div className="flex items-center space-x-5">
+              <DevicePhoneMobileIcon className="h-7 w-7 text-[#F7AB0A] animate-pulse" />
+              <p className="text-2xl">{pageInfo?.phoneNumber}</p>
+            </div>
+            <div className="flex items-center space-x-5">
+              <EnvelopeIcon className="h-7 w-7 text-[#F7AB0A] animate-pulse" />
+              <p className="text-2xl">{pageInfo?.email}</p>
+            </div>
+            <div className="flex items-center space-x-5">
+              <MapPinIcon className="h-7 w-7 text-[#F7AB0A] animate-pulse" />
+              <p className="text-2xl">{pageInfo?.address}</p>
+            </div>
           </div>
-          <div className="flex items-center space-x-5">
-            <MapPinIcon className="h-7 w-7 text-[#F7AB0A] animate-pulse" />
-            <p className="text-2xl">{pageInfo?.address}</p>
-          </div>
-        </div>
+        )}
+
         <form
           onSubmit={sendEmail}
-          className="flex flex-col w-screen mx-auto space-y-2 md:w-fit"
+          className="flex flex-col w-screen p-5 mx-auto space-y-2 md:w-fit"
         >
-          <div className="flex space-x-2">
-            <input
-              name="name"
-              className="contactInput"
-              placeholder="Name"
-              type="text"
-            />
-            <input
-              name="email"
-              className="contactInput"
-              placeholder="Email"
-              type="email"
-            />
-          </div>
+          {!isTabletOrMobile && (
+            <div className="space-x-2 ">
+              <input
+                name="name"
+                className="contactInput"
+                placeholder="Name"
+                type="text"
+              />
+              <input
+                name="email"
+                className="contactInput"
+                placeholder="Email"
+                type="email"
+              />
+            </div>
+          )}
+          {isTabletOrMobile && (
+            <div className="flex flex-col w-screen mx-auto space-y-2 md:w-fit">
+              <input
+                name="name"
+                className="contactInput"
+                placeholder="Name"
+                type="text"
+              />
+              <input
+                name="email"
+                className="contactInput"
+                placeholder="Email"
+                type="email"
+              />
+            </div>
+          )}
+
           <input
             name="subject"
             className="contactInput"
@@ -94,9 +135,10 @@ function ContactMe({ pageInfo }: Props) {
             name="message"
             placeholder="Message..."
           ></textarea>
+
           <button
             type="submit"
-            className="bg-[#F7AB0A] py-5 px-10 rounded-md text-black font-bold hover:opacity-80 transition-all duration-500 "
+            className="bg-[#F7AB0A] py-5   rounded-md  text-black font-bold hover:opacity-80 transition-all duration-500  "
           >
             Submit
           </button>

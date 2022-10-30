@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Experience } from "../typings";
 import { urlFor } from "../sanity";
+import { useMediaQuery } from "react-responsive";
 type Props = {
   experience: Experience;
 };
@@ -21,7 +22,8 @@ export default function ExperienceCard({ experience }: Props) {
         className="w-32 h-32 rounded-full xl:w-[200px] object-cover object-center xl:h-[200px] "
         src={urlFor(experience?.companyImage).url()}
       />
-      <div className="px-0 overflow-y-scroll w-50 h-100 md:px-10 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80 ">
+      (
+      <div className="px-0 overflow-y-scroll overflow-x-scroll w-50 h-100 md:px-10 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80  ">
         <h4 className="text-4xl font-light">{experience.jobTitle} </h4>
         <p className="mt-1 text-2xl font-bold">Telem</p>
         <div className="flex w-10 h-10 rounded-full">
@@ -45,6 +47,7 @@ export default function ExperienceCard({ experience }: Props) {
           ))}
         </ul>
       </div>
+      )
     </article>
   );
 }
