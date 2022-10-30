@@ -46,17 +46,31 @@ function ContactMe({ pageInfo }: Props) {
   };
 
   return (
-    <div className="relative flex flex-col items-center h-screen max-w-2xl p-10 mx-auto text-center md:text-left md:flex-row justify-evenly">
-      <h3 className="absolute uppercase top-24 tracking-[20px] text-gray-500 text-2xl">
+    <div className="relative flex flex-col items-center h-screen max-w-2xl p-10 mx-auto my-auto text-center md:text-left md:flex-row justify-evenly">
+      <h3 className="absolute uppercase top-16 tracking-[20px] text-gray-500 text-2xl">
         Contact
       </h3>
       <div className="flex flex-col ">
-        <h4 className="text-4xl font-semibold text-center">
-          Get in Touch.{" "}
-          <span className="decoration-[#F7AB0A]/50 underline">Lets Talk</span>
-        </h4>
+        {!isTabletOrMobile && (
+          <h4 className="mt-10 text-3xl font-semibold text-center ">
+            Get in Touch.
+            <span className="decoration-[#F7AB0A]/50 underline">
+              Lets Talk:
+            </span>
+          </h4>
+        )}
         {isTabletOrMobile && (
-          <div className="p-5 space-y-10 ">
+          <h4 className="font-semibold text-center mt-28 text-md ">
+            Get in Touch.
+            <br />
+            <span className="decoration-[#F7AB0A]/50 underline">
+              Lets Talk:
+            </span>
+          </h4>
+        )}
+
+        {isTabletOrMobile && (
+          <div className="p-5 ">
             <div className="flex items-center space-x-5">
               <DevicePhoneMobileIcon className="h-7 w-7 text-[#F7AB0A] animate-pulse" />
               <p className="text-2xl">{pageInfo?.phoneNumber}</p>
