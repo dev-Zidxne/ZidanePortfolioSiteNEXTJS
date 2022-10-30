@@ -20,9 +20,8 @@ type Props = {
 };
 
 function ContactMe({ pageInfo }: Props) {
-  const form = useRef();
-
   const isTabletOrMobile = useMediaQuery({ maxWidth: 558 });
+  const form = useRef();
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -46,7 +45,7 @@ function ContactMe({ pageInfo }: Props) {
   };
 
   return (
-    <div className="relative flex flex-col items-center h-screen max-w-2xl p-10 mx-auto my-auto overflow-auto overflow-x-hidden text-center md:text-left md:flex-row justify-evenly">
+    <div className="relative flex flex-col items-center h-screen max-w-2xl overflow-hidden text-center md:text-left md:flex-row justify-evenly">
       <h3 className="absolute uppercase top-20 tracking-[20px] text-gray-500 text-2xl">
         Contact
       </h3>
