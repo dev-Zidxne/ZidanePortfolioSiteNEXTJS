@@ -109,7 +109,7 @@ function ContactMe({ pageInfo }: Props) {
             </div>
           )}
           {isTabletOrMobile && (
-            <div className="flex flex-col w-screen mx-auto space-y-2 md:w-fit">
+            <div className="flex flex-col space-y-2 ">
               <input
                 name="name"
                 className="contactInput"
