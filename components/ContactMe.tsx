@@ -45,14 +45,14 @@ function ContactMe({ pageInfo }: Props) {
   };
 
   return (
-    <div className="relative flex flex-col items-center max-w-2xl overflow-auto overflow-x-auto text-center md:text-left md:flex-row justify-evenly">
+    <div className="relative flex flex-col items-center h-screen max-w-2xl m-auto overflow-x-auto text-center md:text-left md:flex-row justify-evenly">
       {!isTabletOrMobile && (
         <h3 className="absolute uppercase top-16 tracking-[20px] text-gray-500 text-2xl">
           Contact
         </h3>
       )}
       {isTabletOrMobile && (
-        <h3 className="absolute uppercase top-20 tracking-[20px] text-gray-500 text-md pl-5">
+        <h3 className="absolute uppercase top-16 tracking-[20px] text-gray-500 text-md pl-5">
           Contact
         </h3>
       )}
@@ -66,7 +66,7 @@ function ContactMe({ pageInfo }: Props) {
           </h4>
         )}
         {isTabletOrMobile && (
-          <h4 className="font-semibold text-center mt-28 text-md ">
+          <h4 className="mt-16 font-semibold text-center text-md ">
             Get in Touch. {""}
             <span className="decoration-[#F7AB0A]/50 underline">
               Lets Talk:
@@ -75,7 +75,7 @@ function ContactMe({ pageInfo }: Props) {
         )}
 
         {isTabletOrMobile && (
-          <div className="p-5 mb-[-10px]">
+          <div className="p-5 ">
             <div className="flex items-center space-x-5">
               <DevicePhoneMobileIcon className="h-7 w-7 text-[#F7AB0A] animate-pulse" />
               <p className="text-2xl">{pageInfo?.phoneNumber}</p>
@@ -109,7 +109,7 @@ function ContactMe({ pageInfo }: Props) {
 
         <form
           onSubmit={sendEmail}
-          className="flex flex-col w-screen h-screen p-5 space-y-2 md:w-fit"
+          className="flex flex-col w-screen p-5 mx-auto space-y-2 md:w-fit"
         >
           {!isTabletOrMobile && (
             <div className="space-x-2 ">
@@ -148,7 +148,6 @@ function ContactMe({ pageInfo }: Props) {
             name="subject"
             className="contactInput"
             placeholder="Subject"
-            type="text"
           ></input>
           <textarea
             className="contactInput"
