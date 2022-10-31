@@ -23,7 +23,7 @@ export default function Skills({ skills }: Props) {
         </h3>
       )}
       {!isTabletOrMobile && (
-        <h3 className="absolute top-24 tracking-[3px] text-gray-500 text-md m-1">
+        <h3 className="absolute top-32 tracking-[3px] text-gray-500 text-xl m-1">
           Hover over a skill for current proficiency.
         </h3>
       )}
