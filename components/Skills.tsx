@@ -32,7 +32,7 @@ export default function Skills({ skills }: Props) {
       )}
 
       {isTabletOrMobile && (
-        <div className="grid grid-cols-3 gap-3 mt-16 overflow-x-hidden overflow-x-scroll overflow-y-scroll overscroll-y-none">
+        <div className="grid grid-cols-3 gap-3 mt-12 overflow-y-scroll s overscroll-y-none">
           {skills?.slice(0, skills.length / 2).map((skill) => (
             <Skill key={skill._id} skill={skill} />
           ))}
