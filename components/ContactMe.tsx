@@ -45,7 +45,7 @@ function ContactMe({ pageInfo }: Props) {
   };
 
   return (
-    <div className="relative flex flex-col items-center h-screen max-w-2xl m-auto text-center md:text-left md:flex-row justify-evenly">
+    <div className="relative flex flex-col items-center w-screen h-screen m-auto text-center md:text-left md:flex-row justify-evenly overflow-x-">
       <h3 className="absolute uppercase top-16 tracking-[20px] text-gray-500 text-2xl">
         Contact
       </h3>

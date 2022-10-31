@@ -14,7 +14,7 @@ export default function Skills({ skills }: Props) {
       transition={{ duration: 1.5 }}
       className="relative flex text-center md:text-left xl:flex-row max-w-[2000px] xl:px-10 min-h-screen xl:space-y-0 mx-auto items-center justify-center "
     >
-      <h3 className="absolute top-16 uppercase tracking-[20px] text-gray-500 text-2xl">
+      <h3 className="absolute top-16 uppercase tracking-[20px] text-gray-500 text-2xl items-center justify-center">
         Skills
       </h3>
       {isTabletOrMobile && (
