@@ -45,21 +45,14 @@ function ContactMe({ pageInfo }: Props) {
   };
 
   return (
-    <div className="relative flex flex-col items-center h-screen max-w-2xl m-auto overflow-x-scroll text-center md:text-left md:flex-row justify-evenly">
-      {!isTabletOrMobile && (
-        <h3 className="absolute uppercase top-16 tracking-[20px] text-gray-500 text-2xl">
-          Contact
-        </h3>
-      )}
-      {isTabletOrMobile && (
-        <h3 className="absolute uppercase top-16 tracking-[20px] text-gray-500 text-md pl-5">
-          Contact
-        </h3>
-      )}
+    <div className="relative flex flex-col items-center h-screen max-w-2xl m-auto text-center md:text-left md:flex-row justify-evenly">
+      <h3 className="absolute uppercase top-16 tracking-[20px] text-gray-500 text-2xl">
+        Contact
+      </h3>
       <div className="flex flex-col ">
         {!isTabletOrMobile && (
           <h4 className="mt-10 text-3xl font-semibold text-center ">
-            Get in Touch.
+            Get in Touch.{" "}
             <span className="decoration-[#F7AB0A]/50 underline">
               Lets Talk:
             </span>
@@ -67,7 +60,7 @@ function ContactMe({ pageInfo }: Props) {
         )}
         {isTabletOrMobile && (
           <h4 className="mt-24 font-semibold text-center text-md ">
-            Get in Touch. {""}
+            Get in Touch.{" "}
             <span className="decoration-[#F7AB0A]/50 underline">
               Lets Talk:
             </span>
