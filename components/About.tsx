@@ -24,11 +24,7 @@ function About({ pageInfo }: Props) {
         className="flex-shrink-0 object-cover w-56 h-56 rounded-full md:mb-0 md:rounded-lg md:w-64 md:h-96 xl:w-[500px] xl:h-[600px] mt-10"
       />
       <div className="px-0 space-y-10 md:px-10">
-        <h4 className="text-4xl font-semibold">
-          Here is a{" "}
-          <span className="underline decoration-white/50">little</span>{" "}
-          background
-        </h4>
+        <h4 className="text-4xl font-semibold">Background and Skills</h4>
         <p className="text-base">{pageInfo?.backgroundInformation}</p>
       </div>
     </motion.div>
