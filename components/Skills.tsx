@@ -14,10 +14,10 @@ export default function Skills({ skills }: Props) {
       transition={{ duration: 1.5 }}
       className="relative flex text-center md:text-left xl:flex-row max-w-[2000px] xl:px-10 min-h-screen xl:space-y-0 mx-auto items-center justify-center "
     >
-      <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
+      <h3 className="absolute top-16 uppercase tracking-[20px] text-gray-500 text-2xl">
         Skills
       </h3>
-      <h3 className="absolute top-32 upper tracking-[3px] text-gray-500 text-md m-1">
+      <h3 className="absolute top-28 upper tracking-[3px] text-gray-500 text-md m-1">
         Hover over a skill for current proficiency.
       </h3>
       {!isTabletOrMobile && (
@@ -32,7 +32,7 @@ export default function Skills({ skills }: Props) {
       )}
 
       {isTabletOrMobile && (
-        <div className="grid grid-cols-3 gap-3 overflow-x-hidden overflow-x-scroll overflow-y-scroll overscroll-y-none mt-28">
+        <div className="grid grid-cols-3 gap-3 mt-20 overflow-x-hidden overflow-x-scroll overflow-y-scroll overscroll-y-none">
           {skills?.slice(0, skills.length / 2).map((skill) => (
             <Skill key={skill._id} skill={skill} />
           ))}
