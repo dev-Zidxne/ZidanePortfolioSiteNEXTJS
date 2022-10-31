@@ -21,7 +21,7 @@ export default function Skills({ skills }: Props) {
         Hover over a skill for current proficiency.
       </h3>
       {!isTabletOrMobile && (
-        <div className="grid grid-cols-4 ">
+        <div className="grid grid-cols-4 gap-5">
           {skills?.slice(0, skills.length / 2).map((skill) => (
             <Skill key={skill._id} skill={skill} />
           ))}
@@ -32,7 +32,7 @@ export default function Skills({ skills }: Props) {
       )}
 
       {isTabletOrMobile && (
-        <div className="grid grid-cols-3 mt-24 ">
+        <div className="grid grid-cols-3 gap-3 overflow-x-hidden overflow-x-scroll overflow-y-scroll overscroll-y-none mt-28">
           {skills?.slice(0, skills.length / 2).map((skill) => (
             <Skill key={skill._id} skill={skill} />
           ))}

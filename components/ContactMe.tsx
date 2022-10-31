@@ -102,7 +102,7 @@ function ContactMe({ pageInfo }: Props) {
 
         <form
           onSubmit={sendEmail}
-          className="flex flex-col w-screen p-5 space-y-2 md:w-fit sm:w-fit "
+          className="flex flex-col w-screen h-auto p-5 space-y-2 md:w-fit"
         >
           {!isTabletOrMobile && (
             <div className="space-x-2 ">
