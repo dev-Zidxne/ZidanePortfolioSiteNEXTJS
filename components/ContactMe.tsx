@@ -50,7 +50,12 @@ function ContactMe({ pageInfo }: Props) {
         <h3 className="absolute uppercase top-16 tracking-[20px] text-gray-500 text-2xl">
           Contact
         </h3>
-      )}{" "}
+      )}
+      {isTabletOrMobile && (
+        <h3 className="absolute uppercase top-16 tracking-[20px] text-gray-500 text-md pl-5">
+          Contact
+        </h3>
+      )}
       <div className="flex flex-col ">
         {!isTabletOrMobile && (
           <h4 className="mt-10 text-3xl font-semibold text-center ">
@@ -61,7 +66,7 @@ function ContactMe({ pageInfo }: Props) {
           </h4>
         )}
         {isTabletOrMobile && (
-          <h4 className="mt-3 font-semibold text-center text-md ">
+          <h4 className="mt-16 font-semibold text-center text-md ">
             Get in Touch. {""}
             <span className="decoration-[#F7AB0A]/50 underline">
               Lets Talk:
