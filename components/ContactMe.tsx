@@ -45,7 +45,7 @@ function ContactMe({ pageInfo }: Props) {
   };
 
   return (
-    <div className="relative flex flex-col items-center h-screen max-w-2xl m-auto overflow-x-auto text-center md:text-left md:flex-row justify-evenly">
+    <div className="relative flex flex-col items-center max-w-2xl overflow-x-auto text-center md:text-left md:flex-row justify-evenly">
       {!isTabletOrMobile && (
         <h3 className="absolute uppercase top-16 tracking-[20px] text-gray-500 text-2xl">
           Contact
@@ -66,7 +66,7 @@ function ContactMe({ pageInfo }: Props) {
           </h4>
         )}
         {isTabletOrMobile && (
-          <h4 className="mt-16 font-semibold text-center text-md ">
+          <h4 className="mt-24 font-semibold text-center text-md ">
             Get in Touch. {""}
             <span className="decoration-[#F7AB0A]/50 underline">
               Lets Talk:
@@ -109,7 +109,7 @@ function ContactMe({ pageInfo }: Props) {
 
         <form
           onSubmit={sendEmail}
-          className="flex flex-col w-screen p-5 mx-auto space-y-2 md:w-fit"
+          className="flex flex-col w-screen p-5 space-y-2 md:w-fit"
         >
           {!isTabletOrMobile && (
             <div className="space-x-2 ">
