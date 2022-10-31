@@ -53,7 +53,7 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
         <ContactMe pageInfo={pageInfo} />
       </section>
       <Link href="#hero">
-        <footer className="sticky bottom-0 w-full mr-10 cursor-pointer">
+        <footer className="sticky bottom-0 w-full cursor-pointer">
           <div className="flex ">
             <img
               className="w-10 h-10 rounded-full cursor-pointer filter grayscale hover:grayscale-0 "
