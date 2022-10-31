@@ -152,7 +152,7 @@ function ContactMe({ pageInfo }: Props) {
             type="submit"
             className="bg-[#F7AB0A] py-5   rounded-md  text-black font-bold hover:opacity-80 transition-all duration-500  "
           >
-            Submit
+            Send Mail
           </button>
         </form>
       </div>

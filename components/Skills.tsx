@@ -17,9 +17,16 @@ export default function Skills({ skills }: Props) {
       <h3 className="absolute top-16 uppercase tracking-[20px] text-gray-500 text-2xl">
         Skills
       </h3>
-      <h3 className="absolute top-24 upper tracking-[3px] text-gray-500 text-md m-1">
-        Hover over a skill for current proficiency.
-      </h3>
+      {isTabletOrMobile && (
+        <h3 className="absolute top-24  tracking-[3px] text-gray-500 text-sm m-1">
+          Tap on a skill for current proficiency.
+        </h3>
+      )}
+      {!isTabletOrMobile && (
+        <h3 className="absolute top-24 tracking-[3px] text-gray-500 text-md m-1">
+          Hover over a skill for current proficiency.
+        </h3>
+      )}
       {!isTabletOrMobile && (
         <div className="grid grid-cols-4 gap-5">
           {skills?.slice(0, skills.length / 2).map((skill) => (
