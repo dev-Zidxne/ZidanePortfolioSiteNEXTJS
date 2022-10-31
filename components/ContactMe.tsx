@@ -45,7 +45,7 @@ function ContactMe({ pageInfo }: Props) {
   };
 
   return (
-    <div className="relative flex flex-col items-center h-screen max-w-2xl m-auto overflow-x-auto text-center md:text-left md:flex-row justify-evenly ">
+    <div className="relative flex flex-col items-center max-w-2xl m-auto overflow-x-auto text-center md:text-left md:flex-row justify-evenly ">
       {!isTabletOrMobile && (
         <h3 className="absolute uppercase top-16 tracking-[20px] text-gray-500 text-2xl">
           Contact
