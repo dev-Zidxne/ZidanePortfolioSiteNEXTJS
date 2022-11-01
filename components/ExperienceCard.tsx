@@ -22,7 +22,7 @@ export default function ExperienceCard({ experience }: Props) {
         className="w-32 h-32 rounded-full xl:w-[200px] object-cover object-center xl:h-[200px]"
         src={urlFor(experience?.companyImage).url()}
       />
-      (
+
       <div className="flex flex-col w-screen p-5 space-y-2 md:w-fit ">
         <h4 className="text-4xl font-light">{experience.jobTitle} </h4>
         <p className="mt-1 text-2xl font-bold">Telem</p>
@@ -47,7 +47,6 @@ export default function ExperienceCard({ experience }: Props) {
           ))}
         </ul>
       </div>
-      )
     </article>
   );
 }
