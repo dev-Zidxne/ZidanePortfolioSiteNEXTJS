@@ -11,7 +11,7 @@ type Props = {
 
 function Hero({ pageInfo }: Props) {
   const [text, count] = useTypewriter({
-    words: [`My name is ${pageInfo?.name}`, `React.JS Deveoper`],
+    words: [`My name is ${pageInfo?.name}`, `${pageInfo?.role}`],
     loop: true,
     delaySpeed: 2000,
   });
@@ -23,9 +23,9 @@ function Hero({ pageInfo }: Props) {
         src={urlFor(pageInfo?.heroImage).url()}
         alt=""
       />
-      <div className="z-20">
+      <div className="z-1">
         <h2 className="pb-2 text-sm uppercase tracking-[15px] text-gray-500 ">
-          {pageInfo?.role}
+          Software Engineer
         </h2>
         <h1 className="text-5xl font-semibold lg:text-6xl scroll-px10">
           <span className="mr-3">{text}</span>
