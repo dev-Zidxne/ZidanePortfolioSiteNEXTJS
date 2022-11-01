@@ -20,7 +20,7 @@ export default function Projects({ projects }: Props) {
       }}
       className="relative z-0 flex flex-col items-center h-screen max-w-full mx-auto overflow-hidden text-left md:flex-row justify-evenly "
     >
-      <h3 className="absolute uppercase top-24 tracking-[20px] text-gray-500 text-2xl ml-6">
+      <h3 className="absolute uppercase top-24 tracking-[20px] text-gray-500 text-2xl ml-6 lg:text-4xl">
         Projects
       </h3>
       <div className="relative z-20 flex w-full overflow-y-hidden snap-x snap-mandatory scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">

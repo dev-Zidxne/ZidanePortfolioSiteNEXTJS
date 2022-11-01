@@ -7,7 +7,7 @@ type Props = { pageInfo: PageInfo };
 function About({ pageInfo }: Props) {
   return (
     <motion.div className="relative flex flex-col items-center justify-center px-10 mx-auto mb-28 md:text-left md:flex-row max-w-7xl top-6">
-      <h3 className="absolute uppercase top-8  ml-6 tracking-[20px] text-gray-500 text-2xl ">
+      <h3 className="absolute uppercase top-8  ml-6 tracking-[20px] text-gray-500 text-2xl lg:text-4xl">
         About
       </h3>
       <motion.img
@@ -24,10 +24,12 @@ function About({ pageInfo }: Props) {
         className="flex-shrink-0 object-cover w-56 h-56 rounded-full md:mb-0 md:rounded-lg md:w-64 md:h-96 xl:w-[500px] xl:h-[600px] mt-20"
       />
       <div className="space-y-5 md:px-10 text">
-        <h4 className="text-4xl font-semibold text-center">
+        <h4 className="text-4xl font-semibold text-center ">
           Background and Skills
         </h4>
-        <p className="text-sm">{pageInfo?.backgroundInformation}</p>
+        <p className="text-sm lg:text-base">
+          {pageInfo?.backgroundInformation}
+        </p>
       </div>
     </motion.div>
   );
