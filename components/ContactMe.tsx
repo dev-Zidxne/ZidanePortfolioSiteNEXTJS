@@ -53,7 +53,7 @@ function ContactMe({ pageInfo }: Props) {
 
       <div className="flex flex-col ">
         {!isTabletOrMobile && (
-          <h4 className="mt-10 text-3xl font-semibold text-center ">
+          <h4 className="mt-20 font-semibold text-center text-md ">
             Get in Touch.{" "}
             <span className="decoration-[#F7AB0A]/50 underline">
               Lets Talk:
