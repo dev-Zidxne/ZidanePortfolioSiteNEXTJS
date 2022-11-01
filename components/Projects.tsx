@@ -30,7 +30,7 @@ export default function Projects({ projects }: Props) {
             key={project.toString()}
             className="flex flex-col items-center justify-center flex-shrink-0 w-screen h-screen p-20 space-y-5 snap-center md:p-44"
           >
-            <div className="flex-shrink-0 object-cover w-24 h-24   md:mb-0 md:rounded-lg md:w-64 md:h-96 xl:w-[500px] xl:h-[400px]  cursor-pointer hover:opacity-80 bg-transparent-400 transition">
+            <div className="flex-shrink-0 object-cover w-24 h-24   md:mb-0 md:rounded-lg md:w-64 md:h-96 xl:w-[500px] xl:h-[400px] mt-10 cursor-pointer hover:opacity-80 bg-transparent-400 transition">
               <Link href={project.linkToBuild}>
                 <a target="_blank">
                   <motion.img
@@ -48,7 +48,7 @@ export default function Projects({ projects }: Props) {
                 </a>
               </Link>
             </div>
-            <div className="max-w-6xl px-0 space-y-5 md:px-10">
+            <div className="max-w-6xl px-0 space-y-10 md:px-10">
               <h4 className="text-4xl font-semibold text-center">
                 <span className="underline decoration-[#F7AB0A]/50 text-sm lg:text-lg ">
                   Case Study {i + 1} of {projects.length}: {project?.title}
