@@ -28,7 +28,7 @@ type Props = {
 
 const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
   return (
-    <div className="bg-[rgb(36,36,36)] text-white h-screen  overflow-y-scroll overscroll-x-scroll z-0  scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
+    <div className="bg-[rgb(36,36,36)] text-white h-screen  overflow-y-scroll overscroll-x-scroll   scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
       <Head>
         <title>{pageInfo?.name}</title>
       </Head>
@@ -53,10 +53,10 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
         <ContactMe pageInfo={pageInfo} />
       </section>
       <Link href="#hero">
-        <footer className="sticky bottom-0 w-full cursor-pointer">
+        <footer className="sticky w-full cursor-pointer bottom-96 ">
           <div className="flex ">
             <img
-              className="w-10 h-10 rounded-full cursor-pointer filter grayscale hover:grayscale-0 "
+              className="w-8 h-8 rounded-full cursor-pointer filter grayscale hover:grayscale-0 "
               src="https://media-exp1.licdn.com/dms/image/D4E03AQHdJZFLTFQDHQ/profile-displayphoto-shrink_800_800/0/1665970228383?e=1671667200&v=beta&t=wKKVw1mofVg899wMOc5pVB5suTg4nD0Vz8PWKdjtz6w"
               alt=""
             ></img>
