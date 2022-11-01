@@ -23,7 +23,7 @@ function Hero({ pageInfo }: Props) {
         src={urlFor(pageInfo?.heroImage).url()}
         alt=""
       />
-      <div className="z-1">
+      <div className="z-0">
         <h2 className="pb-2 text-sm uppercase tracking-[15px] text-gray-500 ">
           Software Engineer
         </h2>
