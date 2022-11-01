@@ -4,6 +4,7 @@ import React, {
   ReactEventHandler,
   ReactHTML,
   useRef,
+  useState,
 } from "react";
 import {
   DevicePhoneMobileIcon,
@@ -21,10 +22,25 @@ type Props = {
 
 function ContactMe({ pageInfo }: Props) {
   const isTabletOrMobile = useMediaQuery({ maxWidth: 558 });
-  const isPortrait = useMediaQuery({ orientation: "portrait" });
-  const form = useRef();
 
-  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+  const [input, setInput] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+  const [isdisabled, setIsDisabled] = useState(true);
+
+  const onChange = (e: any) => {
+    setInput((prevState) => e.target.value);
+    if (e.target.value.trim().length < 8) {
+      // Checking the length of the input
+      setIsDisabled(true); // Disabling the button if length is < 1
+    } else {
+      setIsDisabled(false);
+    }
+  };
+  const sendEmail = (e: any) => {
     e.preventDefault();
 
     emailjs
@@ -109,13 +125,17 @@ function ContactMe({ pageInfo }: Props) {
           {!isTabletOrMobile && (
             <div className="space-x-2 ">
               <input
+                onChange={onChange}
                 name="name"
+                value={input.name}
                 className="contactInput"
                 placeholder="Name"
                 type="text"
               />
               <input
+                onChange={onChange}
                 name="email"
+                value={input.email}
                 className="contactInput"
                 placeholder="Email"
                 type="email"
@@ -125,13 +145,17 @@ function ContactMe({ pageInfo }: Props) {
           {isTabletOrMobile && (
             <div className="flex flex-col space-y-2 ">
               <input
+                onChange={onChange}
                 name="name"
+                value={input.name}
                 className="contactInput"
                 placeholder="Name"
                 type="text"
               />
               <input
+                onChange={onChange}
                 name="email"
+                value={input.email}
                 className="contactInput"
                 placeholder="Email"
                 type="email"
@@ -140,19 +164,24 @@ function ContactMe({ pageInfo }: Props) {
           )}
 
           <input
+            onChange={onChange}
             name="subject"
+            value={input.subject}
             className="contactInput"
             placeholder="Subject"
           ></input>
           <textarea
+            onChange={onChange}
             className="contactInput"
             name="message"
+            value={input.message}
             placeholder="Message..."
           ></textarea>
 
           <button
             type="submit"
             className="bg-[#F7AB0A] py-5   rounded-md  text-black font-bold hover:opacity-80 transition-all duration-500  "
+            disabled={isdisabled}
           >
             Send Mail
           </button>

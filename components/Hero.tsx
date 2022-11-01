@@ -34,16 +34,24 @@ function Hero({ pageInfo }: Props) {
       </div>
       <div className="pt-5 ">
         <Link href="#about">
-          <button className="heroButton">About</button>
+          <button type="button" className=" heroButton">
+            About
+          </button>
         </Link>
         <Link href="#experience">
-          <button className="heroButton">Experience</button>
+          <button type="button" className="heroButton">
+            Experience
+          </button>
         </Link>
         <Link href="#skills">
-          <button className="heroButton">Skills</button>
+          <button type="button" className="heroButton">
+            Skills
+          </button>
         </Link>
         <Link href="#projects">
-          <button className="heroButton">Projects</button>
+          <button type="button" className="heroButton">
+            Projects
+          </button>
         </Link>
       </div>
     </div>

@@ -962,6 +962,13 @@ concat-map@0.0.1:
   resolved "https://registry.npmjs.org/concat-map/-/concat-map-0.0.1.tgz"
   integrity sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==
 
+context@^3.0.4:
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/context/-/context-3.0.4.tgz#23e95879c0a9381790baa34d895c55f80156de78"
+  integrity sha512-kjRlThxjda9o3L4lFXO7dOmxVXfO+v8q8A9dCyJxZ07XudYq6/TAFmF2bV5Plb4afi+oLSox2rXkJtI/nFB9Aw==
+  dependencies:
+    vest-utils "^0.0.4"
+
 core-js-pure@^3.25.1:
   version "3.25.5"
   resolved "https://registry.npmjs.org/core-js-pure/-/core-js-pure-3.25.5.tgz"
@@ -2120,6 +2127,14 @@ ms@^2.1.1:
   resolved "https://registry.npmjs.org/ms/-/ms-2.1.3.tgz"
   integrity sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==
 
+n4s@^4.3.3:
+  version "4.3.3"
+  resolved "https://registry.yarnpkg.com/n4s/-/n4s-4.3.3.tgz#53d9872bbc691a164738f41ef70257268bd3a2f3"
+  integrity sha512-kXSB7ubRIsD90q3Gt4VQ1u311AWp/2Rul5SYeNbo2mQ2fEb+NL196rDIJqwrqznp60ObWZb95tO+Kk7rVIdJew==
+  dependencies:
+    context "^3.0.4"
+    vest-utils "^0.0.4"
+
 nano-pubsub@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/nano-pubsub/-/nano-pubsub-1.0.2.tgz#34ce776f7af959915b8f7acfe8dd6b9c66f3bde9"
@@ -3047,6 +3062,33 @@ util-deprecate@^1.0.2, util-deprecate@~1.0.1:
   version "1.0.2"
   resolved "https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz"
   integrity sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==
+
+vast@^1.0.14:
+  version "1.0.14"
+  resolved "https://registry.yarnpkg.com/vast/-/vast-1.0.14.tgz#689d8366952a0553bdb58e67f8d6230a1e237bdf"
+  integrity sha512-w3iCRS3G+qOR/wkGpLz6b5/kdVQU3w/SHKZ8S9f0UTEwIZ3cE/IXuEZYZrFJkxL9AotyUk7b1WPxkA0cxq1fPA==
+  dependencies:
+    vest-utils "^0.0.3"
+
+vest-utils@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/vest-utils/-/vest-utils-0.0.3.tgz#a3be45f8876e7b2421477f5d2c23a4aed83b3155"
+  integrity sha512-ZVeNgF0CSf+35/jFd639savGiYiH8FO5PAOGKeUbyd6PwfiPkqm84XwAnErq5qcXoCZT3N9cw94YevduFTUTjg==
+
+vest-utils@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/vest-utils/-/vest-utils-0.0.4.tgz#c0fd0260c1772bc97732694da2c500c734cd25d3"
+  integrity sha512-H9YiK3yjg2CG+0KF5BzoFJYW38fFnfC+Z/5xDvJpRmGBe7J3X2Y29iHihgp1iQJl93JmEv/Kch8cjIQ+H3ilyg==
+
+vest@^4.6.7:
+  version "4.6.7"
+  resolved "https://registry.yarnpkg.com/vest/-/vest-4.6.7.tgz#619b8bebfd30e5f79437ecf232a9bf3c63df5668"
+  integrity sha512-fl1WBDNmy+Xilcq17PSd5Se1FQSYwkHugPxarRqSwStTJKtCyI/YHXLEhzeRK6RP+6mB3oiXPbTrv94zYC59WA==
+  dependencies:
+    context "^3.0.4"
+    n4s "^4.3.3"
+    vast "^1.0.14"
+    vest-utils "^0.0.4"
 
 w3c-keyname@^2.2.4:
   version "2.2.6"
