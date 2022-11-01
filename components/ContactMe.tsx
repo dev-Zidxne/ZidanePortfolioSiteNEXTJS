@@ -21,6 +21,7 @@ type Props = {
 
 function ContactMe({ pageInfo }: Props) {
   const isTabletOrMobile = useMediaQuery({ maxWidth: 558 });
+  const isPortrait = useMediaQuery({ orientation: "portrait" });
   const form = useRef();
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
@@ -45,10 +46,11 @@ function ContactMe({ pageInfo }: Props) {
   };
 
   return (
-    <div className="relative bottom-0 flex items-center justify-center h-screen text-center md:text-left md:flex-row ">
+    <div className="relative bottom-0 flex items-center justify-center text-center md:text-left md:flex-row ">
       <h3 className="absolute uppercase top-8  ml-6 tracking-[20px] text-gray-500 text-2xl">
         Contact
       </h3>
+
       <div className="flex flex-col ">
         {!isTabletOrMobile && (
           <h4 className="mt-10 text-3xl font-semibold text-center ">
