@@ -46,7 +46,7 @@ function ContactMe({ pageInfo }: Props) {
   };
 
   return (
-    <div className="relative bottom-0 flex items-center justify-center text-center md:text-left md:flex-row ">
+    <div className="relative bottom-0 flex items-center justify-center text-center md:text-left md:flex-row top-6">
       <h3 className="absolute uppercase top-8  ml-6 tracking-[20px] text-gray-500 text-2xl">
         Contact
       </h3>
