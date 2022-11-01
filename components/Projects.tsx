@@ -24,7 +24,7 @@ export default function Projects({ projects }: Props) {
       <h3 className="absolute uppercase top-24 tracking-[20px] text-gray-500 text-2xl ml-6 lg:text-4xl">
         Projects
       </h3>
-      <div className="relative z-20 flex w-full overflow-y-hidden snap-x snap-mandatory scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
+      <div className="relative  flex w-full overflow-y-hidden snap-x snap-mandatory scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
         {projects.map((project, i) => (
           <div
             key={project.toString()}
@@ -43,7 +43,7 @@ export default function Projects({ projects }: Props) {
                     viewport={{ once: true }}
                     src={urlFor(project?.image).url()}
                     alt=""
-                    className="flex-shrink-0 object-cover w-28 h-28   md:mb-0 md:rounded-lg md:w-64 md:h-96 xl:w-[500px] xl:h-[400px] mt-10 cursor-pointer"
+                    className="flex-shrink-0 object-cover w-24 h-24   md:mb-0 md:rounded-lg md:w-64 md:h-96 xl:w-[500px] xl:h-[400px] mt-10 cursor-pointer  "
                   />
                 </a>
               </Link>
@@ -57,14 +57,14 @@ export default function Projects({ projects }: Props) {
               <div className="flex items-center justify-center space-x-2">
                 {project?.technologies.map((technology) => (
                   <img
-                    className="h-10 rounded-full"
+                    className="h-10 m-1 rounded-full"
                     key={technology._id}
                     src={urlFor(technology.image).url()}
                     alt=""
                   />
                 ))}
               </div>
-              <p className="text-sm text-center lg:text-lg md:text-left ">
+              <p className="text-lg text-center md:text-left ">
                 {project?.summary}
               </p>
             </div>
