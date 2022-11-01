@@ -71,7 +71,7 @@ export default function Projects({ projects }: Props) {
           </div>
         ))}
       </div>
-      <div className="w-full absolute top-[20%] bg-[#F7AB0A]/10 left-0 h-[500px] -skew-y-12"></div>
+      <div className="w-full absolute top-[20%] bg-[#F7AB0A]/10 left-0 h-[400px] -skew-y-12"></div>
     </motion.div>
   );
 }
