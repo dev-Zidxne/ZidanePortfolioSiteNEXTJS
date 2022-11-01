@@ -24,7 +24,7 @@ export default function Projects({ projects }: Props) {
       <h3 className="absolute uppercase top-24 tracking-[20px] text-gray-500 text-2xl ml-6 lg:text-4xl">
         Projects
       </h3>
-      <div className="relative  flex w-full overflow-y-hidden snap-x snap-mandatory scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
+      <div className="relative z-20 flex w-full overflow-y-hidden snap-x snap-mandatory scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
         {projects.map((project, i) => (
           <div
             key={project.toString()}
@@ -48,7 +48,7 @@ export default function Projects({ projects }: Props) {
                 </a>
               </Link>
             </div>
-            <div className="max-w-6xl p-10 px-0 space-y-5 md:px-10">
+            <div className="max-w-6xl px-0 space-y-5 md:px-10">
               <h4 className="text-4xl font-semibold text-center">
                 <span className="underline decoration-[#F7AB0A]/50 text-sm lg:text-lg ">
                   Case Study {i + 1} of {projects.length}: {project?.title}
