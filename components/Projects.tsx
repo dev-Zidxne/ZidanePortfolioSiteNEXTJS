@@ -43,7 +43,7 @@ export default function Projects({ projects }: Props) {
                     viewport={{ once: true }}
                     src={urlFor(project?.image).url()}
                     alt=""
-                    className="flex-shrink-0 object-cover w-28 h-28   md:mb-0 md:rounded-lg md:w-64 md:h-96 xl:w-[500px] xl:h-[400px] mt-10 cursor-pointer  "
+                    className="flex-shrink-0 object-cover w-28 h-28   md:mb-0 md:rounded-lg md:w-64 md:h-96 xl:w-[500px] xl:h-[400px] mt-10 cursor-pointer"
                   />
                 </a>
               </Link>
