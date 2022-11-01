@@ -63,13 +63,13 @@ function ContactMe({ pageInfo }: Props) {
 
   return (
     <div className="relative bottom-0 flex items-center justify-center text-center md:text-left md:flex-row top-6">
-      <h3 className="absolute uppercase top-8  ml-6 tracking-[20px] text-gray-500 text-2xl lg:text-4xl">
+      <h3 className="absolute uppercase top-8  ml-6 tracking-[20px] text-gray-500 text-2xl lg:text-4xl ">
         Contact
       </h3>
 
       <div className="flex flex-col ">
         {!isTabletOrMobile && (
-          <h4 className="mt-20 font-semibold text-center text-md ">
+          <h4 className="mt-24 font-semibold text-center text-md ">
             Get in Touch.{" "}
             <span className="decoration-[#F7AB0A]/50 underline">
               Lets Talk:
