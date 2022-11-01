@@ -46,7 +46,7 @@ function ContactMe({ pageInfo }: Props) {
 
   return (
     <div className="relative bottom-0 flex items-center justify-center h-screen text-center md:text-left md:flex-row justify-evenly ">
-      <h3 className="absolute uppercase top-12   tracking-[20px] text-gray-500 text-2xl">
+      <h3 className="absolute uppercase top-8   tracking-[20px] text-gray-500 text-2xl">
         Contact
       </h3>
       <div className="flex flex-col ">
@@ -59,7 +59,7 @@ function ContactMe({ pageInfo }: Props) {
           </h4>
         )}
         {isTabletOrMobile && (
-          <h4 className="mt-24 font-semibold text-center text-md ">
+          <h4 className="mt-24 text-2xl font-semibold text-center ">
             Get in Touch.{" "}
             <span className="decoration-[#F7AB0A]/50 underline">
               Lets Talk:
@@ -71,15 +71,15 @@ function ContactMe({ pageInfo }: Props) {
           <div className="p-5 mt-[-10px] ">
             <div className="flex items-center space-x-5">
               <DevicePhoneMobileIcon className="h-7 w-7 text-[#F7AB0A] animate-pulse" />
-              <p className="text-2xl">{pageInfo?.phoneNumber}</p>
+              <p className="text-md">{pageInfo?.phoneNumber}</p>
             </div>
             <div className="flex items-center space-x-5">
               <EnvelopeIcon className="h-7 w-7 text-[#F7AB0A] animate-pulse" />
-              <p className="text-2xl">{pageInfo?.email}</p>
+              <p className="text-md">{pageInfo?.email}</p>
             </div>
             <div className="flex items-center space-x-5">
               <MapPinIcon className="h-7 w-7 text-[#F7AB0A] animate-pulse" />
-              <p className="text-2xl">{pageInfo?.address}</p>
+              <p className="text-md">{pageInfo?.address}</p>
             </div>
           </div>
         )}
