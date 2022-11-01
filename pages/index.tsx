@@ -56,7 +56,7 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
         <footer className="sticky w-full cursor-pointer bottom-96 ">
           <div className="flex flex-row-reverse pr-4">
             <img
-              className="w-10 h-10 rounded-full cursor-pointer filter grayscale hover:grayscale-0 "
+              className="w-8 h-8 rounded-full cursor-pointer filter grayscale hover:grayscale-0 "
               src="https://media-exp1.licdn.com/dms/image/D4E03AQHdJZFLTFQDHQ/profile-displayphoto-shrink_800_800/0/1665970228383?e=1671667200&v=beta&t=wKKVw1mofVg899wMOc5pVB5suTg4nD0Vz8PWKdjtz6w"
               alt=""
             ></img>
