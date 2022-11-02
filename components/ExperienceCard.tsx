@@ -30,7 +30,7 @@ export default function ExperienceCard({ experience }: Props) {
         <p className="mt-1 ml-5 text-2xl font-bold text-center ">
           {experience.company}
         </p>
-        <div className="flex w-full h-12 mr-10 overflow-scroll rounded-full lg:overflow-hidden">
+        <div className="flex w-full h-12 mr-10 overflow-scroll rounded-full lg:overflow-hidden md:overflow-hidden ">
           {experience.technologies.map((technology) => (
             <img
               key={technology._id}
@@ -39,7 +39,7 @@ export default function ExperienceCard({ experience }: Props) {
             />
           ))}
         </div>
-        <p className="py-2 text-center text-gray-300 uppercase lg:text-left">
+        <p className="py-1 text-center text-gray-300 uppercase lg:text-left">
           {new Date(experience.dateStarted).toDateString()} - {""}
           {experience.isCurrentlyWorkingHere
             ? "Present"
