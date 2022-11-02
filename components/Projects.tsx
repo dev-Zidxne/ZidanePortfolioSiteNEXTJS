@@ -27,7 +27,7 @@ export default function Projects({ projects }: Props) {
       <h3 className="absolute top-16 tracking-[2px] text-gray-500 text-sm lg:text-xl lg:top-48">
         Click or tap on a project image to visit.
       </h3>
-      <div className="relative z-30 flex w-full overflow-y-hidden snap-x snap-mandatory scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80 bottom-32">
+      <div className="relative z-30 flex w-full overflow-y-hidden snap-x snap-mandatory scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80 bottom-20 ">
         {projects.map((project, i) => (
           <div
             key={project.toString()}
