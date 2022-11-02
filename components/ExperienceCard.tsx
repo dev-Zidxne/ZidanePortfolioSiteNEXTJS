@@ -24,13 +24,13 @@ export default function ExperienceCard({ experience }: Props) {
       />
 
       <div className="flex flex-col w-screen p-10 space-y-2 md:w-fit ">
-        <h4 className="ml-10 text-2xl font-light lg:text-4xl lg:ml-0 ">
+        <h4 className="text-2xl font-light text-center lg:text-4xl lg:ml-0">
           {experience.jobTitle}{" "}
         </h4>
-        <p className="mt-1 ml-5 text-2xl font-bold text-center lg:text-left">
+        <p className="mt-1 ml-5 text-2xl font-bold text-center ">
           {experience.company}
         </p>
-        <div className="flex w-full h-12 m-5 rounded-full overflow-scroll-hidden">
+        <div className="flex w-full h-12 m-5 overflow-scroll rounded-full lg:overflow-hidden">
           {experience.technologies.map((technology) => (
             <img
               key={technology._id}
