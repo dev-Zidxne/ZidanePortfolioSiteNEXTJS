@@ -23,8 +23,10 @@ export default function ExperienceCard({ experience }: Props) {
         src={urlFor(experience?.companyImage).url()}
       />
 
-      <div className="flex flex-col w-screen p-5 space-y-2 md:w-fit ">
-        <h4 className="text-4xl font-light">{experience.jobTitle} </h4>
+      <div className="flex flex-col w-screen p-16 space-y-2 md:w-fit ">
+        <h4 className="text-2xl font-light lg:text-4xl">
+          {experience.jobTitle}{" "}
+        </h4>
         <p className="mt-1 text-2xl font-bold">Telem</p>
         <div className="flex w-10 h-10 rounded-full">
           {experience.technologies.map((technology) => (
@@ -41,7 +43,7 @@ export default function ExperienceCard({ experience }: Props) {
             ? "Present"
             : new Date(experience.dateEnded).toDateString()}
         </p>
-        <ul className="h-40 ml-5 space-y-4 text-lg list-disc w-80">
+        <ul className="h-40 ml-5 space-y-4 text-sm list-disc lg:text-lg w-80 ">
           {experience.points.map((point, i) => (
             <li key={i}>{point}</li>
           ))}

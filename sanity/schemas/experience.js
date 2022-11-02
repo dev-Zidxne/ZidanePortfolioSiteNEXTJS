@@ -29,7 +29,7 @@ export default {
     {
       name: "dateEnded",
       title: "DateEnded",
-      type: "string",
+      type: "date",
     },
     {
       name: "isCurrentlyWorkingHere",
