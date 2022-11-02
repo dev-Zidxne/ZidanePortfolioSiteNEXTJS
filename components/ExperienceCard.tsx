@@ -10,7 +10,7 @@ type Props = {
 
 export default function ExperienceCard({ experience }: Props) {
   return (
-    <article className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[500px] md:w-[600px] xl:w-[600px] xl:h-[700px]  snap-center bg-[#292929] p-10 hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden ">
+    <article className="flex flex-col  rounded-lg items-center  flex-shrink-0 w-[500px]  md:w-[600px] xl:w-[600px] xl:h-[700px]  snap-center bg-[#292929] p-3 hover:opacity-100 opacity-60 cursor-pointer transition-opacity duration-200 overflow-hidden ">
       <motion.img
         initial={{
           y: -100,
@@ -23,11 +23,11 @@ export default function ExperienceCard({ experience }: Props) {
         src={urlFor(experience?.companyImage).url()}
       />
 
-      <div className="flex flex-col w-screen p-16 space-y-2 md:w-fit ">
+      <div className="flex flex-col w-screen p-12 space-y-2 md:w-fit ">
         <h4 className="text-2xl font-light lg:text-4xl">
           {experience.jobTitle}{" "}
         </h4>
-        <p className="mt-1 text-2xl font-bold">Telem</p>
+        <p className="mt-1 text-2xl font-bold">{experience.company}</p>
         <div className="flex w-10 h-10 rounded-full">
           {experience.technologies.map((technology) => (
             <img
@@ -43,7 +43,7 @@ export default function ExperienceCard({ experience }: Props) {
             ? "Present"
             : new Date(experience.dateEnded).toDateString()}
         </p>
-        <ul className="h-40 ml-5 space-y-4 text-sm list-disc lg:text-lg w-80 ">
+        <ul className="h-40 ml-5 space-y-4 text-sm list-disc lg:text-md w-80 ">
           {experience.points.map((point, i) => (
             <li key={i}>{point}</li>
           ))}
