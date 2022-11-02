@@ -27,9 +27,7 @@ function About({ pageInfo }: Props) {
         <h4 className="text-4xl font-semibold text-center ">
           Background and Skills
         </h4>
-        <p className="text-sm lg:text-base">
-          {pageInfo?.backgroundInformation}
-        </p>
+        <p className="text-sm lg:text-lg">{pageInfo?.backgroundInformation}</p>
       </div>
     </motion.div>
   );
