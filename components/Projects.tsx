@@ -25,7 +25,7 @@ export default function Projects({ projects }: Props) {
         Projects
       </h3>
       <h3 className="absolute top-16 tracking-[2px] text-gray-500 text-sm lg:text-xl lg:top-24 md:top-52 ">
-        Click or tap on a project image to visit.
+        Scroll across to select a project to view on image press.
       </h3>
       <div className="relative z-30 flex w-screen transition  scrollbar-thin overflow-y-hidden snap-x snap-mandatory hover:scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80 bottom-20 ">
         {projects.map((project, i) => (
