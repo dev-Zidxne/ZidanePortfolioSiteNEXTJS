@@ -21,7 +21,7 @@ function About({ pageInfo }: Props) {
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         src={urlFor(pageInfo?.profilePic).url()}
-        className="flex-shrink-0 object-cover w-56 h-56 rounded-full md:mb-0 md:rounded-lg md:w-64 md:h-96 xl:w-[500px] xl:h-[600px] mt-20"
+        className="flex-shrink-0 object-cover w-56 h-56 rounded-full md:mb-0 md:rounded-3xl md:w-64 md:h-96 xl:w-[500px] xl:h-[600px] mt-20"
       />
       <div className="space-y-5 md:px-10 text">
         <h4 className="text-4xl font-semibold text-center ">

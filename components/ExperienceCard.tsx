@@ -30,7 +30,7 @@ export default function ExperienceCard({ experience }: Props) {
         <p className="mt-1 ml-5 text-2xl font-bold text-center ">
           {experience.company}
         </p>
-        <div className="flex w-full h-12 m-5 overflow-scroll rounded-full lg:overflow-hidden">
+        <div className="flex w-full h-12 mr-10 overflow-scroll rounded-full lg:overflow-hidden">
           {experience.technologies.map((technology) => (
             <img
               key={technology._id}
@@ -45,7 +45,7 @@ export default function ExperienceCard({ experience }: Props) {
             ? "Present"
             : new Date(experience.dateEnded).toDateString()}
         </p>
-        <ul className="p-3 space-y-2 text-xs list-disc h-36 ml-7 lg:text-base">
+        <ul className="p-3 space-y-1 text-xs list-disc h-36 ml-7 lg:text-base">
           {experience.points.map((point, i) => (
             <li key={i}>{point}</li>
           ))}

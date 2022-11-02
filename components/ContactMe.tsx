@@ -128,7 +128,7 @@ function ContactMe({ pageInfo }: Props) {
                 onChange={onChange}
                 name="name"
                 value={input.name}
-                className="contactInput"
+                className="rounded-lg contactInput"
                 placeholder="Name"
                 type="text"
               />
@@ -136,7 +136,7 @@ function ContactMe({ pageInfo }: Props) {
                 onChange={onChange}
                 name="email"
                 value={input.email}
-                className="contactInput"
+                className="rounded-lg contactInput"
                 placeholder="Email"
                 type="email"
               />
@@ -148,7 +148,7 @@ function ContactMe({ pageInfo }: Props) {
                 onChange={onChange}
                 name="name"
                 value={input.name}
-                className="contactInput"
+                className="rounded-lg contactInput"
                 placeholder="Name"
                 type="text"
               />
@@ -156,7 +156,7 @@ function ContactMe({ pageInfo }: Props) {
                 onChange={onChange}
                 name="email"
                 value={input.email}
-                className="contactInput"
+                className="rounded-lg contactInput"
                 placeholder="Email"
                 type="email"
               />
@@ -167,12 +167,12 @@ function ContactMe({ pageInfo }: Props) {
             onChange={onChange}
             name="subject"
             value={input.subject}
-            className="contactInput"
+            className="rounded-lg contactInput"
             placeholder="Subject"
           ></input>
           <textarea
             onChange={onChange}
-            className="contactInput"
+            className="rounded-lg contactInput"
             name="message"
             value={input.message}
             placeholder="Message..."
@@ -180,7 +180,7 @@ function ContactMe({ pageInfo }: Props) {
 
           <button
             type="submit"
-            className="bg-[#F7AB0A] py-5   rounded-md  text-black font-bold hover:opacity-80 transition-all duration-500  "
+            className="bg-[#F7AB0A] py-5   rounded-3xl  text-black font-bold hover:opacity-80 transition-all duration-500  "
             disabled={isdisabled}
           >
             Send Mail
