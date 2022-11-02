@@ -13,13 +13,13 @@ export default function Skills({ skills }: Props) {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
-      className="relative flex text-center md:text-left xl:flex-row max-w-[2000px] xl:px-10 h-screen xl:space-y-0 mx-auto items-center justify-center "
+      className="relative flex text-center md:text-left xl:flex-row max-w-[2000px] xl:px-10 h-screen xl:space-y-0 mx-auto items-center justify-center  "
     >
-      <h3 className="absolute uppercase top-6  ml-6 tracking-[20px] text-gray-500 text-2xl lg:top-48 lg:text-4xl">
+      <h3 className="absolute uppercase top-6  ml-6 tracking-[20px] text-gray-500 text-2xl lg:top-32 lg:text-4xl ">
         Skills
       </h3>
 
-      <h3 className="absolute top-16 tracking-[3px] text-gray-500 text-sm lg:text-xl lg:top-64">
+      <h3 className="absolute top-16 tracking-[3px] text-gray-500 text-sm lg:text-xl lg:top-44 ">
         Hover or tap on a skill for current proficiency.
       </h3>
 
