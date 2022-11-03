@@ -33,7 +33,7 @@ function ContactMe({ pageInfo }: Props) {
 
   const onChange = (e: any) => {
     setInput((prevState) => e.target.value);
-    if (e.target.value.trim().length < 8) {
+    if (e.target.value.trim().length < 2) {
       // Checking the length of the input
       setIsDisabled(true); // Disabling the button if length is < 1
     } else {
