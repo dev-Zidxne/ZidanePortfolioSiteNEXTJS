@@ -19,7 +19,7 @@ export default function Projects({ projects }: Props) {
       transition={{
         duration: 1.5,
       }}
-      className="relative flex flex-col items-center h-screen p-10 mx-auto  md:text-left md:flex-row max-w-screen justify-evenly space-y-7 xl:h-[700px] "
+      className="relative flex flex-col items-center h-screen p-10 mx-auto  md:text-left md:flex-row max-w-screen justify-evenly space-y-7 xl:h-[700px] lg:top-10 "
     >
       <h3 className="absolute uppercase top-6  ml-6 tracking-[20px] text-gray-500 text-2xl  lg:text-4xl ">
         Projects
