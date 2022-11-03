@@ -21,7 +21,7 @@ export default function Projects({ projects }: Props) {
       }}
       className="relative flex flex-col items-center h-screen p-10 mx-auto  md:text-left md:flex-row max-w-screen justify-evenly space-y-7 xl:h-[700px] "
     >
-      <h3 className="absolute uppercase top-6  ml-6 tracking-[20px] text-gray-500 text-2xl  lg:text-4xl ">
+      <h3 className="absolute uppercase top-6  text-center items-center tracking-[20px] text-gray-500 text-2xl  lg:text-4xl m-5">
         Projects
       </h3>
       <h3 className="absolute  text-center top-16 tracking-[3px] text-gray-500 text-sm lg:text-xl lg:top-24 md:top-52 m-5 ">
