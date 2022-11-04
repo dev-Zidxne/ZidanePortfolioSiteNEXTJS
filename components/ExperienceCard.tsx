@@ -23,7 +23,7 @@ export default function ExperienceCard({ experience }: Props) {
         src={urlFor(experience?.companyImage).url()}
       />
 
-      <div className="flex flex-col w-screen p-10 space-y-1 md:w-fit ">
+      <div className="flex flex-col w-screen p-8 space-y-1 md:w-fit ">
         <h4 className="ml-2 text-2xl font-light text-center lg:text-4xl lg:ml-0 ">
           {experience.jobTitle}{" "}
         </h4>
