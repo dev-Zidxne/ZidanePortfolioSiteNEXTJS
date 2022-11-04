@@ -19,10 +19,6 @@ export default function Skills({ skills }: Props) {
         Skills
       </h3>
 
-      <h3 className="absolute top-16 tracking-[3px] text-gray-500 text-sm lg:text-xl lg:top-44 sm:top-32">
-        Top skills I have proficiency in.
-      </h3>
-
       {!isTabletOrMobile && (
         <div className="grid grid-cols-6 gap-3 mt-12">
           {skills?.slice(0, skills.length / 2).map((skill) => (
