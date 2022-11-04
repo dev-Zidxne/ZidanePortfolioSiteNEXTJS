@@ -7,7 +7,7 @@ type Props = { skills: SkillType[] };
 
 export default function Skills({ skills }: Props) {
   const isTabletOrMobile = useMediaQuery({ maxWidth: 716 });
-  const isLandScape = useMediaQuery({ maxHeight: 914 });
+
   return (
     <motion.div
       initial={{ opacity: 0 }}

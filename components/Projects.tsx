@@ -52,7 +52,7 @@ export default function Projects({ projects }: Props) {
                 </a>
               </Link>
             </div>
-            <div className="max-w-6xl px-0 space-y-5 md:px-10">
+            <div className="max-w-6xl space-y-5 md:px-10">
               <h4 className="text-4xl font-semibold text-center ">
                 <span className=" underline decoration-[#F7AB0A]/50 text-sm lg:text-lg ">
                   Case Study {i + 1} of {projects.length}: {project?.title}
