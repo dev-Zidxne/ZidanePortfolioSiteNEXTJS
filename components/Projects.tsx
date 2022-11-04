@@ -21,10 +21,10 @@ export default function Projects({ projects }: Props) {
       }}
       className="relative flex flex-col items-center h-screen p-10 mx-auto  md:text-left md:flex-row max-w-screen justify-evenly space-y-7 xl:h-[700px] lg:top-10 "
     >
-      <h3 className="absolute uppercase top-6  ml-6 tracking-[20px] text-gray-500 text-2xl  lg:text-4xl ">
+      <h3 className="absolute uppercase top-6  ml-6 tracking-[20px] text-gray-500 text-2xl  lg:text-4xl  ">
         Projects
       </h3>
-      <h3 className="absolute  text-center top-16 tracking-[3px] text-gray-500 text-sm lg:text-xl lg:top-24 md:top-52 m-5 mr-8">
+      <h3 className="absolute  text-center top-16 tracking-[3px] text-gray-500 text-sm lg:text-xl lg:top-24 md:top-52 m-5 mr-8 ">
         Scroll across and select a preview image to view.
       </h3>
       <div className="relative z-30 flex w-screen transition  scrollbar-thin overflow-y-hidden snap-x snap-mandatory hover:scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80 bottom-20 ">
