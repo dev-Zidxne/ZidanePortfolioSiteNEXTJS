@@ -45,7 +45,7 @@ export default function ExperienceCard({ experience }: Props) {
             ? "Present"
             : new Date(experience.dateEnded).toDateString()}
         </p>
-        <ul className="m-12 space-y-1 text-xs text-left list-disc h-36 lg:text-base">
+        <ul className="h-40 m-12 space-y-0.5 text-xs text-left list-disc lg:text-base">
           {experience.points.map((point, i) => (
             <li key={i}>{point}</li>
           ))}
