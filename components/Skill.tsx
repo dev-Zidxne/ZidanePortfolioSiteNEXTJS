@@ -10,7 +10,7 @@ type Props = {
 
 function Skill({ directionLeft, skill }: Props) {
   return (
-    <div className="relative flex m-auto cursor-pointer overflow group top-8">
+    <div className="relative flex m-auto cursor-pointer overflow group ">
       <motion.img
         initial={{
           x: directionLeft ? -50 : 50,
