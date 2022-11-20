@@ -71,17 +71,17 @@ function ContactMe({ pageInfo }: Props) {
         {!isTabletOrMobile && (
           <h4 className="mt-24 font-semibold text-center text-md ">
             Get in Touch.{" "}
-            <span className="decoration-[#F7AB0A]/50 underline">
+            {/* <span className="decoration-[#F7AB0A]/50 underline">
               Lets Talk:
-            </span>
+            </span> */}
           </h4>
         )}
         {isTabletOrMobile && (
           <h4 className="mt-24 text-2xl font-semibold text-center ">
             Get in Touch.{" "}
-            <span className="decoration-[#F7AB0A]/50 underline">
+            {/* <span className="decoration-[#F7AB0A]/50 underline">
               Lets Talk:
-            </span>
+            </span> */}
           </h4>
         )}
 
