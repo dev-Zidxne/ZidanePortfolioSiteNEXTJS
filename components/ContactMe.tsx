@@ -35,7 +35,7 @@ function ContactMe({ pageInfo }: Props) {
     setInput((prevState) => e.target.value);
     if (e.target.value.trim().length < 2) {
       // Checking the length of the input
-      setIsDisabled(true); // Disabling the button if length is < 1
+      setIsDisabled(true); // Disabling the button if length is < 2
     } else {
       setIsDisabled(false);
     }
