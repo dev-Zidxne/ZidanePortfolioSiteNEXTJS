@@ -31,6 +31,7 @@ export default function Header({ socials }: Props) {
             bgColor="transparent"
             fgColor="currentColor"
             className="text-[#808080ff] transition cursor-pointer hover:text-white"
+            target="_blank"
           />
         ))}
       </motion.div>
