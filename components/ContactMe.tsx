@@ -64,7 +64,7 @@ function ContactMe({ pageInfo }: Props) {
   function validateSubjectInterceptor(e: any) {
     setSubject(e.target.value);
 
-    if (e.target.value.length > 0 && e.target.value.length < 56) {
+    if (e.target.value.length > 2 && e.target.value.length < 56) {
       setSubjectValid(true);
       return true;
     } else {
@@ -128,11 +128,13 @@ function ContactMe({ pageInfo }: Props) {
           "tDGyBqf16EkmbUFVk"
         )
         .then(() => {
-          alert("Form submitted. Thank You.");
+          alert("Message sent. Thank you.");
         })
         .catch(() => {
-          alert("Form not submitted. Please check internet connection.");
+          alert("Message not sent. Please check internet connection.");
         });
+    } else if (!nameValid) {
+      alert("10 digit dialing");
     }
     e.currentTarget.reset();
   };
@@ -146,7 +148,7 @@ function ContactMe({ pageInfo }: Props) {
       <div className="flex flex-col ">
         {!isTabletOrMobile && (
           <h4 className="mt-24 font-semibold text-center text-md ">
-            Get in Touch.{" "}
+            Get in Touch{" "}
             {/* <span className="decoration-[#F7AB0A]/50 underline">
               Lets Talk:
             </span> */}
@@ -154,7 +156,7 @@ function ContactMe({ pageInfo }: Props) {
         )}
         {isTabletOrMobile && (
           <h4 className="mt-24 text-2xl font-semibold text-center ">
-            Get in Touch.{" "}
+            Get in Touch{" "}
             {/* <span className="decoration-[#F7AB0A]/50 underline">
               Lets Talk:
             </span> */}
