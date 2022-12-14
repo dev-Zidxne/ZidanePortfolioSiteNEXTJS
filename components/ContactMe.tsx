@@ -137,6 +137,7 @@ function ContactMe({ pageInfo }: Props) {
       alert("10 digit dialing");
     }
     e.currentTarget.reset();
+    setIsDisabled(true);
   };
 
   return (
