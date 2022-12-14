@@ -15,6 +15,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { PageInfo } from "../typings";
 import emailjs from "@emailjs/browser";
 import { useMediaQuery } from "react-responsive";
+import axios from "axios";
 
 type Props = {
   pageInfo: PageInfo;
@@ -22,42 +23,117 @@ type Props = {
 
 function ContactMe({ pageInfo }: Props) {
   const isTabletOrMobile = useMediaQuery({ maxWidth: 558 });
+  const [email, setEmail] = useState("");
+  const [emailValid, setEmailValid] = useState(false);
+  const [name, setName] = useState("");
+  const [nameValid, setNameValid] = useState(false);
+  const [subject, setSubject] = useState("");
+  const [subjectValid, setSubjectValid] = useState(false);
+  const [message, setMessage] = useState("");
+  const [messageValid, setMessageValid] = useState(false);
 
+  const [isdisabled, setIsDisabled] = useState(true);
+
+  function validateNameInterceptor(e: any) {
+    setName(e.target.value);
+
+    if (e.target.value.length > 2) {
+      setNameValid(true);
+      return true;
+    } else {
+      setNameValid(false);
+
+      return false;
+    }
+  }
+
+  function validateEmailInterceptor(e: any) {
+    setEmail(e.target.value);
+    const filter =
+      /^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/;
+    let pass = String(e.target.value).search(filter) != -1;
+    if (pass) {
+      setEmailValid(true);
+      return true;
+    } else {
+      setEmailValid(false);
+      return false;
+    }
+  }
+
+  function validateSubjectInterceptor(e: any) {
+    setSubject(e.target.value);
+
+    if (e.target.value.length > 0 && e.target.value.length < 56) {
+      setSubjectValid(true);
+      return true;
+    } else {
+      setSubjectValid(false);
+      return false;
+    }
+  }
+  function validateMessageInterceptor(e: any) {
+    setMessage(e.target.value);
+
+    if (e.target.value.length < 4000) {
+      setMessageValid(true);
+      return true;
+    } else {
+      setMessageValid(false);
+      return false;
+    }
+  }
   const [input, setInput] = useState({
     name: "",
     email: "",
     subject: "",
     message: "",
   });
-  const [isdisabled, setIsDisabled] = useState(true);
 
+  // const sendEmail = (e: any) => {
+  //   e.preventDefault();
+
+  //   emailjs
+  //     .sendForm(
+  //       "service_c2i43fi",
+  //       "template_2hcql09",
+  //       e.currentTarget,
+  //       "tDGyBqf16EkmbUFVk"
+  //     )
+  //     .then(
+  //       (result) => {
+  //         console.log(result.text);
+  //       },
+  //       (error) => {
+  //         console.log(error.text);
+  //       }
+  //     );
+  //   e.currentTarget.reset();
+  // };
   const onChange = (e: any) => {
     setInput((prevState) => e.target.value);
-    if (e.target.value.trim().length < 2) {
-      // Checking the length of the input
-      setIsDisabled(true); // Disabling the button if length is < 2
-    } else {
+    if (emailValid && nameValid && subjectValid && messageValid) {
       setIsDisabled(false);
+    } else {
+      setIsDisabled(true);
     }
   };
   const sendEmail = (e: any) => {
-    e.preventDefault();
-
-    emailjs
-      .sendForm(
-        "service_c2i43fi",
-        "template_2hcql09",
-        e.currentTarget,
-        "tDGyBqf16EkmbUFVk"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+    if (emailValid && nameValid && subjectValid && messageValid) {
+      emailjs
+        .sendForm(
+          "service_c2i43fi",
+          "template_2hcql09",
+          e.currentTarget,
+          "tDGyBqf16EkmbUFVk"
+        )
+        .then(() => {
+          alert("Form submitted. Thank You.");
+        })
+        .catch(() => {
+          alert("Form not submitted. Please check internet connection.");
+        });
+    }
     e.currentTarget.reset();
   };
 
@@ -119,21 +195,26 @@ function ContactMe({ pageInfo }: Props) {
         )}
 
         <form
+          onChange={onChange}
           onSubmit={sendEmail}
-          className="flex flex-col w-screen p-5 space-y-2 md:w-fit h-96"
+          className="flex flex-col w-screen p-5 space-y-2 md:w-fit "
         >
           {!isTabletOrMobile && (
             <div className="space-x-2 ">
               <input
-                onChange={onChange}
-                name="name"
+                onChange={(e) => {
+                  validateNameInterceptor(e);
+                }}
                 value={input.name}
+                name="name"
                 className="rounded-lg contactInput"
                 placeholder="Name"
                 type="text"
               />
               <input
-                onChange={onChange}
+                onChange={(e) => {
+                  validateEmailInterceptor(e);
+                }}
                 name="email"
                 value={input.email}
                 className="rounded-lg contactInput"
@@ -145,7 +226,9 @@ function ContactMe({ pageInfo }: Props) {
           {isTabletOrMobile && (
             <div className="flex flex-col space-y-2 ">
               <input
-                onChange={onChange}
+                onChange={(e) => {
+                  validateNameInterceptor(e);
+                }}
                 name="name"
                 value={input.name}
                 className="rounded-lg contactInput"
@@ -153,7 +236,9 @@ function ContactMe({ pageInfo }: Props) {
                 type="text"
               />
               <input
-                onChange={onChange}
+                onChange={(e) => {
+                  validateEmailInterceptor(e);
+                }}
                 name="email"
                 value={input.email}
                 className="rounded-lg contactInput"
@@ -164,17 +249,21 @@ function ContactMe({ pageInfo }: Props) {
           )}
 
           <input
-            onChange={onChange}
+            onChange={(e) => {
+              validateSubjectInterceptor(e);
+            }}
             name="subject"
             value={input.subject}
             className="rounded-lg contactInput"
             placeholder="Subject"
           ></input>
           <textarea
-            onChange={onChange}
+            onChange={(e) => {
+              validateMessageInterceptor(e);
+            }}
+            value={input.message}
             className="rounded-lg contactInput"
             name="message"
-            value={input.message}
             placeholder="Message..."
           ></textarea>
 

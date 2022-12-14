@@ -15,6 +15,7 @@
     "@sanity/image-url": "^1.0.1",
     "@sanity/vision": "^3.0.0-dev-preview.22",
     "@vercel/analytics": "^0.1.5",
+    "axios": "^1.2.1",
     "emailjs": "^4.0.1",
     "framer-motion": "^7.5.3",
     "next": "12.3.1",

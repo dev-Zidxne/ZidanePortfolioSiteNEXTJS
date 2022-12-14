@@ -10,6 +10,7 @@ import Hero from "../components/Hero";
 import Projects from "../components/Projects";
 import Skills from "../components/Skills";
 import WorkExperience from "../components/WorkExperience";
+import { urlFor } from "../sanity";
 import styles from "../styles/Home.module.css";
 import { Experience, PageInfo, Project, Skill, Social } from "../typings";
 import { fetchExperience } from "../utils/fetchExperiences";
@@ -57,7 +58,7 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
           <div className="">
             <img
               className="w-8 h-8 rounded-full cursor-pointer filter grayscale hover:grayscale-0 "
-              src="https://media-exp1.licdn.com/dms/image/D4E03AQHdJZFLTFQDHQ/profile-displayphoto-shrink_800_800/0/1665970228383?e=1671667200&v=beta&t=wKKVw1mofVg899wMOc5pVB5suTg4nD0Vz8PWKdjtz6w"
+              src={urlFor(pageInfo?.heroImage).url()}
               alt=""
             ></img>
           </div>
