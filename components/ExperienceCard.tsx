@@ -3,7 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Experience } from "../typings";
 import { urlFor } from "../sanity";
-import { useMediaQuery } from "react-responsive";
+
 type Props = {
   experience: Experience;
 };
