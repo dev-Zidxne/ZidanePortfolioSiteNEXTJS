@@ -26,7 +26,7 @@ export default {
       title: "DateStarted",
       type: "date",
       options: {
-        inputFormat: "year",
+        inputFormat: "month",
       },
     },
     {
@@ -34,7 +34,7 @@ export default {
       title: "DateEnded",
       type: "date",
       options: {
-        inputFormat: "year",
+        inputFormat: "month",
       },
     },
     {
