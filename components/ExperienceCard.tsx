@@ -52,7 +52,8 @@ export default function ExperienceCard({ experience }: Props) {
         <ul className=" h-40 m-14 sm:mx-44 space-y-0.5 text-xs text-left list-disc lg:text-base lg:mx-10 md:mx-32 ">
           {experience.points &&
             experience.points.map((point, i) => <li key={i}>{point}</li>)}
-        </ul>
+        </ul>{" "}
+        {/* added a null check before calling the map function */}
       </div>
     </article>
   );
