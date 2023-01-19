@@ -1,21 +1,12 @@
-import React, {
-  ReactComponentElement,
-  ReactElement,
-  ReactEventHandler,
-  ReactHTML,
-  useRef,
-  useState,
-} from "react";
+import React, { useState } from "react";
 import {
   DevicePhoneMobileIcon,
   MapPinIcon,
   EnvelopeIcon,
 } from "@heroicons/react/24/solid";
-import { useForm, SubmitHandler } from "react-hook-form";
 import { PageInfo } from "../typings";
 import emailjs from "@emailjs/browser";
 import { useMediaQuery } from "react-responsive";
-import axios from "axios";
 
 type Props = {
   pageInfo: PageInfo;

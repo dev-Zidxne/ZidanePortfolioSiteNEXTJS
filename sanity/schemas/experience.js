@@ -25,17 +25,11 @@ export default {
       name: "dateStarted",
       title: "DateStarted",
       type: "date",
-      options: {
-        inputFormat: "year",
-      },
     },
     {
       name: "dateEnded",
       title: "DateEnded",
       type: "date",
-      options: {
-        inputFormat: "year",
-      },
     },
     {
       name: "isCurrentlyWorkingHere",

@@ -1,4 +1,3 @@
-import { MotionConfig } from "framer-motion";
 import React from "react";
 import { motion } from "framer-motion";
 import { Experience } from "../typings";
@@ -45,10 +44,14 @@ export default function ExperienceCard({ experience }: Props) {
             ? "Present"
             : new Date(experience.dateEnded).toDateString()}
         </p>
-        <ul className=" h-40 m-14 sm:mx-44 space-y-0.5 text-xs text-left list-disc lg:text-base lg:mx-10 md:mx-32 ">
+        {/* <ul className=" h-40 m-14 sm:mx-44 space-y-0.5 text-xs text-left list-disc lg:text-base lg:mx-10 md:mx-32 ">
           {experience.points.map((point, i) => (
             <li key={i}>{point}</li>
           ))}
+        </ul> */}
+        <ul className=" h-40 m-14 sm:mx-44 space-y-0.5 text-xs text-left list-disc lg:text-base lg:mx-10 md:mx-32 ">
+          {experience.points &&
+            experience.points.map((point, i) => <li key={i}>{point}</li>)}
         </ul>
       </div>
     </article>
