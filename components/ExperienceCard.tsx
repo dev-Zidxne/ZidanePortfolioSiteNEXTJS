@@ -34,7 +34,7 @@ export default function ExperienceCard({ experience }: Props) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         className="w-32 h-32 rounded-full xl:w-[200px] object-cover object-center xl:h-[200px]"
-        src={urlFor(experience?.companyImage).url()}
+        src={urlFor(experience?.companyImage)?.url()}
       />
 
       <div className="flex flex-col w-screen p-8 space-y-1 md:w-fit ">
@@ -45,13 +45,16 @@ export default function ExperienceCard({ experience }: Props) {
           {experience.company}
         </p>
         <div className="flex h-12 m-10 overflow-scroll rounded-full lg:overflow-hidden md:overflow-hidden ">
-          {experience?.technologies.map((technology) => (
-            <img
-              key={technology._id}
-              className="h-10 m-1 rounded-full"
-              src={urlFor(technology.image).url()}
-            />
-          ))}
+          {experience?.technologies.map(
+            (technology) =>
+              technology?.image && (
+                <img
+                  key={technology._id}
+                  className="h-10 m-1 rounded-full"
+                  src={urlFor(technology.image).url()}
+                />
+              )
+          )}
         </div>
         <p className="py-2 text-center text-gray-300 uppercase lg:text-left">
           {employmentTimeStarted} - {""}
