@@ -28,7 +28,7 @@ function Skill({ directionLeft, skill }: Props) {
           <p className="text-3xl font-bold text-black opacity-100">
             {skill.progress}%
           </p>
-        </div>
+        </div>g
       </div> */}
     </div>
   );
