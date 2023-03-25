@@ -1,9 +1,5 @@
 import React, { useState } from "react";
-import {
-  DevicePhoneMobileIcon,
-  MapPinIcon,
-  EnvelopeIcon,
-} from "@heroicons/react/24/solid";
+import { DevicePhoneMobileIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
 import { PageInfo } from "../typings";
 import emailjs from "@emailjs/browser";
 import { useMediaQuery } from "react-responsive";
@@ -165,10 +161,6 @@ function ContactMe({ pageInfo }: Props) {
               <EnvelopeIcon className="h-7 w-7 text-[#F7AB0A] animate-pulse" />
               <p className="text-md">{pageInfo?.email}</p>
             </div>
-            <div className="flex items-center space-x-5">
-              <MapPinIcon className="h-7 w-7 text-[#F7AB0A] animate-pulse" />
-              <p className="text-md">{pageInfo?.address}</p>
-            </div>
           </div>
         )}
         {!isTabletOrMobile && (
@@ -180,10 +172,6 @@ function ContactMe({ pageInfo }: Props) {
             <div className="flex items-center space-x-5">
               <EnvelopeIcon className="h-7 w-7 text-[#F7AB0A] animate-pulse" />
               <p className="text-2xl">{pageInfo?.email}</p>
-            </div>
-            <div className="flex items-center space-x-5">
-              <MapPinIcon className="h-7 w-7 text-[#F7AB0A] animate-pulse" />
-              <p className="text-2xl">{pageInfo?.address}</p>
             </div>
           </div>
         )}
@@ -266,7 +254,7 @@ function ContactMe({ pageInfo }: Props) {
             className="bg-[#F7AB0A] py-5   rounded-3xl  text-black font-bold hover:opacity-80 transition-all duration-500  "
             disabled={isdisabled}
           >
-            Send Mail
+            Send Mesaage
           </button>
         </form>
       </div>
