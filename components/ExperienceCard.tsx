@@ -45,14 +45,13 @@ export default function ExperienceCard({ experience }: Props) {
           {experience.company}
         </p>
         <div className="flex h-12 m-10 overflow-scroll rounded-full lg:overflow-hidden md:overflow-hidden ">
-          {experience.technologies &&
-            experience.technologies.map((technology) => (
-              <img
-                key={technology._id}
-                className="h-10 m-1 rounded-full"
-                src={urlFor(technology.image).url()}
-              />
-            ))}
+          {experience?.technologies.map((technology) => (
+            <img
+              key={technology._id}
+              className="h-10 m-1 rounded-full"
+              src={urlFor(technology.image).url()}
+            />
+          ))}
         </div>
         <p className="py-2 text-center text-gray-300 uppercase lg:text-left">
           {employmentTimeStarted} - {""}
@@ -64,8 +63,9 @@ export default function ExperienceCard({ experience }: Props) {
           ))}
         </ul> */}
         <ul className=" h-40 m-14 sm:mx-44 space-y-0.5 text-xs text-left list-disc lg:text-base lg:mx-10 md:mx-32 ">
-          {experience.points &&
-            experience.points.map((point, i) => <li key={i}>{point}</li>)}
+          {experience?.points.map((point, i) => (
+            <li key={i}>{point}</li>
+          ))}
         </ul>{" "}
         {/* added a null check before calling the map function */}
       </div>
