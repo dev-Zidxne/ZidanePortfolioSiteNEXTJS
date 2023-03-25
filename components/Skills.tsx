@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Skill from "./Skill";
 import { Skill as SkillType } from "../typings";
 import { useMediaQuery } from "react-responsive";
-type Props = { skills?: SkillType[] };
+type Props = { skills: SkillType[] };
 
 export default function Skills({ skills }: Props) {
   const isTabletOrMobile = useMediaQuery({ maxWidth: 716 });
@@ -21,10 +21,11 @@ export default function Skills({ skills }: Props) {
 
       {!isTabletOrMobile && (
         <div className="grid grid-cols-6 gap-3 mt-12">
-          {skills?.slice(0, skills?.length / 2).map((skill) => (
-            <Skill key={skill._id} skill={skill} />
-          ))}
-          {skills?.slice(skills?.length / 2, skills?.length).map((skill) => (
+          {skills &&
+            skills
+              ?.slice(0, skills.length / 2)
+              .map((skill) => <Skill key={skill._id} skill={skill} />)}
+          {skills?.slice(skills.length / 2, skills.length).map((skill) => (
             <Skill key={skill._id} skill={skill} directionLeft />
           ))}
         </div>
@@ -32,10 +33,11 @@ export default function Skills({ skills }: Props) {
 
       {isTabletOrMobile && (
         <div className="grid grid-cols-3 gap-3 overflow-y-scroll ">
-          {skills?.slice(0, skills?.length / 2).map((skill) => (
-            <Skill key={skill._id} skill={skill} />
-          ))}
-          {skills?.slice(skills?.length / 2, skills.length).map((skill) => (
+          {skills &&
+            skills
+              ?.slice(0, skills.length / 2)
+              .map((skill) => <Skill key={skill._id} skill={skill} />)}
+          {skills?.slice(skills.length / 2, skills.length).map((skill) => (
             <Skill key={skill._id} skill={skill} directionLeft />
           ))}
         </div>
