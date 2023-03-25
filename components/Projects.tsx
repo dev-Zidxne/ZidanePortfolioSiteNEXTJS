@@ -28,7 +28,7 @@ export default function Projects({ projects }: Props) {
         Scroll across and select a preview image to view.
       </h3>
       <div className="relative z-30 flex w-screen transition  scrollbar-thin overflow-y-hidden snap-x snap-mandatory hover:scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80 bottom-20 ">
-        {projects.map((project, i) => (
+        {projects?.map((project, i) => (
           <div
             key={project.toString()}
             className="flex flex-col items-center justify-center flex-shrink-0 w-screen h-screen space-y-5 p- snap-center md:p-44 "
@@ -55,7 +55,7 @@ export default function Projects({ projects }: Props) {
             <div className="max-w-6xl space-y-5 md:px-10">
               <h4 className="text-4xl font-semibold text-center ">
                 <span className=" underline decoration-[#F7AB0A]/50 text-sm lg:text-lg ">
-                  Case Study {i + 1} of {projects.length}: {project?.title}
+                  Case Study {i + 1} of {projects?.length}: {project?.title}
                 </span>{" "}
               </h4>{" "}
               <div className="flex items-center justify-center space-x-2 ">
