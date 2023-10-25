@@ -24,17 +24,14 @@ export default function Header({ socials }: Props) {
 				className="flex flex-row items-center"
 			>
 				{socials.map((social) => (
-					<div className="social-icon-wrapper" key={social._id}>
-						<SocialIcon
-							key={social._id}
-							url={social.url}
-							bgColor="transparent"
-							fgColor="currentColor"
-							className="text-[#808080ff] transition cursor-pointer hover:text-white"
-							target="_blank"
-						/>
-						<span className="tooltip-text">{social.title}</span>
-					</div>
+					<SocialIcon
+						key={social._id}
+						url={social.url}
+						bgColor="transparent"
+						fgColor="currentColor"
+						className="text-[#808080ff] transition cursor-pointer hover:text-white"
+						target="_blank"
+					/>
 				))}
 			</motion.div>
 			<Link href="#contact">
