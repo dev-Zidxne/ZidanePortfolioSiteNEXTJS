@@ -21,13 +21,13 @@ export default function Projects({ projects }: Props) {
 			}}
 			className="relative flex flex-col items-center h-screen p-10 mx-auto  md:text-left md:flex-row max-w-screen justify-evenly space-y-7 xl:h-[700px] lg:top-10 "
 		>
-			<h3 className="absolute top-0 left-1/2 transform -translate-x-1/2 tracking-[20px] text-gray-500 text-2xl lg:text-4xl uppercase">
+			<h3 className="absolute top-2 ml-2 tracking-[15px] text-gray-500 uppercase text-xl sm:top-6 sm:ml-6 sm:tracking-[20px] sm:text-2xl lg:text-4xl">
 				Projects
 			</h3>
-			<h3 className="absolute  text-center top-16 tracking-[3px] text-gray-500 text-sm lg:text-xl lg:top-24 md:top-52 m-5 mr-8">
+			<h3 className="absolute text-center top-8 tracking-[2px] text-gray-400 text-xs sm:top-16 sm:tracking-[3px] sm:text-sm lg:text-xl lg:top-24 md:top-52 m-2 sm:m-5 sm:mr-8">
 				Scroll across and select a preview image to view.
 			</h3>
-			<div className="relative flex flex-col items-center w-full overflow-hidden">
+			<div className="relative flex flex-col items-center w-full over">
 				<div className="relative z-30 flex w-screen transition  scrollbar-thin overflow-y-hidden snap-x snap-mandatory hover:scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80 bottom-20">
 					{projects?.map((project, i) => (
 						<div
