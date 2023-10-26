@@ -27,7 +27,7 @@ export default function Projects({ projects }: Props) {
 			<h3 className="absolute  text-center top-16 tracking-[3px] text-gray-500 text-sm lg:text-xl lg:top-24 md:top-52 m-5 mr-8">
 				Scroll across and select a preview image to view.
 			</h3>
-			<div className="relative flex flex-col items-center w-full">
+			<div className="relative flex flex-col items-center w-full overflow-hidden">
 				<div className="relative z-30 flex w-screen transition  scrollbar-thin overflow-y-hidden snap-x snap-mandatory hover:scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80 bottom-20">
 					{projects?.map((project, i) => (
 						<div
