@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { DevicePhoneMobileIcon, EnvelopeIcon } from '@heroicons/react/24/solid';
 import { PageInfo } from '../typings';
 import emailjs from '@emailjs/browser';
@@ -126,7 +126,14 @@ function ContactMe({ pageInfo }: Props) {
 		e.currentTarget.reset();
 		setIsDisabled(true);
 	};
-
+	useEffect(() => {
+		// Enable or Disable submit button based on validation
+		if (emailValid && nameValid && subjectValid && messageValid) {
+			setIsDisabled(false);
+		} else {
+			setIsDisabled(true);
+		}
+	}, [emailValid, nameValid, subjectValid, messageValid]);
 	return (
 		<div className="relative w-screen h-screen flex items-center justify-center pb-20 text-center md:text-left md:flex-row top-6 lg:top-20">
 			<h3 className="absolute uppercase top-8  ml-6 tracking-[20px] text-gray-500 text-2xl lg:text-4xl ">
