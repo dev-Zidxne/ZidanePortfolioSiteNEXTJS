@@ -8,9 +8,10 @@ function About({ pageInfo }: Props) {
 	return (
 		<motion.div className="relative flex flex-col items-center justify-center px-10 mx-auto mb-28 md:text-left md:flex-row max-w-7xl top-6 md:top-0 lg:top-10 h-screen">
 			{/* Centered horizontally at the top of the motion.div */}
-			<h3 className="absolute  uppercase top-6  ml-6 tracking-[20px] text-gray-500 text-2xl lg:top-32 lg:text-4xl sm:top-20 ">
+			<h3 className="absolute  uppercase top-24  ml-6 tracking-[20px] text-gray-500 text-2xl lg:top-32 lg:text-4xl sm:top-20 ">
 				About
 			</h3>
+
 			<motion.img
 				initial={{
 					x: -200,

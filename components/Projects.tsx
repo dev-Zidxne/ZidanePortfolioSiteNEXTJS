@@ -21,10 +21,10 @@ export default function Projects({ projects }: Props) {
 			}}
 			className="relative w-screen h-screen flex items-center justify-center pb-20 text-center md:text-left md:flex-row top-6 lg:top-20 p-10 "
 		>
-			<h3 className="absolute top-2 ml-2 tracking-[15px] text-gray-500 uppercase text-xl sm:top-6 sm:ml-6 sm:tracking-[20px] sm:text-2xl lg:text-4xl">
+			<h3 className="absolute top-24 sm:top-2 ml-2 tracking-[15px] text-gray-500 uppercase text-xl lg:top-4 lg:text-4xl">
 				Projects
 			</h3>
-			<h3 className="absolute text-center top-8 tracking-[2px] text-gray-400 text-xs sm:top-16 sm:tracking-[3px] sm:text-sm lg:text-xl lg:top-24 md:top-52 m-2 sm:m-5 sm:mr-8">
+			<h3 className="absolute text-center top-32 sm:top-8 tracking-[2px] text-gray-400 text-xs lg:top-20 lg:text-xl md:top-40 m-2 sm:m-5 sm:mr-8">
 				Scroll across and select a preview image to view.
 			</h3>
 			<div className="relative flex flex-col items-center w-full overflow-hidden">
@@ -54,11 +54,12 @@ export default function Projects({ projects }: Props) {
 								</Link>
 							</div>
 							<div className="max-w-6xl space-y-5 md:px-10">
-								<h4 className="text-4xl font-semibold text-center ">
-									<span className=" underline decoration-[#F7AB0A]/50 text-sm lg:text-lg ">
+								<h4 className="text-xl font-semibold text-center md:text-4xl lg:text-5xl mx-auto w-3/4 md:w-auto mt-4 md:mt-6">
+									<span className="underline decoration-[#F7AB0A]/50 text-xs md:text-sm lg:text-lg">
 										Case Study {i + 1} of {projects?.length}: {project?.title}
-									</span>{' '}
-								</h4>{' '}
+									</span>
+								</h4>
+
 								<div className="flex items-center justify-center space-x-2 ">
 									{project?.technologies.map((technology) => (
 										<img
@@ -69,7 +70,7 @@ export default function Projects({ projects }: Props) {
 										/>
 									))}
 								</div>
-								<p className="text-sm text-center lg:text-lg md:text-left break-words w-full">
+								<p className="text-xs text-center break-words w-3/4 mx-auto md:w-auto md:text-left lg:text-lg xl:text-xl">
 									{project?.summary}
 								</p>
 							</div>

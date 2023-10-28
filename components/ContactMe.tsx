@@ -126,23 +126,20 @@ function ContactMe({ pageInfo }: Props) {
 		e.currentTarget.reset();
 		setIsDisabled(true);
 	};
-	useEffect(() => {
-		// Enable or Disable submit button based on validation
-		if (emailValid && nameValid && subjectValid && messageValid) {
-			setIsDisabled(false);
-		} else {
-			setIsDisabled(true);
-		}
-	}, [emailValid, nameValid, subjectValid, messageValid]);
+
 	return (
 		<div className="relative w-screen h-screen flex items-center justify-center pb-20 text-center md:text-left md:flex-row top-6 lg:top-20">
-			<h3 className="absolute uppercase top-8  ml-6 tracking-[20px] text-gray-500 text-2xl lg:text-4xl ">
+			<h3
+				className={`absolute uppercase ml-6 tracking-[20px] text-gray-500 ${
+					isTabletOrMobile ? 'text-2xl top-16' : 'text-4xl top-8'
+				}`}
+			>
 				Contact
 			</h3>
 
 			<div className="flex flex-col ">
 				{!isTabletOrMobile && (
-					<h4 className="mt-24 font-semibold text-center text-md ">
+					<h4 className="mt-10 mb-10 font-semibold text-center text-md ">
 						Get in Touch{' '}
 						{/* <span className="decoration-[#F7AB0A]/50 underline">
               Lets Talk:
@@ -150,7 +147,7 @@ function ContactMe({ pageInfo }: Props) {
 					</h4>
 				)}
 				{isTabletOrMobile && (
-					<h4 className="mt-24 text-2xl font-semibold text-center ">
+					<h4 className="mt-10 mb-10 text-2xl font-semibold text-center ">
 						Get in Touch{' '}
 						{/* <span className="decoration-[#F7AB0A]/50 underline">
               Lets Talk:
@@ -189,7 +186,7 @@ function ContactMe({ pageInfo }: Props) {
 					className="flex flex-col w-screen p-5 space-y-2 md:w-fit "
 				>
 					{!isTabletOrMobile && (
-						<div className="space-x-2 ">
+						<div className="flex flex-col space-y-2 md:space-y-0 md:space-x-2 md:flex-row">
 							<input
 								onChange={(e) => {
 									validateNameInterceptor(e);

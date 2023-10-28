@@ -15,7 +15,7 @@ export default function Skills({ skills }: Props) {
 			transition={{ duration: 1.5 }}
 			className="relative flex text-center md:text-left xl:flex-row h-screen w-full xl:px-10 mx-auto items-center justify-center"
 		>
-			<h3 className="absolute  uppercase top-6  ml-6 tracking-[20px] text-gray-500 text-2xl lg:top-32 lg:text-4xl sm:top-20 ">
+			<h3 className="absolute  uppercase top-24  ml-6 tracking-[20px] text-gray-500 text-2xl lg:top-32 lg:text-4xl sm:top-20 ">
 				Skills
 			</h3>
 
