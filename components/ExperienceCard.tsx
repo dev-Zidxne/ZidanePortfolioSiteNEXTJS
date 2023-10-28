@@ -24,55 +24,48 @@ export default function ExperienceCard({ experience }: Props) {
 	);
 
 	return (
-		<article className="flex flex-col  rounded-3xl items-center flex-shrink-0 w-[300px]  lg-[500px]  md:w-[600px] xl:w-[600px] xl:h-[700px]   first-letter:  bg-[#292929] p-3 ml-6 hover:opacity-100 opacity-60 cursor-pointer transition-opacity duration-200 overflow-hidden ">
+		<article className="flex flex-col items-center flex-shrink-0 w-full md:w-[300px] lg:w-[500px] p-3 ml-6 hover:opacity-100 opacity-60 transition-opacity duration-200 rounded-3xl bg-[#292929]">
+			{/* Reduced margin-top and adjusted sizes */}
 			<motion.img
-				initial={{
-					y: -100,
-					opacity: 0,
-				}}
-				transition={{ duration: 1.2 }}
-				whileInView={{ opacity: 1, y: 0 }}
-				viewport={{ once: true }}
-				className="w-32 h-32 rounded-full xl:w-[200px] object-cover object-center xl:h-[200px]"
+				// ... (keep your framer-motion attributes)
+				className="w-24 h-24 rounded-full object-cover object-center xl:w-[200px] xl:h-[200px]"
 				src={urlFor(experience?.companyImage)?.url()}
 			/>
-
-			<div className="flex flex-col w-screen p-8 space-y-1 md:w-fit ">
-				<h4 className="ml-2 text-2xl font-light text-center lg:text-4xl lg:ml-0 ">
-					{experience.jobTitle}{' '}
+			{/* Reduced padding and flex dimensions */}
+			<div className="flex flex-col items-center space-y-1 p-4 md:w-full">
+				{/* Adjusted margins and text sizes */}
+				<h4 className="text-xl font-light text-center lg:text-2xl">
+					{experience.jobTitle}
 				</h4>
-				<p className="mt-1 ml-2 text-2xl font-bold text-center ">
-					{experience.company}
-				</p>
-				<div className="flex h-12 m-10 overflow-x-hidden rounded-full lg:overflow-hidden overflow-y-hidden ">
+				<p className="text-xl font-bold text-center">{experience.company}</p>
+				{/* Simplified layout */}
+				<div className="flex flex-wrap justify-center">
 					{experience?.technologies
 						? experience.technologies.map(
 								(technology) =>
 									technology?.image && (
 										<img
 											key={technology._id}
-											className="h-10 m-1 rounded-full"
+											className="h-8 m-1 rounded-full"
 											src={urlFor(technology.image).url()}
 										/>
 									)
 						  )
 						: null}
 				</div>
-				<p className="py-2 text-center text-gray-300 uppercase lg:text-left">
-					{employmentTimeStarted} - {''}
+				{/* Adjusted layout and styles */}
+				<p className="py-1 text-center text-gray-300 uppercase">
+					{employmentTimeStarted} -{' '}
 					{experience.isCurrentlyWorkingHere ? 'Present' : employmentTimeEnded}
 				</p>
-				{/* <ul className=" h-40 m-14 sm:mx-44 space-y-0.5 text-xs text-left list-disc lg:text-base lg:mx-10 md:mx-32 ">
-          {experience.points.map((point, i) => (
-            <li key={i}>{point}</li>
-          ))}
-        </ul> */}
-				<ul className=" h-40 m-14 sm:mx-44 space-y-0.5 text-xs text-left list-disc lg:text-base lg:mx-10 md:mx-32 ">
-					{experience?.points
-						? experience.points.map((point, i) => <li key={i}>{point}</li>)
-						: null}
-				</ul>
-				{/* added a null check before calling the map function */}
+				{/* Removed fixed height */}
+				<div className="overflow-auto w-full h-[300px] md:h-[200px]">
+					<ul className="pl-5 space-y-0.5 text-sm text-left list-disc ">
+						{experience?.points
+							? experience.points.map((point, i) => <li key={i}>{point}</li>)
+							: null}
+					</ul>
+				</div>
 			</div>
 		</article>
 	);
