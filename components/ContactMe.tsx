@@ -139,7 +139,7 @@ function ContactMe({ pageInfo }: Props) {
 
 			<div className="flex flex-col ">
 				{!isTabletOrMobile && (
-					<h4 className="mt-10 mb-10 font-semibold text-center text-md ">
+					<h4 className="mt-10 mb-10 font-semibold text-center text-md custom-underline">
 						Get in Touch{' '}
 						{/* <span className="decoration-[#F7AB0A]/50 underline">
               Lets Talk:
@@ -147,7 +147,7 @@ function ContactMe({ pageInfo }: Props) {
 					</h4>
 				)}
 				{isTabletOrMobile && (
-					<h4 className="mt-10 mb-10 text-2xl font-semibold text-center ">
+					<h4 className="mt-24 mb-10 text-2xl font-semibold text-center custom-underline ">
 						Get in Touch{' '}
 						{/* <span className="decoration-[#F7AB0A]/50 underline">
               Lets Talk:

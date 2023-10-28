@@ -44,7 +44,7 @@ export default function ExperienceCard({ experience }: Props) {
 				<p className="mt-1 ml-2 text-2xl font-bold text-center ">
 					{experience.company}
 				</p>
-				<div className="flex h-12 m-10 overflow-scroll rounded-full lg:overflow-hidden md:overflow-hidden ">
+				<div className="flex h-12 m-10 overflow-x-hidden rounded-full lg:overflow-hidden overflow-y-hidden ">
 					{experience?.technologies
 						? experience.technologies.map(
 								(technology) =>
