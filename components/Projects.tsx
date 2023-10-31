@@ -38,7 +38,7 @@ export default function Projects({ projects }: Props) {
 					{projects?.map((project, i) => (
 						<div
 							key={project.toString()}
-							className="flex flex-col items-center justify-center flex-shrink-0 w-screen h-screen space-y-5 snap-center md:p-44 "
+							className="flex flex-col items-center justify-center flex-shrink-0 w-screen h-screen space-y-6 snap-center md:p-44 "
 						>
 							<div className="flex-shrink-0 object-cover  h-24   md:mb-0 md:rounded-lg md:w-64 md:h-96 xl:w-[500px] xl:h-[300px] mt-20 cursor-pointer hover:opacity-80 bg-transparent-400 transition ">
 								<Link href={project.linkToBuild}>

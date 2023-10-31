@@ -2,14 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { DevicePhoneMobileIcon, EnvelopeIcon } from '@heroicons/react/24/solid';
 import { PageInfo } from '../typings';
 import emailjs from '@emailjs/browser';
-import { useMediaQuery } from 'react-responsive';
 
 type Props = {
 	pageInfo: PageInfo;
 };
 
 function ContactMe({ pageInfo }: Props) {
-	const isTabletOrMobile = useMediaQuery({ maxWidth: 558 });
 	const [email, setEmail] = useState('');
 	const [emailValid, setEmailValid] = useState(false);
 	const [name, setName] = useState('');
@@ -129,110 +127,49 @@ function ContactMe({ pageInfo }: Props) {
 
 	return (
 		<div className="relative w-screen h-screen flex items-center justify-center pb-20 text-center md:text-left md:flex-row top-6 lg:top-20">
-			<h3
-				className={`absolute uppercase ml-6 tracking-[20px] text-gray-500 ${
-					isTabletOrMobile ? 'text-2xl top-16' : 'text-4xl top-8'
-				}`}
-			>
+			<h3 className="absolute uppercase lg:top-8  ml-6 tracking-[20px] text-gray-500 text-2xl lg:text-4xl top-[-20px] ">
 				Contact
 			</h3>
 
 			<div className="flex flex-col ">
-				{!isTabletOrMobile && (
-					<h4 className="mt-10 mb-10 font-semibold text-center text-md custom-underline">
-						Get in Touch{' '}
-						{/* <span className="decoration-[#F7AB0A]/50 underline">
-              Lets Talk:
-            </span> */}
-					</h4>
-				)}
-				{isTabletOrMobile && (
-					<h4 className="mt-24 mb-10 text-2xl font-semibold text-center custom-underline ">
-						Get in Touch{' '}
-						{/* <span className="decoration-[#F7AB0A]/50 underline">
-              Lets Talk:
-            </span> */}
-					</h4>
-				)}
-
-				{isTabletOrMobile && (
-					<div className="p-5 mt-[-10px] ">
-						<div className="flex items-center space-x-5">
-							<DevicePhoneMobileIcon className="h-7 w-7 text-[#F7AB0A] animate-pulse" />
-							<p className="text-md">{pageInfo?.phoneNumber}</p>
-						</div>
-						<div className="flex items-center space-x-5">
-							<EnvelopeIcon className="h-7 w-7 text-[#F7AB0A] animate-pulse" />
-							<p className="text-md">{pageInfo?.email}</p>
-						</div>
+				<div className="p-5 space-y-10 ">
+					<div className="flex items-center space-x-5">
+						<DevicePhoneMobileIcon className="h-7 w-7 text-[#F7AB0A] animate-pulse" />
+						<p className="text-2xl">{pageInfo?.phoneNumber}</p>
 					</div>
-				)}
-				{!isTabletOrMobile && (
-					<div className="p-5 space-y-10 ">
-						<div className="flex items-center space-x-5">
-							<DevicePhoneMobileIcon className="h-7 w-7 text-[#F7AB0A] animate-pulse" />
-							<p className="text-2xl">{pageInfo?.phoneNumber}</p>
-						</div>
-						<div className="flex items-center space-x-5">
-							<EnvelopeIcon className="h-7 w-7 text-[#F7AB0A] animate-pulse" />
-							<p className="text-2xl">{pageInfo?.email}</p>
-						</div>
+					<div className="flex items-center space-x-5">
+						<EnvelopeIcon className="h-7 w-7 text-[#F7AB0A] animate-pulse" />
+						<p className="text-2xl">{pageInfo?.email}</p>
 					</div>
-				)}
+				</div>
 
 				<form
 					onChange={onChange}
 					onSubmit={sendEmail}
 					className="flex flex-col w-screen p-5 space-y-2 md:w-fit "
 				>
-					{!isTabletOrMobile && (
-						<div className="flex flex-col space-y-2 md:space-y-0 md:space-x-2 md:flex-row">
-							<input
-								onChange={(e) => {
-									validateNameInterceptor(e);
-								}}
-								value={input.name}
-								name="name"
-								className="rounded-lg contactInput"
-								placeholder="Name"
-								type="text"
-							/>
-							<input
-								onChange={(e) => {
-									validateEmailInterceptor(e);
-								}}
-								name="email"
-								value={input.email}
-								className="rounded-lg contactInput"
-								placeholder="Email"
-								type="email"
-							/>
-						</div>
-					)}
-					{isTabletOrMobile && (
-						<div className="flex flex-col space-y-2 ">
-							<input
-								onChange={(e) => {
-									validateNameInterceptor(e);
-								}}
-								name="name"
-								value={input.name}
-								className="rounded-lg contactInput"
-								placeholder="Name"
-								type="text"
-							/>
-							<input
-								onChange={(e) => {
-									validateEmailInterceptor(e);
-								}}
-								name="email"
-								value={input.email}
-								className="rounded-lg contactInput"
-								placeholder="Email"
-								type="email"
-							/>
-						</div>
-					)}
+					<div className="flex flex-col space-y-2 md:space-y-0 md:space-x-2 md:flex-row">
+						<input
+							onChange={(e) => {
+								validateNameInterceptor(e);
+							}}
+							value={input.name}
+							name="name"
+							className="rounded-lg contactInput"
+							placeholder="Name"
+							type="text"
+						/>
+						<input
+							onChange={(e) => {
+								validateEmailInterceptor(e);
+							}}
+							name="email"
+							value={input.email}
+							className="rounded-lg contactInput"
+							placeholder="Email"
+							type="email"
+						/>
+					</div>
 
 					<input
 						onChange={(e) => {
