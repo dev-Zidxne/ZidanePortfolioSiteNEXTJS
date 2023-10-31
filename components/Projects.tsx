@@ -4,12 +4,14 @@ import { Project } from '../typings';
 
 import { urlFor } from '../sanity';
 import Link from 'next/link';
+import { useMediaQuery } from 'react-responsive';
 
 type Props = {
 	projects: Project[];
 };
 
 export default function Projects({ projects }: Props) {
+	const isTabletOrMobile = useMediaQuery({ maxWidth: 558 });
 	return (
 		<motion.div
 			initial={{
@@ -21,20 +23,24 @@ export default function Projects({ projects }: Props) {
 			}}
 			className="relative w-screen h-screen flex items-center justify-center pb-20 text-center md:text-left md:flex-row top-6 lg:top-20 p-10 "
 		>
-			<h3 className="absolute top-24 sm:top-2 ml-2 tracking-[15px] text-gray-500 uppercase text-xl lg:top-4 lg:text-4xl">
+			<h3
+				className={`absolute top-8 uppercase ml-6 tracking-[20px] text-gray-500 ${
+					isTabletOrMobile ? 'text-2xl' : 'text-4xl'
+				}`}
+			>
 				Projects
 			</h3>
-			<h3 className="absolute text-center top-32 sm:top-8 tracking-[2px] text-gray-400 text-xs lg:top-20 lg:text-xl md:top-40 m-2 sm:m-5 sm:mr-8">
+			<h3 className="absolute text-center top-24 tracking-[2px] text-gray-400 text-xs lg:text-xl">
 				Scroll across and select a preview image to view.
 			</h3>
 			<div className="relative flex flex-col items-center w-full overflow-hidden">
-				<div className="relative z-30 flex w-screen transition  scrollbar-thin overflow-y-hidden snap-x snap-mandatory hover:scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80 bottom-20">
+				<div className="relative z-30 flex w-screen transition scrollbar-thin overflow-y-hidden snap-x snap-mandatory hover:scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80 bottom-20 lg:bottom-44 ">
 					{projects?.map((project, i) => (
 						<div
 							key={project.toString()}
 							className="flex flex-col items-center justify-center flex-shrink-0 w-screen h-screen space-y-5 snap-center md:p-44 "
 						>
-							<div className="flex-shrink-0 object-cover  h-24   md:mb-0 md:rounded-lg md:w-64 md:h-96 xl:w-[500px] xl:h-[400px] mt-20 cursor-pointer hover:opacity-80 bg-transparent-400 transition ">
+							<div className="flex-shrink-0 object-cover  h-24   md:mb-0 md:rounded-lg md:w-64 md:h-96 xl:w-[500px] xl:h-[300px] mt-20 cursor-pointer hover:opacity-80 bg-transparent-400 transition ">
 								<Link href={project.linkToBuild}>
 									<a target="_blank">
 										<motion.img
@@ -53,8 +59,8 @@ export default function Projects({ projects }: Props) {
 									</a>
 								</Link>
 							</div>
-							<div className="max-w-6xl space-y-5 md:px-10">
-								<h4 className="text-xl font-semibold text-center md:text-4xl lg:text-5xl mx-auto w-3/4 md:w-auto mt-4 md:mt-6">
+							<div className="max-w-6xl space-y-5 md:px-10 ">
+								<h4 className="text-xl font-semibold text-center md:text-4xl lg:text-5xl mx-auto w-3/4 md:w-auto  ">
 									<span className="underline decoration-[#F7AB0A]/50 text-xs md:text-sm lg:text-lg">
 										Case Study {i + 1} of {projects?.length}: {project?.title}
 									</span>
