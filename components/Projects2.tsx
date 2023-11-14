@@ -21,10 +21,10 @@ const Projects2 = ({ projects }: Props) => {
 				}}
 				className="mx-auto w-full max-w-5xl px-5 py-16 md:px-10 md:py-24 lg:py-32 "
 			>
-				<h2 className="mb-5 text-center tracking-[20px] uppercase text-3xl font-bold md:text-5xl text-gray-500">
+				<h2 className="mb-8 text-center tracking-[20px] uppercase text-3xl font-semibold md:text-5xl text-gray-500 ml-6">
 					Projects
 				</h2>
-				<h3 className="mb-20 text-center text-sm sm:text-base">
+				<h3 className="mb-14 text-center text-sm sm:text-base">
 					Select a preview image to view.
 				</h3>
 

@@ -6,10 +6,10 @@ type Props = { pageInfo: PageInfo };
 
 function About({ pageInfo }: Props) {
 	return (
-		<motion.div className="relative flex flex-col items-center justify-center px-10 mx-auto mb-28 md:text-left md:flex-row max-w-7xl top-6 md:top-0 lg:top-10 h-screen">
+		<motion.div className="relative flex flex-col items-center justify-center px-10 mx-auto mb-28 md:text-left md:flex-row max-w-7xl top-6 md:top-0 lg:top-10 h-screen text-center">
 			{/* Centered horizontally at the top of the motion.div */}
 
-			<h3 className="absolute mb-5 top-24 text-center tracking-[20px] uppercase text-3xl font-bold md:text-5xl text-gray-500">
+			<h3 className="absolute mb-5 top-24 text-center tracking-[20px] uppercase text-3xl font-semibold md:text-5xl text-gray-500 ml-6">
 				About
 			</h3>
 

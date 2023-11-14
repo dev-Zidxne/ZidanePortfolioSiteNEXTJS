@@ -21,7 +21,7 @@ export default function Projects({ projects }: Props) {
 			transition={{
 				duration: 1.5,
 			}}
-			className="relative w-screen h-screen flex items-center justify-center pb-20 text-center md:text-left md:flex-row top-6 lg:top-20 p-10 "
+			className="relative w-screen h-screen flex items-center justify-center pb-20 text-center md:text-left md:flex-row top-6 lg:top-20 p-10"
 		>
 			<h3
 				className={`absolute top-8 uppercase ml-6 tracking-[20px] text-gray-500 ${

@@ -126,13 +126,13 @@ function ContactMe({ pageInfo }: Props) {
 	};
 
 	return (
-		<div className="relative w-screen h-screen flex items-center justify-center pb-20 text-center md:text-left md:flex-row top-6 lg:top-20">
-			<h3 className=" absolute mb-5 text-center tracking-[20px] uppercase text-3xl font-bold md:text-5xl text-gray-500 top-[-20px]">
+		<div className="relative w-screen h-screen flex flex-col items-center justify-center pb-20 text-center md:text-left md:flex-row top-6 lg:top-20 ">
+			<h3 className="absolute mb-5 text-center tracking-[20px] uppercase text-3xl font-semibold md:text-5xl text-gray-500 top-[-20px]">
 				Contact
 			</h3>
 
-			<div className="flex flex-col ">
-				<div className="p-5 space-y-10 ">
+			<div className="flex flex-col">
+				<div className="p-5 space-y-10">
 					<div className="flex items-center space-x-5">
 						<DevicePhoneMobileIcon className="h-7 w-7 text-[#F7AB0A] animate-pulse" />
 						<p className="text-2xl">{pageInfo?.phoneNumber}</p>
