@@ -28,11 +28,11 @@ const Projects2 = ({ projects }: Props) => {
 					Select a preview image to view
 				</h3>
 
-				<div className="grid gap-x-8 md:grid-cols-2 md:gap-x-4">
+				<div className="grid gap-x-8 md:grid-cols-2 md:gap-x-4 ">
 					{projects?.map((project, index) => (
 						<div
 							key={project.toString()}
-							className="mb-12 inline-block border border-solid border-[#cdcdcd] md:mb-8 lg:mb-10 rounded-xl "
+							className="mb-12 inline-block border border-solid border-[#cdcdcd] md:mb-8 lg:mb-10 rounded-xl bg-[#292929] hover:opacity-100 opacity-80 transition-opacity duration-200"
 						>
 							<Link href={project.linkToBuild}>
 								<a
