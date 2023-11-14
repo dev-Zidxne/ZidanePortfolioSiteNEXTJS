@@ -25,7 +25,7 @@ const Projects2 = ({ projects }: Props) => {
 					Projects
 				</h2>
 				<h3 className="mb-20 text-center text-sm sm:text-base">
-					Select a preview image to view
+					Select a preview image to view.
 				</h3>
 
 				<div className="grid gap-x-8 md:grid-cols-2 md:gap-x-4 ">
