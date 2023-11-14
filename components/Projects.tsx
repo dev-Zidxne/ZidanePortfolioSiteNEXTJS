@@ -35,34 +35,34 @@ export default function Projects({ projects }: Props) {
 			</h3>
 			<div className="relative flex flex-col items-center w-full overflow-hidden xl:pt-10">
 				<div className="relative z-30 flex w-screen transition scrollbar-thin overflow-y-hidden snap-x snap-mandatory hover:scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80 bottom-20 lg:bottom-44 ">
-					{projects?.map((project, i) => (
+					{projects?.map((project, index) => (
 						<div
 							key={project.toString()}
 							className="flex flex-col items-center justify-center flex-shrink-0 w-screen h-screen space-y-6 snap-center md:p-44 "
 						>
-							<div className="flex-shrink-0 object-cover  h-24   md:mb-0 md:rounded-lg md:w-64 md:h-96 xl:w-[500px] xl:h-[300px] mt-20 cursor-pointer hover:opacity-80 bg-transparent-400 transition ">
-								<Link href={project.linkToBuild}>
-									<a target="_blank">
-										<motion.img
-											initial={{
-												y: -300,
-												opacity: 0,
-											}}
-											transition={{ duration: 1.2 }}
-											whileInView={{ opacity: 1, y: 0 }}
-											viewport={{ once: true }}
-											src={urlFor(project?.image).url()}
-											alt=""
-											className="flex-shrink-0 object-cover  h-32  md:rounded-lg md:w-64 md:h-56 xl:w-[500px] xl:h-[200px]  xl:mt-32 
+							<Link href={project.linkToBuild}>
+								<a target="_blank">
+									<motion.img
+										initial={{
+											y: -300,
+											opacity: 0,
+										}}
+										transition={{ duration: 1.2 }}
+										whileInView={{ opacity: 1, y: 0 }}
+										viewport={{ once: true }}
+										src={urlFor(project?.image).url()}
+										alt=""
+										className="flex-shrink-0 object-cover  h-32  md:rounded-lg md:w-64 md:h-56 xl:w-[500px] xl:h-[200px]  xl:mt-32 
                    lg:mt-40 cursor-pointer  rounded-md md:mt-32 sm:w-100 "
-										/>
-									</a>
-								</Link>
-							</div>
+									/>
+								</a>
+							</Link>
+
 							<div className="max-w-6xl space-y-5 md:px-10 ">
 								<h4 className="text-xl font-semibold text-center md:text-4xl lg:text-5xl mx-auto w-3/4 md:w-auto  ">
 									<span className="underline decoration-[#F7AB0A]/50 text-xs md:text-sm lg:text-lg">
-										Case Study {i + 1} of {projects?.length}: {project?.title}
+										Case Study {index + 1} of {projects?.length}:{' '}
+										{project?.title}
 									</span>
 								</h4>
 

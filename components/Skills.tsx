@@ -15,9 +15,9 @@ export default function Skills({ skills }: Props) {
 			transition={{ duration: 1.5 }}
 			className="relative flex text-center md:text-left xl:flex-row h-screen w-full xl:px-10 mx-auto items-center justify-center"
 		>
-			<h3 className="absolute  uppercase top-24  ml-6 tracking-[20px] text-gray-500 text-2xl lg:top-32 lg:text-4xl sm:top-20 ">
+			<h2 className=" absolute mb-5 top-24  text-center tracking-[20px] uppercase text-3xl font-bold md:text-5xl text-gray-500">
 				Skills
-			</h3>
+			</h2>
 
 			{!isTabletOrMobile && (
 				<div className="grid grid-cols-6 gap-3 mt-12 overflow-hidden">

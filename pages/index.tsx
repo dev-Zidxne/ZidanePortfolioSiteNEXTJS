@@ -18,6 +18,7 @@ import { fetchPageInfo } from '../utils/fetchPageInfo';
 import { fetchProjects } from '../utils/fetchProjects';
 import { fetchSkills } from '../utils/fetchSkills';
 import { fetchSocials } from '../utils/fetchSocials';
+import Projects2 from '../components/Projects2';
 
 type Props = {
 	pageInfo: PageInfo;
@@ -47,8 +48,11 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
 			<section id="skills" className="snap-start">
 				<Skills skills={skills} />
 			</section>
-			<section id="projects" className="snap-start">
+			{/* <section id="projects" className="snap-start">
 				<Projects projects={projects} />
+			</section> */}
+			<section id="projects" className="snap-start">
+				<Projects2 projects={projects} />
 			</section>
 			<section id="contact" className="snap-start">
 				<ContactMe pageInfo={pageInfo} />
