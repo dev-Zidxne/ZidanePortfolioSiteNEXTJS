@@ -32,12 +32,15 @@ const Projects2 = ({ projects }: Props) => {
 					{projects?.map((project, index) => (
 						<div
 							key={project.toString()}
-							className="mb-12 inline-block border border-solid border-[#cdcdcd] md:mb-8 lg:mb-10 rounded-xl"
+							className="mb-12 inline-block border border-solid border-[#cdcdcd] md:mb-8 lg:mb-10 rounded-xl "
 						>
 							<Link href={project.linkToBuild}>
-								<a target="_blank">
+								<a
+									target="_blank "
+									className="hover:opacity-80 transition-all duration-500"
+								>
 									<motion.img
-										className="inline-block rounded-xl"
+										className="inline-block rounded-xl "
 										initial={{
 											y: -300,
 											opacity: 0,
