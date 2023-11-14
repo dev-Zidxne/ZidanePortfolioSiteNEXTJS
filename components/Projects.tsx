@@ -33,7 +33,7 @@ export default function Projects({ projects }: Props) {
 			<h3 className="absolute text-center top-24 tracking-[2px] text-gray-400 text-xs lg:text-xl">
 				Scroll across and select a preview image to view.
 			</h3>
-			<div className="relative flex flex-col items-center w-full overflow-hidden">
+			<div className="relative flex flex-col items-center w-full overflow-hidden xl:pt-10">
 				<div className="relative z-30 flex w-screen transition scrollbar-thin overflow-y-hidden snap-x snap-mandatory hover:scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80 bottom-20 lg:bottom-44 ">
 					{projects?.map((project, i) => (
 						<div
@@ -54,7 +54,7 @@ export default function Projects({ projects }: Props) {
 											src={urlFor(project?.image).url()}
 											alt=""
 											className="flex-shrink-0 object-cover  h-32  md:rounded-lg md:w-64 md:h-56 xl:w-[500px] xl:h-[200px]  xl:mt-32 
-                   lg:mt-40 cursor-pointer  rounded-md md:mt-32"
+                   lg:mt-40 cursor-pointer  rounded-md md:mt-32 sm:w-100 "
 										/>
 									</a>
 								</Link>

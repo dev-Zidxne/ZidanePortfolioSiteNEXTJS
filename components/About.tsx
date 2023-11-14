@@ -25,7 +25,7 @@ function About({ pageInfo }: Props) {
 				src={urlFor(pageInfo?.profilePic).url()}
 				className="flex-shrink-0 object-cover w-56 h-56 rounded-full md:mb-0 md:rounded-3xl md:w-64 md:h-96 xl:w-[500px] xl:h-[500px] mt-20"
 			/>
-			<div className="space-y-5 md:px-10 text">
+			<div className="space-y-5 md:px-10 ">
 				<h4 className="text-4xl font-semibold text-center ">
 					Background and Skills
 				</h4>
