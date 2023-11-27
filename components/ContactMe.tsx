@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { DevicePhoneMobileIcon, EnvelopeIcon } from '@heroicons/react/24/solid';
+import {
+	DevicePhoneMobileIcon,
+	EnvelopeIcon,
+	PhoneIcon,
+} from '@heroicons/react/24/solid';
 import { PageInfo } from '../typings';
 import emailjs from '@emailjs/browser';
 
@@ -133,6 +137,10 @@ function ContactMe({ pageInfo }: Props) {
 
 			<div className="flex flex-col">
 				<div className="p-5 space-y-10">
+					<div className="flex items-center space-x-5">
+						<PhoneIcon className="h-7 w-7 text-[#F7AB0A] animate-pulse" />
+						<p className="text-2xl">{pageInfo?.address}</p>
+					</div>
 					<div className="flex items-center space-x-5">
 						<DevicePhoneMobileIcon className="h-7 w-7 text-[#F7AB0A] animate-pulse" />
 						<p className="text-2xl">{pageInfo?.phoneNumber}</p>
