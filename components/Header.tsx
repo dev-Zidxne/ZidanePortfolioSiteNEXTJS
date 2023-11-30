@@ -29,7 +29,7 @@ export default function Header({ socials }: Props) {
 						url={social.url}
 						bgColor="transparent"
 						fgColor="currentColor"
-						className="text-[#808080ff] transition cursor-pointer hover:text-white"
+						className="text-[#808080ff] transition cursor-pointer hover:text-[#F7AB0A]"
 						target="_blank"
 					/>
 				))}
@@ -47,17 +47,18 @@ export default function Header({ socials }: Props) {
 					}}
 					className="flex flex-row items-center text-gray-300 cursor-pointer "
 				>
-					<div className="tippy-tooltip">
+					<div className="tippy-tooltip ">
 						<SocialIcon
-							className="text-[#808080ff] transition cursor-pointer hover:text-white "
+							className="text-[#808080ff] transition cursor-pointer hover:text-[#F7AB0A] "
 							network="email"
 							fgColor="currentColor"
 							bgColor="transparent"
 						/>
+
+						<p className="hidden text-sm text-gray-400 uppercase md:inline-flex  ">
+							Get In Touch
+						</p>
 					</div>
-					<p className="hidden text-sm text-gray-400 uppercase md:inline-flex">
-						Get In Touch
-					</p>
 				</motion.div>
 			</Link>
 		</header>

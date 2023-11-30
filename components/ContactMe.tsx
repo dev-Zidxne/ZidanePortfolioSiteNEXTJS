@@ -150,7 +150,7 @@ function ContactMe({ pageInfo }: Props) {
 						<p className="text-2xl">{pageInfo?.phoneNumber}</p>
 					</div>
 					<div className="flex items-center space-x-5">
-						<InboxIcon className="h-7 w-7 text-[#F7AB0A] animate-pulse" />
+						<EnvelopeIcon className="h-7 w-7 text-[#F7AB0A] animate-pulse" />
 						<p className="text-2xl">{pageInfo?.email}</p>
 					</div>
 				</div>

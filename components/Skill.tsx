@@ -20,7 +20,7 @@ function Skill({ directionLeft, skill }: Props) {
 					transition={{ duration: 1 }}
 					whileInView={{ opacity: 1, x: 0 }}
 					src={urlFor(skill.image).url()}
-					className="items-center object-cover w-24 h-24 transition duration-300 ease-in-out border border-gray-500 rounded-full md:h-28 xl:w-32 xl:h-32 group-hover:opacity-80 group-hover:bg-gray-600 md:w-28 "
+					className="items-center object-cover w-24 h-24 transition duration-300 ease-in-out border border-gray-500  md:h-28 xl:w-32 xl:h-32 group-hover:opacity-80 group-hover:bg-gray-600 md:w-28 rounded-xl"
 				/>
 			)}
 			{/* <div className="absolute z-0 w-24 h-24 rounded-full opacity-0 group-hover:opacity-80 group-hover:bg-white md:w-28 md:h-28 xl:w-32 xl:h-32 ">
