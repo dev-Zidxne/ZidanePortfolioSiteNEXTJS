@@ -6,7 +6,7 @@ import About from '../components/About';
 import ContactMe from '../components/ContactMe';
 import ExperienceCard from '../components/ExperienceCard';
 import Header from '../components/Header';
-import Hero, { links } from '../components/Hero';
+import Hero from '../components/Hero';
 import Skills from '../components/Skills';
 import WorkExperience from '../components/WorkExperience';
 import { urlFor } from '../sanity';
@@ -31,7 +31,7 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
 	return (
 		<div className="bg-[rgb(35,35,35)] text-white h-screen  overflow-x-hidden   scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80 container-snap">
 			<Head>
-				<title>Home | Dev Z</title>
+				<title>Home | Dev-Zidane</title>
 			</Head>
 			<Header socials={socials} />
 
