@@ -9,14 +9,14 @@ type Props = {
 	pageInfo: PageInfo;
 };
 
-const links = [
+export const links = [
 	{
 		name: 'About',
 		url: '#about',
 	},
 	{
 		name: 'Experience',
-		url: '#experience',
+		url: 'experience',
 	},
 	{
 		name: 'Projects',
