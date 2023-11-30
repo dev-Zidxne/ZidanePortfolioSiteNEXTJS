@@ -30,6 +30,10 @@ const links = [
 		name: 'Blog',
 		url: '/#blog',
 	},
+	{
+		name: 'contact',
+		url: '#contact',
+	},
 ];
 
 function Hero({ pageInfo }: Props) {
