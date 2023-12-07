@@ -8,8 +8,9 @@ import {
 	InboxIcon,
 	PhoneIcon,
 } from '@heroicons/react/24/solid';
-import { PageInfo } from '../typings';
+import { PageInfo, Social } from '../typings';
 import emailjs from '@emailjs/browser';
+import { SocialIcon } from 'react-social-icons';
 
 type Props = {
 	pageInfo: PageInfo;
@@ -26,6 +27,27 @@ function ContactMe({ pageInfo }: Props) {
 	const [messageValid, setMessageValid] = useState(false);
 
 	const [isdisabled, setIsDisabled] = useState(true);
+
+	const links = [
+		{
+			name: 'Telegram',
+			url: 'https://t.me/zidxne1',
+			network: 'telegram',
+			text: pageInfo?.address,
+		},
+		{
+			name: 'Linkedin',
+			url: 'https://www.linkedin.com/in/zidane-innis/',
+			network: 'linkedin',
+			text: pageInfo?.phoneNumber,
+		},
+		{
+			name: 'Email',
+			url: 'mailto:zidaneinnis@gmail.com',
+			network: 'email',
+			text: pageInfo?.email,
+		},
+	];
 
 	function validateNameInterceptor(e: any) {
 		setName(e.target.value);
@@ -141,18 +163,25 @@ function ContactMe({ pageInfo }: Props) {
 
 			<div className="flex flex-col">
 				<div className="p-5 space-y-10">
-					<div className="flex items-center space-x-5">
-						<DevicePhoneMobileIcon className="h-7 w-7 text-[#F7AB0A] animate-pulse" />
-						<p className="text-2xl">{pageInfo?.address}</p>
-					</div>
-					<div className="flex items-center space-x-5">
-						<ChatBubbleOvalLeftEllipsisIcon className="h-7 w-7 text-[#F7AB0A] animate-pulse" />
-						<p className="text-2xl">{pageInfo?.phoneNumber}</p>
-					</div>
-					<div className="flex items-center space-x-5">
-						<EnvelopeIcon className="h-7 w-7 text-[#F7AB0A] animate-pulse" />
-						<p className="text-2xl">{pageInfo?.email}</p>
-					</div>
+					{links.map((link) => (
+						<div className="flex items-center " key={link.name}>
+							<SocialIcon
+								className="text-[#808080ff] transition cursor-pointer  text-[#F7AB0A]  animate-pulse"
+								network={link.network}
+								fgColor="currentColor"
+								bgColor="transparent"
+							/>
+
+							<a
+								className="text-2xl custom-underline cursor-pointer"
+								href={link.url}
+								rel="noreferrer"
+								target="_blank"
+							>
+								{link.text}
+							</a>
+						</div>
+					))}
 				</div>
 
 				<form
@@ -204,7 +233,7 @@ function ContactMe({ pageInfo }: Props) {
 
 					<button
 						type="submit"
-						className="bg-[#F7AB0A] py-5   rounded-3xl  text-black font-bold hover:opacity-80 transition-all duration-500 cursor-pointer"
+						className="bg-[#F7AB0A] py-5   rounded-2xl  text-black font-bold hover:opacity-80 transition-all duration-500 cursor-pointer"
 						disabled={isdisabled}
 					>
 						Send Mesaage

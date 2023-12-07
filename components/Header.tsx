@@ -30,6 +30,7 @@ export default function Header({ socials }: Props) {
 						bgColor="transparent"
 						fgColor="currentColor"
 						className="text-[#808080ff] transition cursor-pointer hover:text-[#F7AB0A]"
+						rel="noreferrer"
 						target="_blank"
 					/>
 				))}
