@@ -1,14 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import {
-	ChatBubbleLeftIcon,
-	ChatBubbleOvalLeftEllipsisIcon,
-	ChatBubbleOvalLeftIcon,
-	DevicePhoneMobileIcon,
-	EnvelopeIcon,
-	InboxIcon,
-	PhoneIcon,
-} from '@heroicons/react/24/solid';
-import { PageInfo, Social } from '../typings';
+import React, { useState } from 'react';
+import { PageInfo } from '../typings';
 import emailjs from '@emailjs/browser';
 import { SocialIcon } from 'react-social-icons';
 
