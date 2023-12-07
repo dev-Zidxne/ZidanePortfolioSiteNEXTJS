@@ -14,7 +14,6 @@
 	.custom-underline {
 		position: relative;
 		color: white;
-		text-decoration: none;
 	}
 
 	.custom-underline::before {
@@ -26,11 +25,11 @@
 		bottom: 0;
 		left: 0;
 		background-color: #f7ab0a;
-		transform: scaleX(0);
-		transition: transform 0.3s ease;
+		text-decoration: underline;
 	}
 
 	.custom-underline:hover::before {
-		transform: scaleX(1);
+		transform: scaleX(0);
+		transition: transform 0.3s ease;
 	}
 }
