@@ -27,7 +27,7 @@ const links = [
 		url: '#skills',
 	},
 	{
-		name: 'Blog',
+		name: 'Blog (W.I.P)',
 		url: '/#blog',
 	},
 	{
@@ -59,10 +59,10 @@ function Hero({ pageInfo }: Props) {
 					<Cursor cursorColor="#F7AB0A" />
 				</h1>
 			</div>
-			<div className="z-10 pt-5 ">
+			<div className="z-10 pt-1 space-x-4">
 				{links.map((link) => (
 					<Link key={link.name} href={link.url}>
-						<button type="button" className="heroButton">
+						<button type="button" className="heroButton custom-underline  ">
 							{link.name}
 						</button>
 					</Link>

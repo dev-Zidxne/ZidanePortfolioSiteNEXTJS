@@ -157,7 +157,7 @@ function ContactMe({ pageInfo }: Props) {
 					{links.map((link) => (
 						<div className="flex items-center " key={link.name}>
 							<SocialIcon
-								className="text-[#808080ff] transition cursor-pointer  text-[#F7AB0A]  animate-pulse"
+								className="text-[#808080ff] transition cursor-pointer  text-[#6d5a31]  animate-pulse"
 								network={link.network}
 								fgColor="currentColor"
 								bgColor="transparent"
