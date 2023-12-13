@@ -18,6 +18,7 @@ import { fetchProjects } from '../utils/fetchProjects';
 import { fetchSkills } from '../utils/fetchSkills';
 import { fetchSocials } from '../utils/fetchSocials';
 import Projects2 from '../components/Projects2';
+import Footer from '../components/Footer';
 
 type Props = {
 	pageInfo: PageInfo;
@@ -29,7 +30,7 @@ type Props = {
 
 const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
 	return (
-		<div className="bg-[rgb(35,35,35)] text-white h-screen  overflow-x-hidden   scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80 container-snap">
+		<div className="bg-[rgb(35,35,35)] text-white h-screen  overflow-x-hidden   scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80 container-snap ">
 			<Head>
 				<title>Home | Dev-Zidane</title>
 			</Head>
@@ -69,6 +70,9 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
 					</div>
 				</footer>
 			</Link>
+			<section className="mt-5">
+				<Footer />
+			</section>
 		</div>
 	);
 };

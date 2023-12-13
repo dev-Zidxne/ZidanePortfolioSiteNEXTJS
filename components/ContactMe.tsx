@@ -35,7 +35,7 @@ function ContactMe({ pageInfo }: Props) {
 		{
 			name: 'Email',
 			url: 'mailto:zidaneinnis@gmail.com',
-			network: 'email',
+			network: 'mailto',
 			text: pageInfo?.email,
 		},
 	];
