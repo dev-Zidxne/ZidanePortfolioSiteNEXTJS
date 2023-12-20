@@ -67,3 +67,20 @@ export interface Social extends SanityBody {
 	title: string;
 	url: string;
 }
+
+export interface Post extends SanityBody {
+	_id: string;
+	_key: string;
+	_type: 'post';
+	title: string;
+	slug: _slug;
+	current: string;
+	author: string;
+	name: string;
+	mainImage: image;
+	authorImage: image;
+	categories: array;
+	publishedAt: datetime;
+	_createdAt: datetime;
+	body: blockContent;
+}

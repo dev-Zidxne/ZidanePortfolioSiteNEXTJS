@@ -8,7 +8,10 @@ import pageInfo from './pageInfo';
 import experience from './experience';
 import project from './project';
 import social from './social';
-import blog from './blog';
+import post from './post';
+import author from './author';
+import category from './category';
+import blockContent from './blockContent';
 
 export default createSchema({
 	name: 'default',
@@ -19,6 +22,9 @@ export default createSchema({
 		experience,
 		social,
 		project,
-		blog,
+		post,
+		author,
+		category,
+		blockContent,
 	]),
 });

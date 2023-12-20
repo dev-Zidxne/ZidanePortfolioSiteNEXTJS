@@ -22,12 +22,13 @@
 		"@sanity/eslint-config-studio": "^2.0.0",
 		"@sanity/vision": "^2.35.0",
 		"eslint": "^8.6.0",
+		"groq": "^3.21.3",
 		"prop-types": "^15.7",
 		"react": "^17.0",
 		"react-dom": "^17.0",
+		"sanity": "latest",
 		"styled-components": "^5.2.0"
 	},
-	"devDependencies": {},
 	"repository": {
 		"type": "git",
 		"url": "git@github.com:dev-Zidxne/ZidanePortfolioSiteNEXTJS.git"

@@ -1,24 +1,23 @@
 import type { GetServerSideProps, GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
-import Image from 'next/image';
 import Link from 'next/link';
 import About from '../components/About';
 import ContactMe from '../components/ContactMe';
-import ExperienceCard from '../components/ExperienceCard';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import Skills from '../components/Skills';
 import WorkExperience from '../components/WorkExperience';
 import { urlFor } from '../sanity';
-import styles from '../styles/Home.module.css';
-import { Experience, PageInfo, Project, Skill, Social } from '../typings';
+import { Experience, PageInfo, Post, Project, Skill, Social } from '../typings';
 import { fetchExperience } from '../utils/fetchExperiences';
 import { fetchPageInfo } from '../utils/fetchPageInfo';
 import { fetchProjects } from '../utils/fetchProjects';
 import { fetchSkills } from '../utils/fetchSkills';
 import { fetchSocials } from '../utils/fetchSocials';
+import { fetchPosts } from '../utils/fetchPosts';
 import Projects2 from '../components/Projects2';
 import Footer from '../components/Footer';
+import Blogs from '../components/Blogs';
 
 type Props = {
 	pageInfo: PageInfo;
@@ -26,18 +25,29 @@ type Props = {
 	skills: Skill[];
 	projects: Project[];
 	socials: Social[];
+	posts: Post[];
 };
 
-const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
+const Home = ({
+	pageInfo,
+	experiences,
+	skills,
+	projects,
+	socials,
+	posts,
+}: Props) => {
 	return (
 		<div className="bg-[rgb(35,35,35)] text-white h-screen  overflow-x-hidden   scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80 container-snap ">
 			<Head>
-				<title>Home | Dev-Zidane</title>
+				<title>Home | Dev-Z</title>
 			</Head>
 			<Header socials={socials} />
 
-			<section id="hero" className="snap-start">
+			<section id="home" className="snap-start">
 				<Hero pageInfo={pageInfo} />
+			</section>
+			<section id="blog" className="snap-start">
+				<Blogs posts={posts.slice(0, 3)} />
 			</section>
 			<section id="about" className="snap-center">
 				<About pageInfo={pageInfo} />
@@ -59,7 +69,7 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
 			<section id="contact" className="snap-start">
 				<ContactMe pageInfo={pageInfo} />
 			</section>
-			<Link href="#hero">
+			<Link href="#home">
 				<footer className="sticky w-10 h-10 ml-auto mr-2 cursor-pointer bottom-96">
 					<div className="">
 						<img
@@ -85,6 +95,9 @@ export const getServerSideProps: GetServerSideProps<Props> = async () => {
 	const skills: Skill[] = await fetchSkills();
 	const projects: Project[] = await fetchProjects();
 	const socials: Social[] = await fetchSocials();
+	const posts: Post[] = await fetchPosts();
+
+	console.log('Fetched posts in getServerSideProps: ', posts);
 
 	return {
 		props: {
@@ -93,6 +106,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async () => {
 			skills,
 			projects,
 			socials,
+			posts,
 		},
 	};
 };

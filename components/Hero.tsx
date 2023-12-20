@@ -11,6 +11,10 @@ type Props = {
 
 const links = [
 	{
+		name: 'Blog',
+		url: `/blog`,
+	},
+	{
 		name: 'About',
 		url: '#about',
 	},
@@ -26,10 +30,7 @@ const links = [
 		name: 'Skills',
 		url: '#skills',
 	},
-	{
-		name: 'Blog (W.I.P)',
-		url: '/#blog',
-	},
+
 	{
 		name: 'contact',
 		url: '#contact',

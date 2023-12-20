@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { PageInfo, Social } from '../typings';
+import { PageInfo } from '../typings';
 import emailjs from '@emailjs/browser';
 import { SocialIcon } from 'react-social-icons';
 
@@ -147,13 +147,13 @@ function ContactMe({ pageInfo }: Props) {
 	};
 
 	return (
-		<div className="relative w-screen h-screen flex flex-col items-center justify-center pb-20 text-center md:text-left md:flex-row top-6 lg:top-20 ">
-			<h3 className="absolute mb-5 text-center tracking-[20px] uppercase text-3xl font-semibold md:text-5xl text-gray-500 top-[-20px]">
+		<div className="relative w-screen  flex flex-col items-center justify-center pb-48 text-center md:text-left md:flex-row top-6 lg:top-20 md:top-24 mt-20">
+			<h3 className="absolute mb-5 top-6 text-center tracking-[20px] uppercase text-3xl font-semibold md:text-5xl text-gray-500 ml-6 ">
 				Contact
 			</h3>
 
-			<div className="flex flex-col">
-				<div className="p-5 space-y-10">
+			<div className="flex flex-col mt-32">
+				<div className="p-5 space-y-5">
 					{links.map((link) => (
 						<div className="flex items-center " key={link.name}>
 							<SocialIcon

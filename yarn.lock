@@ -502,35 +502,28 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@portabletext/react@npm:^1.0.6":
-  version: 1.0.6
-  resolution: "@portabletext/react@npm:1.0.6"
+"@portabletext/react@npm:^3.0.11":
+  version: 3.0.11
+  resolution: "@portabletext/react@npm:3.0.11"
   dependencies:
-    "@portabletext/toolkit": ^1.0.5
-    "@portabletext/types": ^1.0.3
+    "@portabletext/toolkit": ^2.0.10
+    "@portabletext/types": ^2.0.8
   peerDependencies:
     react: ^17 || ^18
-  checksum: 5f711dc5d9885c9ea9eef120b36fc4dd31a97e58e589e2fc6b3f6768b1db0a178f09b4ff4b8936ffa44eb542e7c3ec51bbcc789bf0f3e48857e9bebff1378cae
+  checksum: d63116bc73b6ea9f68e87d23fcd05400c16e36443b6251ac9a62821eaed3d4107f815318695eec527b27ca3213282e2c7b83a2a15e4383f52eadb5ff6a9e4dbe
   languageName: node
   linkType: hard
 
-"@portabletext/toolkit@npm:^1.0.5":
-  version: 1.0.8
-  resolution: "@portabletext/toolkit@npm:1.0.8"
+"@portabletext/toolkit@npm:^2.0.10":
+  version: 2.0.10
+  resolution: "@portabletext/toolkit@npm:2.0.10"
   dependencies:
-    "@portabletext/types": ^2.0.0
-  checksum: 1815597b5ed024aa3b5f11e6b60dacf81768aa3f76429505522f09484c3b95d971e53335cbb3500ae0bf54aafeda8703ce3c28453c8ac1c9d9a8831ad7ef97a2
+    "@portabletext/types": ^2.0.8
+  checksum: b0318f534bfac9d1e375ecd3699596b5cf7c9fb53d50425a0393150a5062f256730e4e8378adbdae6c141f3f2896344b6d61804625978736edf63c186439e687
   languageName: node
   linkType: hard
 
-"@portabletext/types@npm:^1.0.3":
-  version: 1.0.3
-  resolution: "@portabletext/types@npm:1.0.3"
-  checksum: c241e05d560a1dd2363792839423b6fc36ea3409264a3942a91056be09958741e03414e13c00f0e30451295df93813265f85c01d3b21ca61711efa83cc5ef324
-  languageName: node
-  linkType: hard
-
-"@portabletext/types@npm:^2.0.0":
+"@portabletext/types@npm:^2.0.8":
   version: 2.0.8
   resolution: "@portabletext/types@npm:2.0.8"
   checksum: 95c7e65e77fa6c91d00b85c36f777494aea65604b85e99be4ee17141c92cb0a9a472aa7909841c65736a1e87659787af3f9558e5e151340782b7eb68d0f66b5f
@@ -651,7 +644,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sanity/image-url@npm:^1.0.0, @sanity/image-url@npm:^1.0.1":
+"@sanity/image-url@npm:^1.0.0, @sanity/image-url@npm:^1.0.2":
   version: 1.0.2
   resolution: "@sanity/image-url@npm:1.0.2"
   checksum: fbd2a6e7bd1e9b053c5a8d953c35a17f5d00dcfd792ce115fd7dfb237cbff03c7830fdf64e1ae8c6e00b58c8cabc2673f546d587454359ee02be2e2f8a39bd1e
@@ -5551,8 +5544,8 @@ __metadata:
   resolution: "zidaneportfolio@workspace:."
   dependencies:
     "@emailjs/browser": ^3.7.0
-    "@portabletext/react": ^1.0.6
-    "@sanity/image-url": ^1.0.1
+    "@portabletext/react": ^3.0.11
+    "@sanity/image-url": ^1.0.2
     "@sanity/vision": ^3.0.0-dev-preview.22
     "@types/node": 18.8.3
     "@types/react": ^18.2.31
