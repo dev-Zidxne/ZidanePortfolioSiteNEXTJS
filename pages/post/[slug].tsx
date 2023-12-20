@@ -10,12 +10,6 @@ import { Post, Social } from '../../typings';
 import { fetchSocials } from '../../utils/fetchSocials';
 import Image from 'next/image';
 
-interface PortableTextComponentsExtended extends PortableTextComponents {
-	types: {
-		image: (props: any) => JSX.Element | null;
-	};
-}
-
 interface ImageType {
 	asset: {
 		_ref: string;
