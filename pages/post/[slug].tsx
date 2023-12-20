@@ -130,14 +130,14 @@ const Post: NextPage<Props> = ({ socials, post }) => {
 };
 
 const query = groq`*[_type == "post" && slug.current == $slug][0]{
-  title,
-  "name": author->name,
-  "categories": categories[]->title,
-  "authorImage": author->image,
-  mainImage,
-  body,
-  _createdAt
-}`;
+    title,
+    "name": author->name,
+    "categories": categories[]->title,
+    "authorImage": author->image,
+    mainImage,
+    body,
+    _createdAt
+  }`;
 
 export const getStaticPaths: GetStaticPaths = async () => {
 	const paths = await sanityClient.fetch(
@@ -151,15 +151,22 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps<Props> = async (context) => {
-	const { slug = '' } = context.params as { slug: string };
+	const slug = context.params?.slug as string;
 	const post = await sanityClient.fetch(query, { slug });
 	const socials: Social[] = await fetchSocials();
+
+	if (!post) {
+		return {
+			notFound: true,
+		};
+	}
 
 	return {
 		props: {
 			post,
 			socials,
 		},
+		revalidate: 60,
 	};
 };
 

@@ -1,6 +1,6 @@
 export const fetchPosts = async () => {
 	try {
-		const res = await fetch(`http://localhost:3000/api/getPosts`);
+		const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getPosts`);
 		if (!res.ok) {
 			throw new Error(`Error: ${res.status}`);
 		}
