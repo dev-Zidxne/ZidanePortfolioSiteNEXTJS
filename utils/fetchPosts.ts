@@ -1,13 +1,11 @@
+import { Post } from '../typings';
+
 export const fetchPosts = async () => {
-	try {
-		const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getPosts`);
-		if (!res.ok) {
-			throw new Error(`Error: ${res.status}`);
-		}
-		const data = await res.json();
-		return data.posts;
-	} catch (error) {
-		console.error('Error fetching posts:', error);
-		return [];
-	}
+	const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getPosts`);
+
+	const data = await res.json();
+	const posts: Post[] = data.posts;
+
+	console.log('fetching', posts);
+	return posts;
 };
