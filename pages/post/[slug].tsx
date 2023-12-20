@@ -56,7 +56,7 @@ interface Props {
 	post: Post;
 }
 
-const PostPage: NextPage<Props> = ({ socials, post }) => {
+const Post: NextPage<Props> = ({ socials, post }) => {
 	const {
 		title = 'Missing title',
 		name = 'Missing name',
@@ -163,6 +163,6 @@ export const getStaticProps: GetStaticProps<Props> = async (context) => {
 	};
 };
 
-export default PostPage;
+export default Post;
 
 // [slug].tsx
