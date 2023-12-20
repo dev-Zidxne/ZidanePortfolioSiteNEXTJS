@@ -73,7 +73,7 @@ const Post: NextPage<Props> = ({ socials, post }) => {
 				<title>{title} | Dev-Z</title>
 			</Head>
 			<Header socials={socials} />
-			<article className="max-w-4xl mx-auto p-5 text-white">
+			<article key={title} className="max-w-4xl mx-auto p-5 text-white">
 				<h1 className="text-3xl md:text-5xl font-semibold text-center mb-8 tracking-[10px] uppercase text-gray-500">
 					{title}
 				</h1>
