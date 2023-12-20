@@ -1,43 +1,62 @@
-// [slug].tsx
-
 import groq from 'groq';
 import imageUrlBuilder from '@sanity/image-url';
-import { PortableText } from '@portabletext/react';
-import { sanityClient } from '../../sanity';
+import { PortableText, PortableTextComponents } from '@portabletext/react';
+import { sanityClient, urlFor } from '../../sanity';
 import { motion } from 'framer-motion';
+import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
+import Head from 'next/head';
+import Header from '../../components/Header';
 import { Post, Social } from '../../typings';
 import { fetchSocials } from '../../utils/fetchSocials';
-import Header from '../../components/Header';
-import Head from 'next/head';
+import Image from 'next/image';
 
-function urlFor(source) {
-	return imageUrlBuilder(sanityClient).image(source);
+interface PortableTextComponentsExtended extends PortableTextComponents {
+	types: {
+		image: (props: any) => JSX.Element | null;
+	};
+}
+
+interface ImageType {
+	asset: {
+		_ref: string;
+	};
+	alt?: string;
 }
 
 const ptComponents = {
 	types: {
-		image: ({ value }) => {
+		image: ({ value }: { value: ImageType }) => {
 			if (!value?.asset?._ref) {
 				return null;
 			}
+
+			const imageUrl = urlFor(value)
+				.width(320)
+				.height(240)
+				.fit('max')
+				.auto('format')
+				.url();
+
+			if (!imageUrl) return null;
+
 			return (
-				<img
+				<Image
 					alt={value.alt || ' '}
 					loading="lazy"
-					src={urlFor(value).width(320).height(240).fit('max').auto('format')}
+					src={imageUrl}
+					width={320}
+					height={240}
 				/>
 			);
 		},
 	},
 };
-
-type Props = {
+interface Props {
 	socials: Social[];
-};
+	post: Post;
+}
 
-// Assume the necessary imports are already there
-
-const Post = ({ socials, post }: Post) => {
+const PostPage: NextPage<Props> = ({ socials, post }) => {
 	const {
 		title = 'Missing title',
 		name = 'Missing name',
@@ -74,7 +93,7 @@ const Post = ({ socials, post }: Post) => {
 				{categories && (
 					<ul className="flex justify-center mb-4 space-x-2">
 						<span className="font-medium text-gray-400">Posted in:</span>
-						{categories.map((category) => (
+						{categories.map((category: string) => (
 							<li key={category} className="text-blue-500 font-medium">
 								{category}
 							</li>
@@ -116,30 +135,34 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
   "categories": categories[]->title,
   "authorImage": author->image,
   mainImage,
-  body
+  body,
+  _createdAt
 }`;
-export async function getStaticPaths() {
+
+export const getStaticPaths: GetStaticPaths = async () => {
 	const paths = await sanityClient.fetch(
 		groq`*[_type == "post" && defined(slug.current)][].slug.current`
 	);
 
 	return {
-		paths: paths.map((slug) => ({ params: { slug } })),
+		paths: paths.map((slug: string) => ({ params: { slug } })),
 		fallback: true,
 	};
-}
+};
 
-export async function getStaticProps(context) {
-	const { slug = '' } = context.params;
+export const getStaticProps: GetStaticProps<Props> = async (context) => {
+	const { slug = '' } = context.params as { slug: string };
 	const post = await sanityClient.fetch(query, { slug });
-	console.log('Fetched post:', post); // Add this line to debug
-
 	const socials: Social[] = await fetchSocials();
+
 	return {
 		props: {
 			post,
 			socials,
 		},
 	};
-}
-export default Post;
+};
+
+export default PostPage;
+
+// [slug].tsx
