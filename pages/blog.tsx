@@ -15,13 +15,13 @@ type Props = {
 
 const Blog = ({ posts, socials }: Props) => {
 	return (
-		<div className="bg-[rgb(35,35,35)] ">
+		<div className="bg-[rgb(35,35,35)] flex-grow  h-screen overflow-x-hidden   scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80  ">
 			<Head>
 				<title>Blog | Dev-Z</title>
 			</Head>
 			<Header socials={socials} />
 			<section className="bg-[rgb(35,35,35)] ">
-				<div className="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24 lg:py-32">
+				<div className="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24 lg:py-32 ">
 					<h2 className="mb-8 text-center tracking-[20px] uppercase text-3xl font-semibold md:text-5xl text-gray-500 ml-6">
 						Blogs
 					</h2>

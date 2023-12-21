@@ -37,52 +37,52 @@ const Home = ({
 	posts,
 }: Props) => {
 	return (
-		<div className="bg-[rgb(35,35,35)] text-white h-screen  overflow-x-hidden   scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80 container-snap ">
+		<div className="bg-[rgb(35,35,35)] flex-grow text-white h-screen overflow-x-hidden   scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80  flex flex-col min-h-screen ">
 			<Head>
 				<title>Home | Dev-Z</title>
 			</Head>
 			<Header socials={socials} />
+			<main className="pb-10">
+				<section id="home" className="snap-start">
+					<Hero pageInfo={pageInfo} />
+				</section>
+				<section id="blog" className="snap-start">
+					<Blogs posts={posts.slice(0, 3)} />
+				</section>
+				<section id="about" className="snap-center">
+					<About pageInfo={pageInfo} />
+				</section>
+				<section id="experience" className="snap-center">
+					<WorkExperience experiences={experiences} />
+				</section>
+				<section id="projects" className="snap-start">
+					<Projects2 projects={projects} />
+				</section>
+				<section id="skills" className="snap-start">
+					<Skills skills={skills} />
+				</section>
 
-			<section id="home" className="snap-start">
-				<Hero pageInfo={pageInfo} />
-			</section>
-			<section id="blog" className="snap-start">
-				<Blogs posts={posts.slice(0, 3)} />
-			</section>
-			<section id="about" className="snap-center">
-				<About pageInfo={pageInfo} />
-			</section>
-			<section id="experience" className="snap-center">
-				<WorkExperience experiences={experiences} />
-			</section>
-			<section id="projects" className="snap-start">
-				<Projects2 projects={projects} />
-			</section>
-			<section id="skills" className="snap-start">
-				<Skills skills={skills} />
-			</section>
-
-			{/* <section id="projects" className="snap-start">
+				{/* <section id="projects" className="snap-start">
 				<Projects projects={projects} />
 			</section> */}
 
-			<section id="contact" className="snap-start">
-				<ContactMe pageInfo={pageInfo} />
-			</section>
-			<Link href="#home">
-				<footer className="sticky w-10 h-10 ml-auto mr-2 cursor-pointer bottom-96">
-					<div className="">
-						<img
-							className="w-8 h-8 rounded-full cursor-pointer filter grayscale hover:grayscale-0 "
-							src={urlFor(pageInfo?.heroImage).url()}
-							alt=""
-						></img>
+				<section id="contact" className="snap-start">
+					<ContactMe pageInfo={pageInfo} />
+				</section>
+
+				<Link href="#home">
+					<div className="sticky w-10 h-10 ml-auto mr-2 cursor-pointer bottom-96">
+						<div className="">
+							<img
+								className="w-8 h-8 rounded-full cursor-pointer filter grayscale hover:grayscale-0 "
+								src={urlFor(pageInfo?.heroImage).url()}
+								alt=""
+							></img>
+						</div>
 					</div>
-				</footer>
-			</Link>
-			<section className="mt-5">
-				<Footer />
-			</section>
+				</Link>
+			</main>
+			<Footer />
 		</div>
 	);
 };

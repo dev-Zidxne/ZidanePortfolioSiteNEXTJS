@@ -151,7 +151,6 @@ function ContactMe({ pageInfo }: Props) {
 			<h3 className="absolute mb-5 top-6 text-center tracking-[20px] uppercase text-3xl font-semibold md:text-5xl text-gray-500 ml-6 ">
 				Contact
 			</h3>
-
 			<div className="flex flex-col mt-32">
 				<div className="p-5 space-y-5">
 					{links.map((link) => (

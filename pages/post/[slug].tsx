@@ -1,5 +1,4 @@
 import groq from 'groq';
-import imageUrlBuilder from '@sanity/image-url';
 import { PortableText, PortableTextComponents } from '@portabletext/react';
 import { sanityClient, urlFor } from '../../sanity';
 import { motion } from 'framer-motion';
