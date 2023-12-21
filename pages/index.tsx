@@ -42,7 +42,7 @@ const Home = ({
 				<title>Home | Dev-Z</title>
 			</Head>
 			<Header socials={socials} />
-			<main className="pb-10">
+			<main className="pb-10g">
 				<section id="home" className="snap-start">
 					<Hero pageInfo={pageInfo} />
 				</section>

@@ -65,7 +65,7 @@ const Post: NextPage<Props> = ({ socials, post }) => {
 	} = post;
 
 	return (
-		<div className="flex flex-col min-h-screen bg-[rgb(35,35,35)]">
+		<div className="bg-[rgb(35,35,35)] flex-grow text-white h-screen overflow-x-hidden   scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80  flex flex-col min-h-screen ">
 			<Head>
 				<title>{title} | Dev-Z</title>
 			</Head>

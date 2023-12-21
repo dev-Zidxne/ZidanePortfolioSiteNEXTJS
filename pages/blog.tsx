@@ -15,41 +15,43 @@ type Props = {
 
 const Blog = ({ posts, socials }: Props) => {
 	return (
-		<div className="bg-[rgb(35,35,35)] flex-grow  h-screen overflow-x-hidden   scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80  ">
+		<div className="bg-[rgb(35,35,35)] flex-grow text-white h-screen overflow-x-hidden   scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80  flex flex-col min-h-screen ">
 			<Head>
 				<title>Blog | Dev-Z</title>
 			</Head>
 			<Header socials={socials} />
-			<section className="bg-[rgb(35,35,35)] ">
-				<div className="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24 lg:py-32 ">
-					<h2 className="mb-8 text-center tracking-[20px] uppercase text-3xl font-semibold md:text-5xl text-gray-500 ml-6">
-						Blogs
-					</h2>
-					<p className="mb-14 text-center text-sm sm:text-base text-white">
-						Take a look at these topics
-					</p>
-
-					<div className="mx-auto grid max-w-4xl grid-cols-3 gap-6 ">
-						{posts.map((post) => (
-							<Link href={`/post/${post.slug.current}`} key={post._id}>
-								<a className="flex flex-col overflow-hidden rounded-lg shadow-lg bg-[#292929] hover:opacity-80 opacity-100 transition-opacity duration-200">
-									<img
-										src={urlFor(post.mainImage).url()}
-										alt={post.title}
-										className="h-40 w-full object-cover rounded-lg"
-									/>
-									<div className="p-4">
-										<p className="mb-2 font-bold text-white">{post.title}</p>
-										<p className="text-xs text-gray-500">
-											{new Date(post._createdAt).toLocaleDateString()}
-										</p>
-									</div>
-								</a>
-							</Link>
-						))}
+			<main className="flex-grow s">
+				<section>
+					<div className="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24 lg:py-32">
+						<h2 className="mb-8 text-center tracking-[20px] uppercase text-3xl font-semibold md:text-5xl text-gray-500 ml-6">
+							Blogs
+						</h2>
+						<p className="mb-14 text-center text-sm sm:text-base">
+							Take a look at these topics
+						</p>
+						<div className="mx-auto grid max-w-4xl grid-cols-3 gap-6">
+							{/* Blog posts mapping */}
+							{posts.map((post) => (
+								<Link href={`/post/${post.slug.current}`} key={post._id}>
+									<a className="flex flex-col overflow-hidden rounded-lg shadow-lg bg-[#292929] hover:opacity-80 opacity-100 transition-opacity duration-200">
+										<img
+											src={urlFor(post.mainImage).url()}
+											alt={post.title}
+											className="h-40 w-full object-cover rounded-lg"
+										/>
+										<div className="p-4">
+											<p className="mb-2 font-bold">{post.title}</p>
+											<p className="text-xs text-gray-500">
+												{new Date(post._createdAt).toLocaleDateString()}
+											</p>
+										</div>
+									</a>
+								</Link>
+							))}
+						</div>
 					</div>
-				</div>
-			</section>
+				</section>
+			</main>
 			<Footer />
 		</div>
 	);
