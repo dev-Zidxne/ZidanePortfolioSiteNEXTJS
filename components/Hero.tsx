@@ -11,7 +11,7 @@ type Props = {
 
 const links = [
 	{
-		name: 'Blog',
+		name: 'Blog (NEW!)',
 		url: `/blog`,
 	},
 	{

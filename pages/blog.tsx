@@ -22,10 +22,10 @@ const Blog = ({ posts, socials }: Props) => {
 			<Header socials={socials} />
 			<section className="bg-[rgb(35,35,35)] ">
 				<div className="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24 lg:py-32">
-					<h2 className="text-3xl md:text-5xl font-semibold text-center mb-8 tracking-[10px] uppercase text-gray-500">
+					<h2 className="mb-8 text-center tracking-[20px] uppercase text-3xl font-semibold md:text-5xl text-gray-500 ml-6">
 						Blogs
 					</h2>
-					<p className="mb-16 mt-4 text-center text-[#647084]">
+					<p className="mb-14 text-center text-sm sm:text-base">
 						Take a look at these topics
 					</p>
 

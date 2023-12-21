@@ -66,63 +66,65 @@ const Post: NextPage<Props> = ({ socials, post }) => {
 	} = post;
 
 	return (
-		<div className="bg-[rgb(35,35,35)] min-h-screen">
+		<div className="flex flex-col min-h-screen bg-[rgb(35,35,35)]">
 			<Head>
 				<title>{title} | Dev-Z</title>
 			</Head>
 			<Header socials={socials} />
-			<article key={title} className="max-w-4xl mx-auto p-5 text-white">
-				<h1 className="text-3xl md:text-5xl font-semibold text-center mb-8 tracking-[10px] uppercase text-gray-500">
-					{title}
-				</h1>
-				<div className="text-center mb-4">
-					<span className="text-lg font-medium text-gray-400">By {name}</span>
-				</div>
-
-				{authorImage && (
-					<div className="flex justify-center mb-4">
-						<img
-							src={urlFor(authorImage).width(50).url()}
-							alt={`${name}'s picture`}
-							className="rounded-full" // Tailwind styling for author image
-						/>
+			<main className="flex-grow">
+				<article key={title} className="max-w-4xl mx-auto p-5 text-white">
+					<h1 className="text-3xl md:text-5xl font-semibold text-center mb-8 tracking-[10px] uppercase text-gray-500">
+						{title}
+					</h1>
+					<div className="text-center mb-4">
+						<span className="text-lg font-medium text-gray-400">By {name}</span>
 					</div>
-				)}
-				{categories && (
-					<ul className="flex justify-center mb-4 space-x-2">
-						<span className="font-medium text-gray-400">Posted in:</span>
-						{categories.map((category: string) => (
-							<li key={category} className="text-blue-500 font-medium">
-								{category}
-							</li>
-						))}
-					</ul>
-				)}
-				<div className="text-center text-gray-400 mb-6">
-					{_createdAt
-						? new Date(_createdAt).toLocaleDateString()
-						: 'Date not available'}
-				</div>
 
-				{mainImage && (
-					<div className="flex justify-center mb-6 ">
-						<motion.img
-							src={urlFor(mainImage).url()}
-							alt="Main post image"
-							className="max-w-full md:max-w-2xl mx-auto h-auto max-h-96 rounded-lg shadow-xl" // Adjusting the height of the image
-							initial={{ scale: 0.9 }}
-							animate={{ scale: 1 }}
-							transition={{
-								type: 'spring',
-								stiffness: 260,
-								damping: 20,
-							}}
-						/>
+					{authorImage && (
+						<div className="flex justify-center mb-4">
+							<img
+								src={urlFor(authorImage).width(50).url()}
+								alt={`${name}'s picture`}
+								className="rounded-full" // Tailwind styling for author image
+							/>
+						</div>
+					)}
+					{categories && (
+						<ul className="flex justify-center mb-4 space-x-2">
+							<span className="font-medium text-gray-400">Posted in:</span>
+							{categories.map((category: string) => (
+								<li key={category} className="text-blue-500 font-medium">
+									{category}
+								</li>
+							))}
+						</ul>
+					)}
+					<div className="text-center text-gray-400 mb-6">
+						{_createdAt
+							? new Date(_createdAt).toLocaleDateString()
+							: 'Date not available'}
 					</div>
-				)}
 
-				<PortableText value={body} components={ptComponents} />
-			</article>
+					{mainImage && (
+						<div className="flex justify-center mb-6 ">
+							<motion.img
+								src={urlFor(mainImage).url()}
+								alt="Main post image"
+								className="max-w-full md:max-w-2xl mx-auto h-auto max-h-96 rounded-lg shadow-xl" // Adjusting the height of the image
+								initial={{ scale: 0.9 }}
+								animate={{ scale: 1 }}
+								transition={{
+									type: 'spring',
+									stiffness: 260,
+									damping: 20,
+								}}
+							/>
+						</div>
+					)}
+
+					<PortableText value={body} components={ptComponents} />
+				</article>
+			</main>
 			<Footer />
 		</div>
 	);
