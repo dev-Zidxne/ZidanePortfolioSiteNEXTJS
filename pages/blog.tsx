@@ -25,7 +25,7 @@ const Blog = ({ posts, socials }: Props) => {
 					<h2 className="mb-8 text-center tracking-[20px] uppercase text-3xl font-semibold md:text-5xl text-gray-500 ml-6">
 						Blogs
 					</h2>
-					<p className="mb-14 text-center text-sm sm:text-base">
+					<p className="mb-14 text-center text-sm sm:text-base text-white">
 						Take a look at these topics
 					</p>
 
