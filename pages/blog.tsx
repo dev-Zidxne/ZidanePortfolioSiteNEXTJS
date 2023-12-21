@@ -5,6 +5,8 @@ import Link from 'next/link';
 import { fetchSocials } from '../utils/fetchSocials';
 import Header from '../components/Header';
 import Head from 'next/head';
+import Footer from '../components/Footer';
+import { groq } from 'next-sanity';
 
 type Props = {
 	posts: Post[];
@@ -48,12 +50,13 @@ const Blog = ({ posts, socials }: Props) => {
 					</div>
 				</div>
 			</section>
+			<Footer />
 		</div>
 	);
 };
 
 export const getStaticProps = async () => {
-	const query = `*[_type == "post"] | order(publishedAt desc)`;
+	const query = groq`*[_type == "post"] | order(publishedAt desc)`;
 	const posts = await sanityClient.fetch(query);
 	const socials: Social[] = await fetchSocials();
 	return {

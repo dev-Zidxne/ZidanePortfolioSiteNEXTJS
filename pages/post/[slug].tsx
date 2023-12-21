@@ -9,6 +9,7 @@ import Header from '../../components/Header';
 import { Post, Social } from '../../typings';
 import { fetchSocials } from '../../utils/fetchSocials';
 import Image from 'next/image';
+import Footer from '../../components/Footer';
 
 interface ImageType {
 	asset: {
@@ -51,6 +52,9 @@ interface Props {
 }
 
 const Post: NextPage<Props> = ({ socials, post }) => {
+	if (!post) {
+		return <div>Loading post data or post not found...</div>;
+	}
 	const {
 		title = 'Missing title',
 		name = 'Missing name',
@@ -119,6 +123,7 @@ const Post: NextPage<Props> = ({ socials, post }) => {
 
 				<PortableText value={body} components={ptComponents} />
 			</article>
+			<Footer />
 		</div>
 	);
 };
