@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 function Footer() {
@@ -5,7 +6,10 @@ function Footer() {
 		<div className=" text-white px-10">
 			<hr className="border-[#F7AB0A] " />
 			<footer className="text-center p-4">
-				&copy; 2023 Developed by Zidane Innis
+				&copy; 2023 Developed by
+				<Link href={`/#home`}>
+					<a className="custom-underline cursor-pointer ml-1 ">Zidane Innis</a>
+				</Link>
 			</footer>
 		</div>
 	);

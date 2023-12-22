@@ -107,7 +107,8 @@ const Post: NextPage<Props> = ({ socials, post }) => {
 						{title}
 					</h1>
 					<div className="text-center mb-4">
-						<span className="text-lg font-medium text-gray-400">By {name}</span>
+						<span className="text-lg font-medium text-gray-400">By </span>
+						<a className="text-white  text-lg font-medium">{name}</a>
 					</div>
 
 					{authorImage && (
