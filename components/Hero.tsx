@@ -44,7 +44,7 @@ function Hero({ pageInfo }: Props) {
 		delaySpeed: 2000,
 	});
 	return (
-		<div className="flex flex-col items-center justify-center h-screen space-y-8 overflow-hidden text-center ">
+		<div className="flex flex-col items-center justify-center  space-y-10 overflow-hidden text-center ">
 			<BackgroundCircles />
 			<img
 				className="object-cover w-32 h-32 mx-auto rounded-full"

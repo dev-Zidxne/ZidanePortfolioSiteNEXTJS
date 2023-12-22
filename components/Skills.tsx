@@ -16,7 +16,7 @@ export default function Skills({ skills }: Props) {
 			className="relative flex text-center md:text-left xl:flex-row  w-full xl:px-10 mx-auto items-center justify-center pt-24 bottom-20 mt-20"
 		>
 			<h2 className="absolute mb-5 top-6 text-center tracking-[20px] uppercase text-3xl font-semibold md:text-5xl text-gray-500 ml-6">
-				Skills
+				TECH STACK
 			</h2>
 
 			{!isTabletOrMobile && (

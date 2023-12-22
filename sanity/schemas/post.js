@@ -47,6 +47,13 @@ export default {
 			title: 'Body',
 			type: 'blockContent',
 		},
+		{
+			name: 'viewsCount',
+			title: 'Views Count',
+			type: 'number',
+			hidden: true,
+			initialValue: 1,
+		},
 	],
 
 	preview: {

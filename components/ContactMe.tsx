@@ -21,12 +21,6 @@ function ContactMe({ pageInfo }: Props) {
 
 	const links = [
 		{
-			name: 'Telegram',
-			url: 'https://t.me/zidxne1',
-			network: 'telegram',
-			text: pageInfo?.address,
-		},
-		{
 			name: 'Linkedin',
 			url: 'https://www.linkedin.com/in/zidane-innis/',
 			network: 'linkedin',
@@ -37,6 +31,12 @@ function ContactMe({ pageInfo }: Props) {
 			url: 'mailto:zidaneinnis@gmail.com',
 			network: 'mailto',
 			text: pageInfo?.email,
+		},
+		{
+			name: 'Telegram',
+			url: 'https://t.me/zidxne1',
+			network: 'telegram',
+			text: pageInfo?.address,
 		},
 	];
 
@@ -152,7 +152,7 @@ function ContactMe({ pageInfo }: Props) {
 				Contact
 			</h3>
 			<div className="flex flex-col mt-32">
-				<div className="p-5 space-y-5">
+				<div className="p-5 space-y-5 ">
 					{links.map((link) => (
 						<div className="flex items-center " key={link.name}>
 							<SocialIcon

@@ -17,14 +17,14 @@ const Blogs = ({ posts }: Props) => {
 
 	return (
 		<section className="bg-[rgb(35,35,35)] ">
-			<div className="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24 lg:py-32">
+			<div className="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24 lg:py-20 mt-10 ">
 				<h2 className="text-3xl md:text-5xl font-semibold text-center mb-8 tracking-[10px] uppercase text-gray-500">
 					The Latest Blogs
 				</h2>
-				<div className="mx-auto grid max-w-4xl grid-cols-3 gap-6 ">
+				<div className="mx-auto grid max-w-4xl gap-6 sm:grid-cols-1 md:grid-cols-3">
 					{posts.map((post) => (
 						<Link href={`/post/${post.slug.current}`} key={post._id}>
-							<a className="flex flex-col overflow-hidden rounded-lg shadow-lg bg-[#292929] hover:opacity-80 opacity-100 transition-opacity duration-200">
+							<a className="flex flex-col overflow-hidden rounded-lg shadow-lg bg-[#292929] hover:opacity-80 opacity-100 transition-opacity duration-200 mx-auto max-w-sm">
 								<img
 									src={urlFor(post.mainImage).url()}
 									alt={post.title}
@@ -33,7 +33,13 @@ const Blogs = ({ posts }: Props) => {
 								<div className="p-4">
 									<p className="mb-2 font-bold text-white">{post.title}</p>
 									<p className="text-xs text-gray-500">
-										{new Date(post._createdAt).toLocaleDateString()}
+										{post._createdAt
+											? new Date(post._createdAt).toLocaleDateString('en-US', {
+													month: 'long',
+													day: 'numeric',
+													year: 'numeric',
+											  })
+											: 'Date not available'}
 									</p>
 								</div>
 							</a>

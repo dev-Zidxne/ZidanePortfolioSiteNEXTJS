@@ -1,4 +1,4 @@
-import type { GetServerSideProps, GetStaticProps, NextPage } from 'next';
+import type { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import About from '../components/About';
@@ -37,7 +37,7 @@ const Home = ({
 	posts,
 }: Props) => {
 	return (
-		<div className="bg-[rgb(35,35,35)] flex-grow text-white h-screen overflow-x-hidden   scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80  flex flex-col min-h-screen ">
+		<div className="bg-[rgb(35,35,35)] flex-grow text-white h-screen overflow-x-hidden    scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80  flex flex-col min-h-screen">
 			<Head>
 				<title>Home | Dev-Z</title>
 			</Head>

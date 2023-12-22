@@ -83,4 +83,5 @@ export interface Post extends SanityBody {
 	publishedAt: datetime;
 	_createdAt: datetime;
 	body: blockContent;
+	viewsCount: number;
 }

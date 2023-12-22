@@ -32,7 +32,7 @@ const Projects2 = ({ projects }: Props) => {
 					{projects?.map((project, index) => (
 						<div
 							key={project.toString()}
-							className="mb-12 inline-block border border-solid border-[#cdcdcd] md:mb-8 lg:mb-10 rounded-xl bg-[#292929] hover:opacity-100 opacity-80 transition-opacity duration-200"
+							className="mb-12 inline-block border border-solid border-[#cdcdcd] md:mb-8 lg:mb-10 rounded-xl bg-[#292929] hover:opacity-80 opacity-100 transition-opacity duration-200"
 						>
 							<Link href={project.linkToBuild}>
 								<a
