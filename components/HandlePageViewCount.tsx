@@ -11,7 +11,7 @@ const HandlePageViewCount = ({ post }: Props) => {
 			const mutations = [
 				{
 					patch: {
-						id: postId,
+						_id: postId,
 						set: {
 							viewsCount: post.viewsCount ? post.viewsCount + 1 : 2, // Ensure post is defined
 						},
