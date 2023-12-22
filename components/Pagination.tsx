@@ -3,7 +3,7 @@ export const Pagination = ({
 	totalPosts,
 	paginate,
 	currentPage,
-}) => {
+}: any) => {
 	const pageNumbers = [];
 	for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
 		pageNumbers.push(i);
