@@ -12,14 +12,13 @@ function HandlePageViewCount({ post }: Props) {
 	useEffect(() => {
 		const incrementPostViews = async () => {
 			try {
-				const response = await fetch('/pages/api/increment-views.js', {
+				const response = await fetch('/api/increment-views', {
 					method: 'POST',
 					headers: {
 						'Content-Type': 'application/json',
 					},
 					body: JSON.stringify({ postId: post?._id }),
 				});
-
 				if (!response.ok) {
 					throw new Error('Failed to increment views');
 				}
