@@ -48,7 +48,7 @@ function HandlePageViewCount({ post }: Props) {
 	let formatViewsCount = formatViewsCountFunc();
 
 	return (
-		<div className="text-sm text-gray-400 lg:text-base">
+		<div className="text-sm text-gray-400 lg:text-base text-center">
 			{formatViewsCount} {formatViewsCount > '1' ? 'views' : 'view'}
 		</div>
 	);

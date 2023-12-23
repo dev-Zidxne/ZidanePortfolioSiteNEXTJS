@@ -97,8 +97,6 @@ export const getServerSideProps: GetServerSideProps<Props> = async () => {
 	const socials: Social[] = await fetchSocials();
 	const posts: Post[] = await fetchPosts();
 
-	console.log('Fetched posts in getServerSideProps: ', posts);
-
 	return {
 		props: {
 			pageInfo,

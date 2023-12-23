@@ -9,6 +9,21 @@ import { Post, Social } from '../../typings';
 import { fetchSocials } from '../../utils/fetchSocials';
 import Footer from '../../components/Footer';
 import HandlePageViewCount from '../../components/HandlePageViewCount';
+import {
+	FacebookIcon,
+	FacebookShareButton,
+	LinkedinIcon,
+	LinkedinShareButton,
+	RedditIcon,
+	RedditShareButton,
+	TwitterShareButton,
+	WhatsappIcon,
+	WhatsappShareButton,
+	XIcon,
+} from 'react-share';
+
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 interface ImageType {
 	asset: {
@@ -82,20 +97,26 @@ interface Props {
 }
 
 const Post: NextPage<Props> = ({ socials, post }) => {
+	const router = useRouter();
+	const { slug } = router.query;
 	if (!post) {
 		return <div>Loading post data or post not found...</div>;
 	}
+
 	const {
 		title = 'Missing title',
-		_id,
-		viewsCount,
 		name = 'Missing name',
 		categories,
 		authorImage,
 		_createdAt,
 		mainImage,
+
 		body,
 	} = post;
+
+	const baseUrl = 'https://devzidane.vercel.app'; // Replace with your website's base URL
+	const fullUrl = slug ? `${baseUrl}/post/${slug}` : baseUrl;
+	console.log(fullUrl);
 
 	return (
 		<div className="bg-[rgb(35,35,35)] flex-grow text-white h-screen overflow-x-hidden    scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80  flex flex-col min-h-screen ">
@@ -132,7 +153,7 @@ const Post: NextPage<Props> = ({ socials, post }) => {
 							))}
 						</ul>
 					)}
-					<div className="text-center text-gray-400 mb-6">
+					<div className="text-center text-gray-400 ">
 						{_createdAt
 							? new Date(_createdAt).toLocaleDateString('en-US', {
 									month: 'long',
@@ -140,7 +161,28 @@ const Post: NextPage<Props> = ({ socials, post }) => {
 									year: 'numeric',
 							  })
 							: 'Date not available'}
-						<HandlePageViewCount post={post} />
+					</div>
+					{/* <HandlePageViewCount post={post} /> */}
+					<div className="text-center p-3">
+						<div className="sticky top-20 lg:right-10 md:right-5 right-0 bg-[rgb(45,45,45)] p-2 rounded-lg shadow-lg inline-flex flex-row items-center gap-2 z-50">
+							{/* Social Share Buttons */}
+							<p>Share to:</p>
+							<FacebookShareButton url={fullUrl}>
+								<FacebookIcon size={32} round />
+							</FacebookShareButton>
+							<TwitterShareButton url={fullUrl}>
+								<XIcon size={32} round />
+							</TwitterShareButton>
+							<LinkedinShareButton url={fullUrl}>
+								<LinkedinIcon size={32} round />
+							</LinkedinShareButton>
+							<RedditShareButton url={fullUrl}>
+								<RedditIcon size={32} round />
+							</RedditShareButton>
+							<WhatsappShareButton url={fullUrl}>
+								<WhatsappIcon size={32} round />
+							</WhatsappShareButton>
+						</div>
 					</div>
 
 					{mainImage && (
