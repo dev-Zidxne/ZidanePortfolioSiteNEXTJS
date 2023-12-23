@@ -39,24 +39,17 @@ const ptComponents = {
 				return null;
 			}
 
-			const imageUrl = urlFor(value)
-				.width(320)
-				.height(240)
-				.fit('max')
-				.auto('format')
-				.url();
+			const imageUrl = urlFor(value).width(750).fit('max').auto('format').url();
 
 			if (!imageUrl) return null;
 
 			return (
-				<div className="flex justify-center my-5">
+				<div className="flex justify-center mb-6 ">
 					<img
 						alt={value.alt || ' '}
 						loading="lazy"
 						src={imageUrl}
-						width={320}
-						height={240}
-						className="rounded-lg"
+						className="rounded-lg shadow-xl "
 					/>
 				</div>
 			);
@@ -190,7 +183,8 @@ const Post: NextPage<Props> = ({ socials, post }) => {
 							<motion.img
 								src={urlFor(mainImage).url()}
 								alt="Main post image"
-								className="max-w-full md:max-w-2xl mx-auto h-auto max-h-96 rounded-lg shadow-xl" // Adjusting the height of the image
+								className="rounded-lg shadow-xl "
+								width={1000} // Adjusting the height of the image
 								initial={{ scale: 0.9 }}
 								animate={{ scale: 1 }}
 								transition={{
