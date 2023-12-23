@@ -87,6 +87,8 @@ const Post: NextPage<Props> = ({ socials, post }) => {
 	}
 	const {
 		title = 'Missing title',
+		_id,
+		viewsCount,
 		name = 'Missing name',
 		categories,
 		authorImage,
