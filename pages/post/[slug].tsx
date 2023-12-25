@@ -39,7 +39,12 @@ const ptComponents = {
 				return null;
 			}
 
-			const imageUrl = urlFor(value).width(750).fit('max').auto('format').url();
+			const imageUrl = urlFor(value)
+				.width(600)
+				.height(350)
+				.fit('max')
+				.auto('format')
+				.url();
 
 			if (!imageUrl) return null;
 
@@ -114,6 +119,7 @@ const Post: NextPage<Props> = ({ socials, post }) => {
 	return (
 		<div className="bg-[rgb(35,35,35)] flex-grow text-white h-screen overflow-x-hidden    scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80  flex flex-col min-h-screen ">
 			<Head>
+				<meta name="description" content={post.body} />
 				<title>{title} | Dev-Z</title>
 			</Head>
 			<Header socials={socials} />
@@ -160,19 +166,19 @@ const Post: NextPage<Props> = ({ socials, post }) => {
 						<div className="sticky top-20 lg:right-10 md:right-5 right-0 bg-[rgb(45,45,45)] p-2 rounded-lg shadow-lg inline-flex flex-row items-center gap-2 z-50">
 							{/* Social Share Buttons */}
 							<p>Share to:</p>
-							<FacebookShareButton url={fullUrl}>
+							<FacebookShareButton url={fullUrl} title={title}>
 								<FacebookIcon size={32} round />
 							</FacebookShareButton>
-							<TwitterShareButton url={fullUrl}>
+							<TwitterShareButton url={fullUrl} title={title}>
 								<XIcon size={32} round />
 							</TwitterShareButton>
-							<LinkedinShareButton url={fullUrl}>
+							<LinkedinShareButton url={fullUrl} title={title}>
 								<LinkedinIcon size={32} round />
 							</LinkedinShareButton>
-							<RedditShareButton url={fullUrl}>
+							<RedditShareButton url={fullUrl} title={title}>
 								<RedditIcon size={32} round />
 							</RedditShareButton>
-							<WhatsappShareButton url={fullUrl}>
+							<WhatsappShareButton url={fullUrl} title={title}>
 								<WhatsappIcon size={32} round />
 							</WhatsappShareButton>
 						</div>
@@ -184,7 +190,7 @@ const Post: NextPage<Props> = ({ socials, post }) => {
 								src={urlFor(mainImage).url()}
 								alt="Main post image"
 								className="rounded-lg shadow-xl "
-								width={1000} // Adjusting the height of the image
+								width={750} // Adjusting the height of the image
 								initial={{ scale: 0.9 }}
 								animate={{ scale: 1 }}
 								transition={{
