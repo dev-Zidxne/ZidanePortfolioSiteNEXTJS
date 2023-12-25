@@ -49,12 +49,14 @@ const ptComponents = {
 			if (!imageUrl) return null;
 
 			return (
-				<div className="flex justify-center mb-6 ">
+				<div className="flex justify-center my-5">
 					<img
 						alt={value.alt || ' '}
 						loading="lazy"
 						src={imageUrl}
-						className="rounded-lg shadow-xl "
+						width={320}
+						height={240}
+						className="rounded-lg"
 					/>
 				</div>
 			);
@@ -189,7 +191,7 @@ const Post: NextPage<Props> = ({ socials, post }) => {
 								src={urlFor(mainImage).url()}
 								alt="Main post image"
 								className="rounded-lg shadow-xl "
-								width={750} // Adjusting the height of the image
+								width={1000} // Adjusting the height of the image
 								initial={{ scale: 0.9 }}
 								animate={{ scale: 1 }}
 								transition={{
