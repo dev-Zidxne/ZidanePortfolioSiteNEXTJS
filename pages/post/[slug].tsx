@@ -8,7 +8,7 @@ import Header from '../../components/Header';
 import { Post, Social } from '../../typings';
 import { fetchSocials } from '../../utils/fetchSocials';
 import Footer from '../../components/Footer';
-import HandlePageViewCount from '../../components/HandlePageViewCount';
+// import HandlePageViewCount from '../../components/HandlePageViewCount';
 import {
 	FacebookIcon,
 	FacebookShareButton,
@@ -22,7 +22,6 @@ import {
 	XIcon,
 } from 'react-share';
 
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 interface ImageType {
@@ -54,8 +53,6 @@ const ptComponents = {
 						alt={value.alt || ' '}
 						loading="lazy"
 						src={imageUrl}
-						width={320}
-						height={240}
 						className="rounded-lg"
 					/>
 				</div>
@@ -121,6 +118,7 @@ const Post: NextPage<Props> = ({ socials, post }) => {
 	return (
 		<div className="bg-[rgb(35,35,35)] flex-grow text-white h-screen overflow-x-hidden    scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80  flex flex-col min-h-screen ">
 			<Head>
+				<meta name="description" content={post.body} />
 				<title>{title} | Dev-Z</title>
 			</Head>
 			<Header socials={socials} />
@@ -191,7 +189,7 @@ const Post: NextPage<Props> = ({ socials, post }) => {
 								src={urlFor(mainImage).url()}
 								alt="Main post image"
 								className="rounded-lg shadow-xl "
-								width={1000} // Adjusting the height of the image
+								width={750} // Adjusting the height of the image
 								initial={{ scale: 0.9 }}
 								animate={{ scale: 1 }}
 								transition={{
