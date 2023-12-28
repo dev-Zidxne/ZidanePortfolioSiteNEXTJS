@@ -80,8 +80,8 @@ export interface Post extends SanityBody {
 	mainImage: image;
 	authorImage: image;
 	categories: array;
-	publishedAt: datetime;
-	_createdAt: datetime;
+	publishedAt: Date;
+	_createdAt: Date;
 	body: blockContent;
 	viewsCount: number;
 }
