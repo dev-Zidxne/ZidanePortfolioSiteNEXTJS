@@ -33,8 +33,8 @@ const Blogs = ({ posts }: Props) => {
 								<div className="p-4">
 									<p className="mb-2 font-bold text-white">{post.title}</p>
 									<p className="text-xs text-gray-500">
-										{post._createdAt
-											? new Date(post._createdAt).toLocaleDateString('en-US', {
+										{post.publishedAt
+											? new Date(post.publishedAt).toLocaleDateString('en-US', {
 													month: 'long',
 													day: 'numeric',
 													year: 'numeric',

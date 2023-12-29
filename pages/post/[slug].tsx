@@ -107,6 +107,7 @@ const Post: NextPage<Props> = ({ socials, post }) => {
 		authorImage,
 		_createdAt,
 		mainImage,
+		publishedAt,
 
 		body,
 	} = post;
@@ -152,8 +153,8 @@ const Post: NextPage<Props> = ({ socials, post }) => {
 						</ul>
 					)}
 					<div className="text-center text-gray-400 ">
-						{_createdAt
-							? new Date(_createdAt).toLocaleDateString('en-US', {
+						{publishedAt
+							? new Date(publishedAt).toLocaleDateString('en-US', {
 									month: 'long',
 									day: 'numeric',
 									year: 'numeric',
@@ -216,7 +217,8 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
     "authorImage": author->image,
     mainImage,
     body,
-    _createdAt
+    _createdAt,
+	publishedAt
   }`;
 
 export const getStaticPaths: GetStaticPaths = async () => {

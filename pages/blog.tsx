@@ -52,7 +52,7 @@ const Blog = ({ posts, socials }: Props) => {
 										<div className="p-4">
 											<p className="mb-2 font-bold">{post.title}</p>
 											<p className="text-xs text-gray-500">
-												{new Date(post._createdAt).toLocaleDateString()}
+												{new Date(post.publishedAt).toLocaleDateString()}
 											</p>
 										</div>
 									</a>
