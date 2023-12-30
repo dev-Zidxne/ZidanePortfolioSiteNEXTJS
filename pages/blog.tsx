@@ -27,7 +27,16 @@ const Blog = ({ posts, socials }: Props) => {
 	return (
 		<div className="bg-[rgb(35,35,35)] flex-grow text-white h-screen overflow-x-hidden scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80 flex flex-col min-h-screen">
 			<Head>
-				<title>Blog | Dev-Z</title>
+				<title>Blog | Dev-Zidane</title>
+				<meta property="og:title" content="Zidane Innis Blog" key="title" />
+				<meta
+					property="og:description"
+					content="Explore topics on web development and general topics on Zidane Innis' Blog. Discover latest trends, tech insights, and tutorials. Ideal for anyone and developers at all levels."
+				/>
+				<meta name="twitter:title" content="Dev-Zidane | Blog" />
+				<meta property="og:type" content="article" />
+
+				{/* Add additional meta tags as needed */}
 			</Head>
 			<Header socials={socials} />
 			<main className="flex-grow">
