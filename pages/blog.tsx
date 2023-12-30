@@ -27,7 +27,7 @@ const Blog = ({ posts, socials }: Props) => {
 	return (
 		<div className="bg-[rgb(35,35,35)] flex-grow text-white h-screen overflow-x-hidden scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80 flex flex-col min-h-screen">
 			<Head>
-				<title>Blog | Dev-Zidane</title>
+				<title>Blog | Zid-Karson</title>
 				<meta property="og:title" content="Zidane Innis Blog" key="title" />
 				<meta
 					property="og:description"

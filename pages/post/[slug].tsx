@@ -120,7 +120,7 @@ const Post: NextPage<Props> = ({ socials, post }) => {
 		<div className="bg-[rgb(35,35,35)] flex-grow text-white h-screen overflow-x-hidden    scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80  flex flex-col min-h-screen ">
 			<Head>
 				<meta name="description" />
-				<title>{title} | Dev-Z</title>
+				<title>{title} | Zid-Karson</title>
 				<meta property="og:title" content={title} />
 				<meta property="og:description" content={body} />
 				<meta property="og:type" content="article" />
