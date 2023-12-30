@@ -121,6 +121,21 @@ const Post: NextPage<Props> = ({ socials, post }) => {
 			<Head>
 				<meta name="description" />
 				<title>{title} | Dev-Z</title>
+				<meta property="og:title" content={title} />
+				<meta property="og:description" content={body} />
+				<meta property="og:type" content="article" />
+				<meta property="og:url" content={`${baseUrl}/post/${post.slug}`} />
+				{post.mainImage && (
+					<meta property="og:image" content={urlFor(post.mainImage).url()} />
+				)}
+				<meta name="twitter:card" content="summary_large_image" />
+				<meta name="twitter:title" content={title} />
+				<meta name="twitter:description" content={title} />
+				{post.mainImage && (
+					<meta name="twitter:image" content={urlFor(post.mainImage).url()} />
+				)}
+
+				{/* Add additional meta tags as needed */}
 			</Head>
 			<Header socials={socials} />
 			<main className="flex-grow pb-20">
