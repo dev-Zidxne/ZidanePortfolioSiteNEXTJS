@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { sanityClient, urlFor } from '../sanity';
-import { Post, Social } from '../typings';
+import { PageInfo, Post, Social } from '../typings';
 import Link from 'next/link';
 import { fetchSocials } from '../utils/fetchSocials';
 import Header from '../components/Header';
@@ -8,13 +8,15 @@ import Head from 'next/head';
 import Footer from '../components/Footer';
 import { groq } from 'next-sanity';
 import { Pagination } from '../components/Pagination';
+import { fetchPageInfo } from '../utils/fetchPageInfo';
 
 type Props = {
 	posts: Post[];
 	socials: Social[];
+	pageInfo: PageInfo;
 };
 
-const Blog = ({ posts, socials }: Props) => {
+const Blog = ({ posts, socials, pageInfo }: Props) => {
 	const [currentPage, setCurrentPage] = useState(1);
 	const postsPerPage = 6;
 
@@ -27,13 +29,17 @@ const Blog = ({ posts, socials }: Props) => {
 	return (
 		<div className="bg-[rgb(35,35,35)] flex-grow text-white h-screen overflow-x-hidden scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80 flex flex-col min-h-screen">
 			<Head>
-				<title>Blog | Zid-Karson</title>
-				<meta property="og:title" content="Zidane Innis Blog" key="title" />
+				<title>Blog | {pageInfo.name}</title>
+				<meta
+					property="og:title"
+					content={`${pageInfo.name}'s Blog `}
+					key="title"
+				/>
 				<meta
 					property="og:description"
 					content="Explore topics on web development and general topics on Zidane Innis' Blog. Discover latest trends, tech insights, and tutorials. Ideal for anyone and developers at all levels."
 				/>
-				<meta name="twitter:title" content="Dev-Zidane | Blog" />
+				<meta name="twitter:title" content="Zidane Innis | Blog" />
 				<meta property="og:type" content="article" />
 
 				{/* Add additional meta tags as needed */}
@@ -86,10 +92,12 @@ export const getStaticProps = async () => {
 	const query = groq`*[_type == "post"] | order(publishedAt desc)`;
 	const posts = await sanityClient.fetch(query);
 	const socials: Social[] = await fetchSocials();
+	const pageInfo: PageInfo = await fetchPageInfo();
 	return {
 		props: {
 			posts,
 			socials,
+			pageInfo,
 		},
 		revalidate: 60, // revalidate at most once per minute
 	};

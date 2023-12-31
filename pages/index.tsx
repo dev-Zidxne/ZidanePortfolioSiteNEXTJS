@@ -39,14 +39,14 @@ const Home = ({
 	return (
 		<div className="bg-[rgb(35,35,35)] flex-grow text-white h-screen overflow-x-hidden    scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80  flex flex-col min-h-screen">
 			<Head>
-				<title>Home | Zid-Karson</title>
+				<title>Home | {pageInfo.name}</title>
 				<meta
 					property="og:description"
-					content=" Zidane is a Web and mobile developer able to build a Web presence from the ground up, from concept navigation, layout to programming to UX and SEO. Skilled at writing well-designed, stable and efficient code using current best practices in web development. Fast learner, hard worker and team player who is proficient in an array of scripting languages and multimedia Web tools"
+					content={pageInfo.backgroundInformation}
 				/>
 				<meta
 					property="og:title"
-					content="Zidane Innis| Portfolio"
+					content={`${pageInfo.name} | Portfolio`}
 					key="title"
 				/>
 			</Head>

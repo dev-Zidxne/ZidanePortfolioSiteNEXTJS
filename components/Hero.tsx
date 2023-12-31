@@ -4,6 +4,7 @@ import { Cursor, useTypewriter } from 'react-simple-typewriter';
 import { urlFor } from '../sanity';
 import { PageInfo } from '../typings';
 import BackgroundCircles from './BackgroundCircles';
+import Head from 'next/head';
 
 type Props = {
 	pageInfo: PageInfo;
@@ -39,13 +40,29 @@ const links = [
 
 function Hero({ pageInfo }: Props) {
 	const [text, count] = useTypewriter({
-		words: [`Hi, my name is ${pageInfo?.name}.`, `${pageInfo?.role}`],
+		words: [` Hi, I'm ${pageInfo?.name}.`, `${pageInfo?.role}`],
 		loop: true,
 		delaySpeed: 2000,
 	});
 	return (
 		<div className="flex flex-col items-center justify-center  space-y-10 overflow-hidden text-center ">
 			<BackgroundCircles />
+			<Head>
+				<meta property="og:title" content={pageInfo.name} />
+				<meta
+					property="og:description"
+					content={pageInfo.backgroundInformation}
+				/>
+				<meta property="og:type" content="article" />
+
+				<meta name="twitter:card" content="summary_large_image" />
+				<meta name="twitter:title" content={pageInfo.name} />
+				<meta
+					name="twitter:description"
+					content={pageInfo.backgroundInformation}
+				/>
+			</Head>
+			{/* Add additional meta tags as needed */}
 			<img
 				className="object-cover w-32 h-32 mx-auto rounded-full"
 				src={urlFor(pageInfo?.heroImage).url()}
@@ -53,7 +70,7 @@ function Hero({ pageInfo }: Props) {
 			/>
 			<div className="z-0">
 				<h2 className="pb-2 text-sm uppercase tracking-[15px] text-gray-500 ">
-					Software Engineer
+					Web Developer
 				</h2>
 				<h1 className="text-5xl font-semibold lg:text-6xl scroll-px10">
 					<span className="mr-3">{text}</span>

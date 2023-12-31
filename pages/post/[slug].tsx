@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 import Header from '../../components/Header';
-import { Post, Social } from '../../typings';
+import { PageInfo, Post, Social } from '../../typings';
 import { fetchSocials } from '../../utils/fetchSocials';
 import Footer from '../../components/Footer';
 // import HandlePageViewCount from '../../components/HandlePageViewCount';
@@ -23,6 +23,7 @@ import {
 } from 'react-share';
 
 import { useRouter } from 'next/router';
+import { fetchPageInfo } from '../../utils/fetchPageInfo';
 
 interface ImageType {
 	asset: {
@@ -91,9 +92,10 @@ const ptComponents = {
 interface Props {
 	socials: Social[];
 	post: Post;
+	pageInfo: PageInfo;
 }
 
-const Post: NextPage<Props> = ({ socials, post }) => {
+const Post = ({ socials, post, pageInfo }: Props) => {
 	const router = useRouter();
 	const { slug } = router.query;
 	if (!post) {
@@ -108,11 +110,10 @@ const Post: NextPage<Props> = ({ socials, post }) => {
 		_createdAt,
 		mainImage,
 		publishedAt,
-
 		body,
 	} = post;
 
-	const baseUrl = 'https://devzidane.vercel.app'; // Replace with your website's base URL
+	const baseUrl = 'https://devzidane.vercel.app';
 	const fullUrl = slug ? `${baseUrl}/post/${slug}` : baseUrl;
 	console.log(fullUrl);
 
@@ -120,7 +121,9 @@ const Post: NextPage<Props> = ({ socials, post }) => {
 		<div className="bg-[rgb(35,35,35)] flex-grow text-white h-screen overflow-x-hidden    scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80  flex flex-col min-h-screen ">
 			<Head>
 				<meta name="description" />
-				<title>{title} | Zid-Karson</title>
+				<title>
+					{title} | {pageInfo.name}
+				</title>
 				<meta property="og:title" content={title} />
 				<meta property="og:description" content={body} />
 				<meta property="og:type" content="article" />
@@ -251,6 +254,7 @@ export const getStaticProps: GetStaticProps<Props> = async (context) => {
 	const slug = context.params?.slug as string;
 	const post = await sanityClient.fetch(query, { slug });
 	const socials: Social[] = await fetchSocials();
+	const pageInfo: PageInfo = await fetchPageInfo();
 
 	if (!post) {
 		return {
@@ -260,6 +264,7 @@ export const getStaticProps: GetStaticProps<Props> = async (context) => {
 
 	return {
 		props: {
+			pageInfo,
 			post,
 			socials,
 		},
