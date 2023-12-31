@@ -42,13 +42,22 @@ const Home = ({
 				<title>Home | {pageInfo.name}</title>
 				<meta
 					property="og:description"
-					content={pageInfo.backgroundInformation}
+					content={`${pageInfo.name} is and expert software engineer proficient in JavaScript, TypeScript, React.js with Next, and Node.js.`}
 				/>
 				<meta
 					property="og:title"
 					content={`${pageInfo.name} | Portfolio`}
 					key="title"
 				/>
+				<meta name="twitter:card" content="summary_large_image" />
+				<meta name="twitter:site" content="@dev-Zidxne" />
+				<meta name="twitter:creator" content="@zidxne_" />
+				<meta
+					name="twitter:description"
+					content={`${pageInfo.name} is and expert software engineer proficient in JavaScript, TypeScript, React.js with Next, and Node.js.`}
+				/>
+				<meta name="twitter:title" content="Zidane Innis" />
+				<meta name="twitter:image" />
 			</Head>
 			<Header socials={socials} />
 			<main className="pb-10g">
@@ -91,7 +100,7 @@ const Home = ({
 					</div>
 				</Link>
 			</main>
-			<Footer />
+			<Footer pageInfo={pageInfo} />
 		</div>
 	);
 };
