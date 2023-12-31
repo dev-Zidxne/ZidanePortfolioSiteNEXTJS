@@ -100,7 +100,7 @@ const Home = ({
 					</div>
 				</Link>
 			</main>
-			<Footer pageInfo={pageInfo} />
+			<Footer />
 		</div>
 	);
 };
