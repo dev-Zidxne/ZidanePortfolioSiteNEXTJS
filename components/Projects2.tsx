@@ -19,7 +19,7 @@ const Projects2 = ({ projects }: Props) => {
 				transition={{
 					duration: 1.5,
 				}}
-				className="mx-auto w-full max-w-5xl px-5 py-16 md:px-10 md:py-24 lg:py-32 mt-36"
+				className="mx-auto w-full max-w-5xl px-5 py-16 md:px-10 md:py-24 lg:py-32 mt-16"
 			>
 				<h2 className="mb-8 text-center tracking-[20px] uppercase text-3xl font-semibold md:text-5xl text-gray-500 ml-6">
 					Projects

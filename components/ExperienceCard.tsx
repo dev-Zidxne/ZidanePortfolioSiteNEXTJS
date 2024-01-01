@@ -24,7 +24,7 @@ export default function ExperienceCard({ experience }: Props) {
 	);
 
 	return (
-		<article className="flex flex-col items-center flex-shrink-0 w-full md:w-[300px] lg:w-[500px] p-3 ml-6 hover:opacity-100 opacity-60 transition-opacity duration-200 rounded-3xl bg-[#292929] mt-20">
+		<article className="flex flex-col items-center flex-shrink-0 w-full md:w-[300px] lg:w-[500px] p-3 ml-6 hover:opacity-100 opacity-60 transition-opacity duration-200 rounded-3xl bg-[#292929] ">
 			{/* Reduced margin-top and adjusted sizes */}
 			<motion.img
 				// ... (keep your framer-motion attributes)
