@@ -45,7 +45,7 @@ function Hero({ pageInfo }: Props) {
 		delaySpeed: 2000,
 	});
 	return (
-		<div className="flex flex-col items-center justify-center  space-y-10 overflow-hidden text-center ">
+		<div className="flex flex-col items-center justify-center  space-y-10 overflow-hidden text-center">
 			<BackgroundCircles />
 			<Head>
 				<meta property="og:title" content={pageInfo.name} />
@@ -68,16 +68,16 @@ function Hero({ pageInfo }: Props) {
 				src={urlFor(pageInfo?.heroImage).url()}
 				alt=""
 			/>
-			<div className="z-0">
+			<div className="z-10 h-20 ">
 				<h2 className="pb-2 text-sm uppercase tracking-[15px] text-gray-500 ">
 					Web Developer
 				</h2>
-				<h1 className="text-5xl font-semibold lg:text-6xl scroll-px10">
-					<span className="mr-3">{text}</span>
+				<h1 className="text-5xl font-semibold lg:text-6xl scroll-px-10 ">
+					<span className="mr-3 ">{text}</span>
 					<Cursor cursorColor="#F7AB0A" />
 				</h1>
 			</div>
-			<div className="z-10 pt-1 space-x-4">
+			<div className="z-10 pt-1 space-x-1">
 				{links.map((link) => (
 					<Link key={link.name} href={link.url}>
 						<button type="button" className="heroButton custom-underline  ">
