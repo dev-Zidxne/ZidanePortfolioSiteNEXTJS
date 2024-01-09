@@ -19,27 +19,14 @@ export default function Skills({ skills }: Props) {
 				TECH STACK
 			</h2>
 
-			{!isTabletOrMobile && (
-				<div className="grid grid-cols-6 gap-3 mt-12 overflow-hidden pt-24">
-					{skills?.slice(0, skills.length / 2).map((skill) => (
-						<Skill key={skill._id} skill={skill} />
-					))}
-					{skills?.slice(skills.length / 2, skills.length).map((skill) => (
-						<Skill key={skill._id} skill={skill} directionLeft />
-					))}
-				</div>
-			)}
-
-			{isTabletOrMobile && (
-				<div className="grid grid-cols-3 gap-3 overflow-hidden pt-24">
-					{skills?.slice(0, skills.length / 2).map((skill) => (
-						<Skill key={skill._id} skill={skill} />
-					))}
-					{skills?.slice(skills.length / 2, skills.length).map((skill) => (
-						<Skill key={skill._id} skill={skill} directionLeft />
-					))}
-				</div>
-			)}
+			<div className="grid  grid-cols-3 gap-1 mt-12 overflow-hidden pt-24 lg:grid-cols-6 md:grid-cols-6">
+				{skills?.slice(0, skills.length / 2).map((skill) => (
+					<Skill key={skill._id} skill={skill} />
+				))}
+				{skills?.slice(skills.length / 2, skills.length).map((skill) => (
+					<Skill key={skill._id} skill={skill} directionLeft />
+				))}
+			</div>
 
 			{/* Lanscape Mode  */}
 		</motion.div>
