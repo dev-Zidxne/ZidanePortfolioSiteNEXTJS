@@ -41,7 +41,7 @@ const Home = ({
 			<Head>
 				<title>Home | {pageInfo.name}</title>
 				<meta
-					property="og:description"
+					property={`${pageInfo.name} is and expert software engineer proficient in JavaScript, TypeScript, React.js with Next, and Node.js.`}
 					content={`${pageInfo.name} is and expert software engineer proficient in JavaScript, TypeScript, React.js with Next, and Node.js.`}
 				/>
 				<meta
@@ -58,6 +58,7 @@ const Home = ({
 				/>
 				<meta name="twitter:title" content="Zidane Innis" />
 				<meta name="twitter:image" />
+				<meta name="robots" content="all" />
 			</Head>
 			<Header socials={socials} />
 			<main className="pb-10g">
@@ -84,7 +85,7 @@ const Home = ({
 					<ContactMe pageInfo={pageInfo} />
 				</section>
 
-				<Link href="#home">
+				<Link href="#home" about="Zidane Innis Website Logo">
 					<div className="sticky w-10 h-10 ml-auto mr-2 cursor-pointer bottom-96">
 						<div className="">
 							<img

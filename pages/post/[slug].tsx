@@ -134,6 +134,7 @@ const Post = ({ socials, post, pageInfo }: Props) => {
 				<meta name="twitter:card" content="summary_large_image" />
 				<meta name="twitter:title" content={title} />
 				<meta name="twitter:description" content={title} />
+				<meta name="robots" content="all" />
 				{post.mainImage && (
 					<meta name="twitter:image" content={urlFor(post.mainImage).url()} />
 				)}

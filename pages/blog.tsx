@@ -41,6 +41,7 @@ const Blog = ({ posts, socials, pageInfo }: Props) => {
 				/>
 				<meta name="twitter:title" content="Zidane Innis | Blog" />
 				<meta property="og:type" content="article" />
+				<meta name="robots" content="all" />
 
 				{/* Add additional meta tags as needed */}
 			</Head>
