@@ -2,12 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Skill from './Skill';
 import { Skill as SkillType } from '../typings';
-import { useMediaQuery } from 'react-responsive';
 type Props = { skills: SkillType[] };
 
 export default function Skills({ skills }: Props) {
-	const isTabletOrMobile = useMediaQuery({ maxWidth: 716 });
-
 	return (
 		<motion.div
 			initial={{ opacity: 0 }}

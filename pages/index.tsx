@@ -80,10 +80,6 @@ const Home = ({
 					<Skills skills={skills} />
 				</section>
 
-				{/* <section id="projects" className="snap-start">
-				<Projects projects={projects} />
-			</section> */}
-
 				<section id="contact" className="snap-start">
 					<ContactMe pageInfo={pageInfo} />
 				</section>
@@ -94,7 +90,7 @@ const Home = ({
 							<img
 								className="w-8 h-8 rounded-full cursor-pointer filter grayscale hover:grayscale-0 "
 								src={urlFor(pageInfo?.heroImage).url()}
-								alt=""
+								alt="Zidane Innis Home Page"
 							></img>
 						</div>
 					</div>

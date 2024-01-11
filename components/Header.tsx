@@ -35,6 +35,7 @@ export default function Header({ socials }: Props) {
 						<SocialIcon
 							key={social._id}
 							url={social.url}
+							about={social.url}
 							bgColor="transparent"
 							fgColor="currentColor"
 							className="ml-3 text-[#808080ff] transition cursor-pointer hover:text-[#F7AB0A]"

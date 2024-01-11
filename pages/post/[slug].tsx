@@ -2,7 +2,7 @@ import groq from 'groq';
 import { PortableText } from '@portabletext/react';
 import { sanityClient, urlFor } from '../../sanity';
 import { motion } from 'framer-motion';
-import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
+import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
 import Header from '../../components/Header';
 import { PageInfo, Post, Social } from '../../typings';
@@ -24,6 +24,7 @@ import {
 
 import { useRouter } from 'next/router';
 import { fetchPageInfo } from '../../utils/fetchPageInfo';
+import HandlePageViewCount from '../../components/HandlePageViewCount';
 
 interface ImageType {
 	asset: {
@@ -107,7 +108,6 @@ const Post = ({ socials, post, pageInfo }: Props) => {
 		name = 'Missing name',
 		categories,
 		authorImage,
-		_createdAt,
 		mainImage,
 		publishedAt,
 		body,

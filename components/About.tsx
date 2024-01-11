@@ -18,7 +18,7 @@ function About({ pageInfo }: Props) {
 					src={urlFor(pageInfo?.profilePic).url()}
 					className="w-32 h-32 md:w-48 md:h-48 lg:w-72 lg:h-96 object-cover mx-auto rounded-full md:rounded-xl" // Changed here
 				/>
-				<h3 className="mt-4 md:mt-6 text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-500  tracking-[20px] uppercase text-3xl">
+				<h3 className="mt-4 md:mt-6 text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-500  tracking-[20px] uppercase ">
 					About
 				</h3>
 				<p className="mt-3 text-sm md:text-base lg:text-lg text-white">
