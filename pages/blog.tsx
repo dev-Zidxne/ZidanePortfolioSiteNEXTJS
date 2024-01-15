@@ -3,12 +3,12 @@ import { sanityClient, urlFor } from '../sanity';
 import { PageInfo, Post, Social } from '../typings';
 import Link from 'next/link';
 import { fetchSocials } from '../utils/fetchSocials';
-import Header from '../components/Header';
 import Head from 'next/head';
 import Footer from '../components/Footer';
 import { groq } from 'next-sanity';
 import { Pagination } from '../components/Pagination';
 import { fetchPageInfo } from '../utils/fetchPageInfo';
+import NavBar from '../components/NavBar';
 
 type Props = {
 	posts: Post[];
@@ -32,7 +32,7 @@ const Blog = ({ posts, socials, pageInfo }: Props) => {
 				<title>Blog | {pageInfo.name}</title>
 				<meta
 					property="og:title"
-					content={`${pageInfo.name}'s Blog `}
+					content={`${pageInfo.name}'s Blog discussing topics in web development and personal interests.`}
 					key="title"
 				/>
 				<meta
@@ -41,11 +41,10 @@ const Blog = ({ posts, socials, pageInfo }: Props) => {
 				/>
 				<meta name="twitter:title" content="Zidane Innis | Blog" />
 				<meta property="og:type" content="article" />
-				<meta name="robots" content="all" />
 
 				{/* Add additional meta tags as needed */}
 			</Head>
-			<Header socials={socials} />
+			<NavBar socials={socials} />
 			<main className="flex-grow">
 				<section>
 					<div className="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24 lg:py-14">

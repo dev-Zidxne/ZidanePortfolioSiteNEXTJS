@@ -9,7 +9,7 @@ type Props = {
 	socials: Social[];
 };
 
-export default function Header({ socials }: Props) {
+export default function NavBar({ socials }: Props) {
 	return (
 		<header className="sticky top-0 z-50 w-full backdrop-blur-md backdrop-brightness-125">
 			<div className="flex items-center justify-between px-5 mx-auto max-w-7xl ">

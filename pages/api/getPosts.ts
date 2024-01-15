@@ -4,7 +4,16 @@ import { groq } from 'next-sanity';
 import { sanityClient } from '../../sanity';
 import { Post } from '../../typings';
 
-const query = groq`*[_type == "post"] | order(publishedAt desc)`;
+export const query = groq`*[_type == "post" && slug.current == $slug] | order(publishedAt desc) [0] {
+    title,
+    "name": author->name,
+    "categories": categories[]->title,
+    "authorImage": author->image,
+    mainImage,
+    body,
+    _createdAt,
+    publishedAt
+}`;
 
 type Data = {
 	posts: Post[];

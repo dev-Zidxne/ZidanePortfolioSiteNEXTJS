@@ -3,7 +3,6 @@ import Head from 'next/head';
 import Link from 'next/link';
 import About from '../components/About';
 import ContactMe from '../components/ContactMe';
-import Header from '../components/Header';
 import Hero from '../components/Hero';
 import Skills from '../components/Skills';
 import WorkExperience from '../components/WorkExperience';
@@ -18,6 +17,7 @@ import { fetchPosts } from '../utils/fetchPosts';
 import Projects2 from '../components/Projects2';
 import Footer from '../components/Footer';
 import Blogs from '../components/Blogs';
+import NavBar from '../components/NavBar';
 
 type Props = {
 	pageInfo: PageInfo;
@@ -27,6 +27,35 @@ type Props = {
 	socials: Social[];
 	posts: Post[];
 };
+
+function Meta() {
+	return (
+		<Head>
+			<title>Zidane Innis</title>
+
+			<meta
+				property="og:description"
+				content="Zidane Innis is an expert software engineer proficient in JavaScript, TypeScript, React.js with Next, and Node.js."
+			/>
+			<meta
+				property="og:title"
+				content="Zidane Innis | Portfolio"
+				key="title"
+			/>
+			<meta property="og:image" content="" />
+			<meta name="twitter:card" content="summary_large_image" />
+			<meta name="twitter:site" content="" />
+			<meta name="twitter:creator" content="@zidxne_" />
+			<meta
+				name="twitter:description"
+				content="Zidane Innis is an expert software engineer proficient in JavaScript, TypeScript, React.js with Next, and Node.js."
+			/>
+			<meta name="twitter:site" content="@dev-Zidxne" />
+			<meta name="twitter:title" content="Zidane Innis" />
+			<meta name="twitter:image" content="" />
+		</Head>
+	);
+}
 
 const Home = ({
 	pageInfo,
@@ -38,29 +67,8 @@ const Home = ({
 }: Props) => {
 	return (
 		<div className="bg-[rgb(35,35,35)] flex-grow text-white h-screen overflow-x-hidden    scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80  flex flex-col min-h-screen">
-			<Head>
-				<title>Home | {pageInfo.name}</title>
-				<meta
-					property={`${pageInfo.name} is and expert software engineer proficient in JavaScript, TypeScript, React.js with Next, and Node.js.`}
-					content={`${pageInfo.name} is and expert software engineer proficient in JavaScript, TypeScript, React.js with Next, and Node.js.`}
-				/>
-				<meta
-					property="og:title"
-					content={`${pageInfo.name} | Portfolio`}
-					key="title"
-				/>
-				<meta name="twitter:card" content="summary_large_image" />
-				<meta name="twitter:site" content="@dev-Zidxne" />
-				<meta name="twitter:creator" content="@zidxne_" />
-				<meta
-					name="twitter:description"
-					content={`${pageInfo.name} is and expert software engineer proficient in JavaScript, TypeScript, React.js with Next, and Node.js.`}
-				/>
-				<meta name="twitter:title" content="Zidane Innis" />
-				<meta name="twitter:image" />
-				<meta name="robots" content="all" />
-			</Head>
-			<Header socials={socials} />
+			<Meta />
+			<NavBar socials={socials} />
 			<main className="pb-10g">
 				<section id="home" className="snap-start">
 					<Hero pageInfo={pageInfo} />
