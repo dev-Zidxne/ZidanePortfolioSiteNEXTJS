@@ -32,16 +32,11 @@ function Meta() {
 	return (
 		<Head>
 			<title>Zidane Innis</title>
-
 			<meta
 				property="og:description"
 				content="Zidane Innis is an expert software engineer proficient in JavaScript, TypeScript, React.js with Next, and Node.js."
 			/>
-			<meta
-				property="og:title"
-				content="Zidane Innis | Portfolio"
-				key="title"
-			/>
+			<meta property="og:title" content="Zidane Innis" key="title" />
 			<meta property="og:image" content="" />
 			<meta name="twitter:card" content="summary_large_image" />
 			<meta name="twitter:site" content="" />
