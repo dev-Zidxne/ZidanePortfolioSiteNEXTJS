@@ -49,10 +49,13 @@ const Post = ({ socials, post }: Props) => {
 				<meta property="og:title" content={post.title} key="title" />
 				<meta property="og:image" content={post.mainImage} />
 				<meta name="twitter:card" content="summary_large_image" />
-				<meta name="twitter:site" content="@zidxne_" />
-				<meta name="twitter:description" content={post.title} />
-				<meta name="twitter:title" content={post.title} />
-				<meta name="twitter:image" content={post.authorImage} />
+				<meta name="twitter:title" content={title} />
+				<meta name="twitter:description" content={title} />
+				{post.mainImage && (
+					<meta name="twitter:image" content={urlFor(post.mainImage).url()} />
+				)}
+
+				{/* Add additional meta tags as needed */}
 			</Head>
 			<NavBar socials={socials} />
 			<main className="flex-grow pb-20">
