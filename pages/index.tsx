@@ -83,13 +83,13 @@ const Home = ({
 				<meta name="twitter:title" content="Zidane Innis" />
 				<meta name="twitter:image" />
 			</Head>
-			<Header socials={socials} />
+			<NavBar socials={socials} />
 			<main className="pb-10g">
 				<section id="home" className="snap-start">
 					<Hero pageInfo={pageInfo} />
 				</section>
 				<section id="blog" className="snap-start">
-					<Blogs posts={posts.slice(0, 3)} />
+					<Blogs posts={posts} />
 				</section>
 				<section id="about" className="snap-center">
 					<About pageInfo={pageInfo} />

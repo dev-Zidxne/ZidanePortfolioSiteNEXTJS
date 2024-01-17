@@ -4,24 +4,101 @@ import { sanityClient, urlFor } from '../../sanity';
 import { motion } from 'framer-motion';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
+
 import { PageInfo, Post, Social } from '../../typings';
 import { fetchSocials } from '../../utils/fetchSocials';
 import Footer from '../../components/Footer';
 // import HandlePageViewCount from '../../components/HandlePageViewCount';
+import {
+	FacebookIcon,
+	FacebookShareButton,
+	LinkedinIcon,
+	LinkedinShareButton,
+	RedditIcon,
+	RedditShareButton,
+	TwitterShareButton,
+	WhatsappIcon,
+	WhatsappShareButton,
+	XIcon,
+} from 'react-share';
+
 import { useRouter } from 'next/router';
 import { fetchPageInfo } from '../../utils/fetchPageInfo';
-import { ptComponents } from '../../components/PortableComponents';
-import NavBar from '../../components/NavBar';
-import { query } from '../api/getPosts';
+import HandlePageViewCount from '../../components/HandlePageViewCount';
 import SocialShareButtons from '../../components/SocialShareButtons';
+import NavBar from '../../components/NavBar';
 
+interface ImageType {
+	asset: {
+		_ref: string;
+	};
+	alt?: string;
+}
+
+const ptComponents = {
+	types: {
+		image: ({ value }: { value: ImageType }) => {
+			if (!value?.asset?._ref) {
+				return null;
+			}
+
+			const imageUrl = urlFor(value)
+				.width(600)
+				.height(350)
+				.fit('max')
+				.auto('format')
+				.url();
+
+			if (!imageUrl) return null;
+
+			return (
+				<div className="flex justify-center my-5">
+					<img
+						alt={value.alt || ' '}
+						loading="lazy"
+						src={imageUrl}
+						className="rounded-lg"
+					/>
+				</div>
+			);
+		},
+	},
+	block: ({ node, children }: any) => {
+		switch (node.style) {
+			case 'normal':
+				return <h3 className=" my-8">{children}</h3>;
+			case 'h1':
+				return <h1 className="text-4xl font-bold my-4">{children}</h1>;
+			case 'h2':
+				return <h2 className="text-3xl font-semibold my-3">{children}</h2>;
+			case 'h3':
+				return <h3 className="text-2xl font-medium my-2">{children}</h3>;
+			case 'h4':
+				return <h4 className="text-xl font-medium my-2">{children}</h4>;
+			case 'blockquote':
+				return (
+					<blockquote className="italic border-l-4 pl-4">{children}</blockquote>
+				);
+
+			default:
+				return <p>{children}</p>;
+		}
+	},
+	list: ({ type, children }: any) => {
+		if (type === 'bullet') {
+			return <ul className="list-disc list-inside space-y-2">{children}</ul>;
+		}
+		return <ol className="list-decimal list-inside space-y-2">{children}</ol>;
+	},
+	listItem: ({ children }: any) => <li>{children}</li>,
+};
 interface Props {
 	socials: Social[];
 	post: Post;
 	pageInfo: PageInfo;
 }
 
-const Post = ({ socials, post }: Props) => {
+const Post = ({ socials, post, pageInfo }: Props) => {
 	const router = useRouter();
 	const { slug } = router.query;
 	if (!post) {
@@ -40,17 +117,26 @@ const Post = ({ socials, post }: Props) => {
 
 	const baseUrl = 'https://devzidane.vercel.app';
 	const fullUrl = slug ? `${baseUrl}/post/${slug}` : baseUrl;
+	console.log(fullUrl);
 
 	return (
 		<div className="bg-[rgb(35,35,35)] flex-grow text-white h-screen overflow-x-hidden    scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80  flex flex-col min-h-screen ">
 			<Head>
-				<meta name="description" content={post.title} />
-				<title>{post.title}</title>
-				<meta property="og:title" content={post.title} key="title" />
-				<meta property="og:image" content={post.mainImage} />
+				<meta name="description" />
+				<title>
+					{title} | {pageInfo.name}
+				</title>
+				<meta property="og:title" content={title} />
+				<meta property="og:description" content={body} />
+				<meta property="og:type" content="article" />
+				<meta property="og:url" content={`${baseUrl}/post/${post.slug}`} />
+				{post.mainImage && (
+					<meta property="og:image" content={urlFor(post.mainImage).url()} />
+				)}
 				<meta name="twitter:card" content="summary_large_image" />
 				<meta name="twitter:title" content={title} />
 				<meta name="twitter:description" content={title} />
+				<meta name="robots" content="all" />
 				{post.mainImage && (
 					<meta name="twitter:image" content={urlFor(post.mainImage).url()} />
 				)}
@@ -97,7 +183,7 @@ const Post = ({ socials, post }: Props) => {
 							: 'Date not available'}
 					</div>
 					{/* <HandlePageViewCount post={post} /> */}
-					<SocialShareButtons title={title} fullUrl={fullUrl} />
+					<SocialShareButtons fullUrl={fullUrl} title={title} />
 					{mainImage && (
 						<div className="flex justify-center mb-6 ">
 							<motion.img
@@ -123,6 +209,17 @@ const Post = ({ socials, post }: Props) => {
 		</div>
 	);
 };
+
+const query = groq`*[_type == "post" && slug.current == $slug][0]{
+    title,
+    "name": author->name,
+    "categories": categories[]->title,
+    "authorImage": author->image,
+    mainImage,
+    body,
+    _createdAt,
+	publishedAt
+  }`;
 
 export const getStaticPaths: GetStaticPaths = async () => {
 	const paths = await sanityClient.fetch(
@@ -158,3 +255,5 @@ export const getStaticProps: GetStaticProps<Props> = async (context) => {
 };
 
 export default Post;
+
+// [slug].tsx
