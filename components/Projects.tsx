@@ -8,7 +8,7 @@ type Props = {
 	projects: Project[];
 };
 
-const Projects2 = ({ projects }: Props) => {
+const Projects = ({ projects }: Props) => {
 	return (
 		<section>
 			<motion.div
@@ -100,4 +100,4 @@ const Projects2 = ({ projects }: Props) => {
 	);
 };
 
-export default Projects2;
+export default Projects;

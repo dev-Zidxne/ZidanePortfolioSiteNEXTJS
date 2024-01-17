@@ -62,7 +62,6 @@ function Hero({ pageInfo }: Props) {
 					content={pageInfo.backgroundInformation}
 				/>
 			</Head>
-			{/* Add additional meta tags as needed */}
 			<img
 				className="object-cover w-32 h-32 mx-auto rounded-full"
 				src={urlFor(pageInfo?.heroImage).url()}

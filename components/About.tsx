@@ -8,7 +8,6 @@ type Props = { pageInfo: PageInfo };
 function About({ pageInfo }: Props) {
 	return (
 		<motion.div className="flex flex-col items-center justify-center mx-auto max-w-7xl px-10 mt-6 md:mt-10 lg:mt-14 text-center md:text-left  pt-16 md:pt-24 mb-10">
-			{/* Modern card-like layout with shadow */}
 			<div className="bg-[#292929] shadow-lg rounded-2xl p-6 md:p-10 lg:p-12 max-w-4xl mx-auto">
 				<motion.img
 					initial={{ x: -200, opacity: 0 }}

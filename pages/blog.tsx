@@ -41,8 +41,6 @@ const Blog = ({ posts, socials, pageInfo }: Props) => {
 				/>
 				<meta name="twitter:title" content="Zidane Innis | Blog" />
 				<meta property="og:type" content="article" />
-
-				{/* Add additional meta tags as needed */}
 			</Head>
 			<NavBar socials={socials} />
 			<main className="flex-grow">

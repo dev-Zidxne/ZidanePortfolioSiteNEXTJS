@@ -14,10 +14,10 @@ import { fetchProjects } from '../utils/fetchProjects';
 import { fetchSkills } from '../utils/fetchSkills';
 import { fetchSocials } from '../utils/fetchSocials';
 import { fetchPosts } from '../utils/fetchPosts';
-import Projects2 from '../components/Projects2';
 import Footer from '../components/Footer';
 import Blogs from '../components/Blogs';
 import NavBar from '../components/NavBar';
+import Projects from '../components/Projects';
 
 type Props = {
 	pageInfo: PageInfo;
@@ -62,27 +62,7 @@ const Home = ({
 }: Props) => {
 	return (
 		<div className="bg-[rgb(35,35,35)] flex-grow text-white h-screen overflow-x-hidden    scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80  flex flex-col min-h-screen">
-			<Head>
-				<title>Home | {pageInfo.name}</title>
-				<meta
-					property="og:description"
-					content={`${pageInfo.name} is and expert software engineer proficient in JavaScript, TypeScript, React.js with Next, and Node.js.`}
-				/>
-				<meta
-					property="og:title"
-					content={`${pageInfo.name} | Portfolio`}
-					key="title"
-				/>
-				<meta name="twitter:card" content="summary_large_image" />
-				<meta name="twitter:site" content="@dev-Zidxne" />
-				<meta name="twitter:creator" content="@zidxne_" />
-				<meta
-					name="twitter:description"
-					content={`${pageInfo.name} is and expert software engineer proficient in JavaScript, TypeScript, React.js with Next, and Node.js.`}
-				/>
-				<meta name="twitter:title" content="Zidane Innis" />
-				<meta name="twitter:image" />
-			</Head>
+			<Meta />
 			<NavBar socials={socials} />
 			<main className="pb-10g">
 				<section id="home" className="snap-start">
@@ -98,16 +78,14 @@ const Home = ({
 					<WorkExperience experiences={experiences} />
 				</section>
 				<section id="projects" className="snap-start">
-					<Projects2 projects={projects} />
+					<Projects projects={projects} />
 				</section>
 				<section id="skills" className="snap-start">
 					<Skills skills={skills} />
 				</section>
-
 				<section id="contact" className="snap-start">
 					<ContactMe pageInfo={pageInfo} />
 				</section>
-
 				<Link href="#home">
 					<div className="sticky w-10 h-10 ml-auto mr-2 cursor-pointer bottom-96">
 						<div className="">

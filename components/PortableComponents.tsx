@@ -1,5 +1,4 @@
 import { urlFor } from '../sanity';
-
 interface ImageType {
 	asset: {
 		_ref: string;

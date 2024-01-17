@@ -96,26 +96,6 @@ function ContactMe({ pageInfo }: Props) {
 		message: '',
 	});
 
-	// const sendEmail = (e: any) => {
-	//   e.preventDefault();
-
-	//   emailjs
-	//     .sendForm(
-	//       "service_c2i43fi",
-	//       "template_2hcql09",
-	//       e.currentTarget,
-	//       "tDGyBqf16EkmbUFVk"
-	//     )
-	//     .then(
-	//       (result) => {
-	//         console.log(result.text);
-	//       },
-	//       (error) => {
-	//         console.log(error.text);
-	//       }
-	//     );
-	//   e.currentTarget.reset();
-	// };
 	const onChange = (e: any) => {
 		setInput((prevState) => e.target.value);
 		if (emailValid && nameValid && subjectValid && messageValid) {

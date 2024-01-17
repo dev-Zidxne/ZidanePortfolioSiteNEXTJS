@@ -8,8 +8,6 @@ type Props = {
 };
 
 const Blogs = ({ posts }: Props) => {
-	console.log('Received posts in Blogs: ', posts);
-
 	return (
 		<section className="bg-[rgb(35,35,35)] mt-10 md:mt-16">
 			<div className="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24 lg:py-20 mt-10 ">

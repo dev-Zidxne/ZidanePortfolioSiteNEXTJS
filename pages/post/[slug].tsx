@@ -24,9 +24,10 @@ import {
 
 import { useRouter } from 'next/router';
 import { fetchPageInfo } from '../../utils/fetchPageInfo';
-import HandlePageViewCount from '../../components/HandlePageViewCount';
+// import HandlePageViewCount from '../../components/HandlePageViewCount';
 import SocialShareButtons from '../../components/SocialShareButtons';
 import NavBar from '../../components/NavBar';
+import { query } from '../api/getPosts';
 
 interface ImageType {
 	asset: {
@@ -117,7 +118,6 @@ const Post = ({ socials, post, pageInfo }: Props) => {
 
 	const baseUrl = 'https://devzidane.vercel.app';
 	const fullUrl = slug ? `${baseUrl}/post/${slug}` : baseUrl;
-	console.log(fullUrl);
 
 	return (
 		<div className="bg-[rgb(35,35,35)] flex-grow text-white h-screen overflow-x-hidden    scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80  flex flex-col min-h-screen ">
@@ -210,17 +210,6 @@ const Post = ({ socials, post, pageInfo }: Props) => {
 	);
 };
 
-const query = groq`*[_type == "post" && slug.current == $slug][0]{
-    title,
-    "name": author->name,
-    "categories": categories[]->title,
-    "authorImage": author->image,
-    mainImage,
-    body,
-    _createdAt,
-	publishedAt
-  }`;
-
 export const getStaticPaths: GetStaticPaths = async () => {
 	const paths = await sanityClient.fetch(
 		groq`*[_type == "post" && defined(slug.current)][].slug.current`
@@ -255,5 +244,3 @@ export const getStaticProps: GetStaticProps<Props> = async (context) => {
 };
 
 export default Post;
-
-// [slug].tsx
