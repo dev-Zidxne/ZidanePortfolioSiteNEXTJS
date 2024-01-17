@@ -4,24 +4,10 @@ import { sanityClient, urlFor } from '../../sanity';
 import { motion } from 'framer-motion';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
-
 import { PageInfo, Post, Social } from '../../typings';
 import { fetchSocials } from '../../utils/fetchSocials';
 import Footer from '../../components/Footer';
 // import HandlePageViewCount from '../../components/HandlePageViewCount';
-import {
-	FacebookIcon,
-	FacebookShareButton,
-	LinkedinIcon,
-	LinkedinShareButton,
-	RedditIcon,
-	RedditShareButton,
-	TwitterShareButton,
-	WhatsappIcon,
-	WhatsappShareButton,
-	XIcon,
-} from 'react-share';
-
 import { useRouter } from 'next/router';
 import { fetchPageInfo } from '../../utils/fetchPageInfo';
 // import HandlePageViewCount from '../../components/HandlePageViewCount';
