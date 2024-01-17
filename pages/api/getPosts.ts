@@ -6,6 +6,17 @@ import { Post } from '../../typings';
 
 const query = groq`*[_type == "post"] | order(publishedAt desc)`;
 
+export const queryPosts = groq`*[_type == "post" && slug.current == $slug][0]{
+    title,
+    "name": author->name,
+    "categories": categories[]->title,
+    "authorImage": author->image,
+    mainImage,
+    body,
+    _createdAt,
+	publishedAt
+  }`;
+
 type Data = {
 	posts: Post[];
 	message?: string; // Optional message property
