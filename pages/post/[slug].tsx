@@ -166,7 +166,6 @@ const Post = ({ socials, post, pageInfo }: Props) => {
 							  })
 							: 'Date not available'}
 					</div>
-					{/* <HandlePageViewCount post={post} /> */}
 					<SocialShareButtons fullUrl={fullUrl} title={title} />
 					{mainImage && (
 						<div className="flex justify-center mb-6 ">

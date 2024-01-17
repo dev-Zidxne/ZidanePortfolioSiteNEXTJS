@@ -28,30 +28,6 @@ type Props = {
 	posts: Post[];
 };
 
-function Meta() {
-	return (
-		<Head>
-			<title>Zidane Innis</title>
-			<meta
-				property="og:description"
-				content="Zidane Innis is an expert software engineer proficient in JavaScript, TypeScript, React.js with Next, and Node.js."
-			/>
-			<meta property="og:title" content="Zidane Innis" key="title" />
-			<meta property="og:image" content="" />
-			<meta name="twitter:card" content="summary_large_image" />
-			<meta name="twitter:site" content="" />
-			<meta name="twitter:creator" content="@zidxne_" />
-			<meta
-				name="twitter:description"
-				content="Zidane Innis is an expert software engineer proficient in JavaScript, TypeScript, React.js with Next, and Node.js."
-			/>
-			<meta name="twitter:site" content="@dev-Zidxne" />
-			<meta name="twitter:title" content="Zidane Innis" />
-			<meta name="twitter:image" content="" />
-		</Head>
-	);
-}
-
 const Home = ({
 	pageInfo,
 	experiences,
@@ -62,7 +38,27 @@ const Home = ({
 }: Props) => {
 	return (
 		<div className="bg-[rgb(35,35,35)] flex-grow text-white h-screen overflow-x-hidden    scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80  flex flex-col min-h-screen">
-			<Meta />
+			<Head>
+				<title>Home | {pageInfo.name}</title>
+				<meta
+					property="og:description"
+					content={`${pageInfo.name} is and expert software engineer proficient in JavaScript, TypeScript, React.js with Next, and Node.js.`}
+				/>
+				<meta
+					property="og:title"
+					content={`${pageInfo.name} | Portfolio`}
+					key="title"
+				/>
+				<meta name="twitter:card" content="summary_large_image" />
+				<meta name="twitter:site" content="@dev-Zidxne" />
+				<meta name="twitter:creator" content="@zidxne_" />
+				<meta
+					name="twitter:description"
+					content={`${pageInfo.name} is and expert software engineer proficient in JavaScript, TypeScript, React.js with Next, and Node.js.`}
+				/>
+				<meta name="twitter:title" content="Zidane Innis" />
+				<meta name="twitter:image" />
+			</Head>
 			<NavBar socials={socials} />
 			<main className="pb-10g">
 				<section id="home" className="snap-start">
@@ -83,9 +79,11 @@ const Home = ({
 				<section id="skills" className="snap-start">
 					<Skills skills={skills} />
 				</section>
+
 				<section id="contact" className="snap-start">
 					<ContactMe pageInfo={pageInfo} />
 				</section>
+
 				<Link href="#home">
 					<div className="sticky w-10 h-10 ml-auto mr-2 cursor-pointer bottom-96">
 						<div className="">
