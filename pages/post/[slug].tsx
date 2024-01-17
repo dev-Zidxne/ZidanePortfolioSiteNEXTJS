@@ -11,7 +11,6 @@ import { useRouter } from 'next/router';
 import { fetchPageInfo } from '../../utils/fetchPageInfo';
 import SocialShareButtons from '../../components/SocialShareButtons';
 import NavBar from '../../components/NavBar';
-import { query } from '../api/getPosts';
 
 interface ImageType {
 	asset: {
@@ -124,8 +123,6 @@ const Post = ({ socials, post, pageInfo }: Props) => {
 				{post.mainImage && (
 					<meta name="twitter:image" content={urlFor(post.mainImage).url()} />
 				)}
-
-				{/* Add additional meta tags as needed */}
 			</Head>
 			<NavBar socials={socials} />
 			<main className="flex-grow pb-20">
@@ -166,6 +163,7 @@ const Post = ({ socials, post, pageInfo }: Props) => {
 							  })
 							: 'Date not available'}
 					</div>
+					{/* <HandlePageViewCount post={post} /> */}
 					<SocialShareButtons fullUrl={fullUrl} title={title} />
 					{mainImage && (
 						<div className="flex justify-center mb-6 ">
@@ -192,6 +190,17 @@ const Post = ({ socials, post, pageInfo }: Props) => {
 		</div>
 	);
 };
+
+const query = groq`*[_type == "post" && slug.current == $slug][0]{
+    title,
+    "name": author->name,
+    "categories": categories[]->title,
+    "authorImage": author->image,
+    mainImage,
+    body,
+    _createdAt,
+	publishedAt
+  }`;
 
 export const getStaticPaths: GetStaticPaths = async () => {
 	const paths = await sanityClient.fetch(
