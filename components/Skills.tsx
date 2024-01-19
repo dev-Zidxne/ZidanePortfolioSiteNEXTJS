@@ -24,8 +24,6 @@ export default function Skills({ skills }: Props) {
 					<Skill key={skill._id} skill={skill} directionLeft />
 				))}
 			</div>
-
-			{/* Lanscape Mode  */}
 		</motion.div>
 	);
 }

@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { urlFor } from '../../sanity';
+import { urlFor } from '../sanity';
 
 interface ImageType {
 	asset: {

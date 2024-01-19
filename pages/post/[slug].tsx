@@ -13,7 +13,8 @@ import SocialShareButtons from '../../components/SocialShareButtons';
 import NavBar from '../../components/NavBar';
 import { queryPosts } from '../api/getPosts';
 import Image from 'next/image';
-import { ptComponents } from '../../utils/Variables/helperVaribles';
+import { ptComponents } from '../../components/PortableComponents';
+
 interface Props {
 	socials: Social[];
 	post: Post;

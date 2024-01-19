@@ -4,7 +4,7 @@ import { Project } from '../typings';
 import Link from 'next/link';
 import { urlFor } from '../sanity';
 import Image from 'next/image';
-import { arrowButton } from '../utils/Variables/helperVaribles';
+import { arrowButton } from './PortableComponents';
 
 type Props = {
 	projects: Project[];
