@@ -43,7 +43,7 @@ const Home = ({
 				<title>Home | {pageInfo.name}</title>
 				<meta
 					name="description"
-					content={` Proficient in JavaScript, TypeScript, React.js with Next, and Node.js. ${pageInfo.name} is a collaborative developer focused on enhancing product delivery timelines and optimizing web application performance."`}
+					content={`${pageInfo.name} is a collaborative web developer focused on enhancing product delivery timelines and optimizing web application performance.`}
 				/>
 			</Head>
 			<NavBar socials={socials} />
