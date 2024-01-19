@@ -45,7 +45,7 @@ const Post = ({ socials, post, pageInfo }: Props) => {
 			<meta property="description" content={title} />
 			<meta property="url" content={`${baseUrl}/post/${slug}`} />
 			{post.mainImage && (
-				<meta property="og:image" content={urlFor(post.mainImage).url()} />
+				<meta property="image" content={urlFor(post.mainImage).url()} />
 			)}
 			<meta name="twitter:title" content={title} />
 			<meta name="twitter:description" content={title} />

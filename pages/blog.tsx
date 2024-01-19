@@ -31,17 +31,12 @@ const Blog = ({ posts, socials, pageInfo }: Props) => {
 		<div className="bg-[rgb(35,35,35)] flex-grow text-white h-screen overflow-x-hidden scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80 flex flex-col min-h-screen">
 			<Head>
 				<title>Blog | {pageInfo.name}</title>
+
 				<meta
-					property="og:title"
-					content={`${pageInfo.name}'s Blog discussing topics in web development and personal interests.`}
-					key="title"
-				/>
-				<meta
-					name="og:description"
+					name="description"
 					content="Explore topics on web development and general topics on Zidane Innis' Blog. Discover latest trends, tech insights, and tutorials. Ideal for anyone and developers at all levels."
 				/>
 				<meta name="twitter:title" content="Zidane Innis | Blog" />
-				<meta property="og:type" content="article" />
 			</Head>
 			<NavBar socials={socials} />
 			<main className="flex-grow">
