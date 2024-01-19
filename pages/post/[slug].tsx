@@ -35,7 +35,6 @@ const Post = ({ socials, post, pageInfo }: Props) => {
 		publishedAt,
 		body,
 	} = post;
-
 	const pageHeadData = (
 		<Head>
 			<meta name="description" />
