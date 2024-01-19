@@ -13,6 +13,7 @@ import SocialShareButtons from '../../components/SocialShareButtons';
 import NavBar from '../../components/NavBar';
 import { queryPosts } from '../api/getPosts';
 import { ptComponents } from '../../components/PortableComponents';
+import Image from 'next/image';
 interface Props {
 	socials: Social[];
 	post: Post;
@@ -77,10 +78,12 @@ const Post = ({ socials, post, pageInfo }: Props) => {
 					</div>
 					{authorImage && (
 						<div className="flex justify-center mb-4">
-							<img
-								src={urlFor(authorImage).width(50).url()}
+							<Image
+								src={urlFor(authorImage).url()}
 								alt={`${name}'s picture`}
-								className="rounded-full" // Tailwind styling for author image
+								className="rounded-full"
+								width={50}
+								height={50}
 							/>
 						</div>
 					)}
@@ -106,11 +109,7 @@ const Post = ({ socials, post, pageInfo }: Props) => {
 					<SocialShareButtons fullUrl={fullUrl} title={title} />
 					{mainImage && (
 						<div className="flex justify-center mb-6 ">
-							<motion.img
-								src={urlFor(mainImage).url()}
-								alt="Main post image"
-								className="rounded-lg shadow-xl "
-								width={750}
+							<motion.div
 								initial={{ scale: 0.9 }}
 								animate={{ scale: 1 }}
 								transition={{
@@ -118,7 +117,15 @@ const Post = ({ socials, post, pageInfo }: Props) => {
 									stiffness: 260,
 									damping: 20,
 								}}
-							/>
+							>
+								<Image
+									className="rounded-lg shadow-xl "
+									src={urlFor(mainImage).url()}
+									width={750}
+									height={429}
+									alt="Main Post Image Zidane Innis Blog"
+								/>
+							</motion.div>
 						</div>
 					)}
 					<PortableText value={body} components={ptComponents} />

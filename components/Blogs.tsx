@@ -49,12 +49,10 @@ const Blogs = ({ posts }: Props) => {
 				<Link href={`/blog`}>
 					<a className="inline-block rounded-md bg-[#F7AB0A] px-6 py-3  font-semibold text-black hover:opacity-80 duration-500 ">
 						View More{' '}
-						<Image
-							src={`/public/button-link-arrow.svg`}
+						<img
+							src="https://assets.website-files.com/6458c625291a94a195e6cf3a/64b636d7c440a74b4076b278_button-link.svg"
 							alt=""
 							className="inline-block bg-[#F7AB0A] rounded-full hover:opacity-80 duration-500"
-							width={20}
-							height={20}
 						/>
 					</a>
 				</Link>

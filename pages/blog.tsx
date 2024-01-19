@@ -9,6 +9,7 @@ import { groq } from 'next-sanity';
 import { Pagination } from '../components/Pagination';
 import { fetchPageInfo } from '../utils/fetchPageInfo';
 import NavBar from '../components/NavBar';
+import Image from 'next/image';
 
 type Props = {
 	posts: Post[];
@@ -36,7 +37,7 @@ const Blog = ({ posts, socials, pageInfo }: Props) => {
 					key="title"
 				/>
 				<meta
-					name="description"
+					name="og:description"
 					content="Explore topics on web development and general topics on Zidane Innis' Blog. Discover latest trends, tech insights, and tutorials. Ideal for anyone and developers at all levels."
 				/>
 				<meta name="twitter:title" content="Zidane Innis | Blog" />
@@ -57,10 +58,12 @@ const Blog = ({ posts, socials, pageInfo }: Props) => {
 							{currentPosts.map((post) => (
 								<Link href={`/post/${post.slug.current}`} key={post._id}>
 									<a className="flex flex-col overflow-hidden rounded-lg shadow-lg bg-[#292929] hover:opacity-80 opacity-100 transition-opacity duration-200 mx-auto max-w-sm">
-										<img
+										<Image
 											src={urlFor(post.mainImage).url()}
 											alt={post.title}
 											className="h-40 w-full object-cover rounded-lg"
+											width={360}
+											height={220}
 										/>
 										<div className="p-4">
 											<p className="mb-2 font-bold">{post.title}</p>
