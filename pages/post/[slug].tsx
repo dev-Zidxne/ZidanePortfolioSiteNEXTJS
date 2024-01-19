@@ -12,8 +12,8 @@ import { fetchPageInfo } from '../../utils/fetchPageInfo';
 import SocialShareButtons from '../../components/SocialShareButtons';
 import NavBar from '../../components/NavBar';
 import { queryPosts } from '../api/getPosts';
-import { ptComponents } from '../../components/PortableComponents';
 import Image from 'next/image';
+import { ptComponents } from '../../utils/Variables/helperVaribles';
 interface Props {
 	socials: Social[];
 	post: Post;
@@ -80,7 +80,7 @@ const Post = ({ socials, post, pageInfo }: Props) => {
 						<div className="flex justify-center mb-4">
 							<Image
 								src={urlFor(authorImage).url()}
-								alt={`${name}'s picture`}
+								alt={`${name}'s author picture`}
 								className="rounded-full"
 								width={50}
 								height={50}
@@ -123,7 +123,7 @@ const Post = ({ socials, post, pageInfo }: Props) => {
 									src={urlFor(mainImage).url()}
 									width={750}
 									height={429}
-									alt="Main Post Image Zidane Innis Blog"
+									alt="Main Hero Image of Zidane Innis Blog Post"
 								/>
 							</motion.div>
 						</div>

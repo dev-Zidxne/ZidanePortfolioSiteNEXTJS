@@ -21,8 +21,8 @@ function Skill({ directionLeft, skill }: Props) {
 				>
 					<Image
 						src={urlFor(skill.image).url()}
-						width={120}
-						height={120}
+						width={130}
+						height={130}
 						className="rounded-full"
 						alt="Zidane Innis Technology Skills Stack"
 					/>

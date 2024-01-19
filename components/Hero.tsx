@@ -53,7 +53,7 @@ function Hero({ pageInfo }: Props) {
 				<Image
 					className="object-cover mx-auto rounded-full"
 					src={urlFor(pageInfo?.heroImage).url()}
-					alt="Zidane Innis Profile Picture"
+					alt="Zidane Innis Main Profile Picture"
 					width={130}
 					height={130}
 				/>

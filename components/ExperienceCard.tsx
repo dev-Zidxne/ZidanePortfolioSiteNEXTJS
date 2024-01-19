@@ -51,7 +51,7 @@ export default function ExperienceCard({ experience }: Props) {
 											key={technology._id}
 											className="h-8 m-2 rounded-full"
 											src={urlFor(technology.image).url()}
-											alt=""
+											alt="Zidane Innis Technology Skills Icons"
 										/>
 									)
 						  )
