@@ -18,6 +18,7 @@ import Footer from '../components/Footer';
 import Blogs from '../components/Blogs';
 import NavBar from '../components/NavBar';
 import Projects from '../components/Projects';
+import Image from 'next/image';
 
 type Props = {
 	pageInfo: PageInfo;
@@ -73,11 +74,13 @@ const Home = ({
 				<Link href="#home">
 					<div className="sticky w-10 h-10 ml-auto mr-2 cursor-pointer bottom-96">
 						<div className="">
-							<img
-								className="w-8 h-8 rounded-full cursor-pointer filter grayscale hover:grayscale-0 "
+							<Image
+								className="rounded-full cursor-pointer filter grayscale hover:grayscale-0 "
 								src={urlFor(pageInfo?.heroImage).url()}
-								alt="Zidane Innis Home Page"
-							></img>
+								width={35}
+								height={35}
+								alt="Zidane Innis Hero Button"
+							></Image>
 						</div>
 					</div>
 				</Link>

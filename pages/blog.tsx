@@ -95,7 +95,6 @@ export const getStaticProps = async () => {
 			socials,
 			pageInfo,
 		},
-		revalidate: 60, // revalidate at most once per minute
 	};
 };
 
