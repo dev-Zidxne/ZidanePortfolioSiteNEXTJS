@@ -21,7 +21,6 @@ function SocialShareButtons({ title, fullUrl }: SocialShareButtonsProps) {
 	return (
 		<div className="text-center p-3">
 			<div className="sticky top-20 lg:right-10 md:right-5 right-0 bg-[rgb(45,45,45)] p-2 rounded-lg shadow-lg inline-flex flex-row items-center gap-2 z-50">
-				{/* Social Share Buttons */}
 				<p>Share to:</p>
 				<FacebookShareButton url={fullUrl} title={title}>
 					<FacebookIcon size={32} round />

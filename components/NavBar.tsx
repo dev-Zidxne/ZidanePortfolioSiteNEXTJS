@@ -24,7 +24,7 @@ export default function NavBar({ socials }: Props) {
 						<Image
 							src="/favicon.ico"
 							className="cursor-pointer"
-							alt="Logo"
+							alt="Zidane Innis Website Logo"
 							width={40}
 							height={40}
 						/>

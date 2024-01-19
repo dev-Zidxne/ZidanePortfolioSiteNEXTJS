@@ -76,7 +76,7 @@ const Projects = ({ projects }: Props) => {
 											className="rounded-lg bg-[#d9d9d9]     "
 											key={technology._id}
 											src={urlFor(technology.image).url()}
-											alt=""
+											alt="Zidane Innis Technology Skills Stack"
 											width={50}
 											height={40}
 										/>

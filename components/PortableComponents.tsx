@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { urlFor } from '../sanity';
 interface ImageType {
 	asset: {
@@ -12,20 +13,17 @@ export const ptComponents = {
 				return null;
 			}
 
-			const imageUrl = urlFor(value)
-				.width(600)
-				.height(350)
-				.fit('max')
-				.auto('format')
-				.url();
+			const imageUrl = urlFor(value).fit('max').auto('format').url();
 
 			if (!imageUrl) return null;
 
 			return (
 				<div className="flex justify-center my-5">
-					<img
+					<Image
 						alt={value.alt || ' '}
 						loading="lazy"
+						width={600}
+						height={350}
 						src={imageUrl}
 						className="rounded-lg"
 					/>

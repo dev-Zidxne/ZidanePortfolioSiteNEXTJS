@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Experience } from '../typings';
 import { urlFor } from '../sanity';
+import Image from 'next/image';
 
 type Props = {
 	experience: Experience;
@@ -25,25 +26,32 @@ export default function ExperienceCard({ experience }: Props) {
 
 	return (
 		<article className="flex flex-col items-center flex-shrink-0 w-full md:w-[300px] lg:w-[500px] p-3 ml-6 hover:opacity-100 opacity-60 transition-opacity duration-200 rounded-3xl bg-[#292929] ">
-			<motion.img
-				// ... (keep your framer-motion attributes)
-				className="w-24 h-24 rounded-full object-cover object-center xl:w-[200px] xl:h-[200px]"
-				src={urlFor(experience?.companyImage)?.url()}
-			/>
+			<motion.div>
+				<Image
+					src={urlFor(experience?.companyImage)?.url()}
+					width={120}
+					height={120}
+					className="object-cover object-center rounded-full w-24 h-24   xl:w-[200px] xl:h-[200px]"
+					alt="Zidane Innis past company experience image"
+				/>
+			</motion.div>
 			<div className="flex flex-col items-center space-y-1 p-4 md:w-full">
 				<h4 className="text-xl font-light text-center lg:text-2xl">
 					{experience.jobTitle}
 				</h4>
 				<p className="text-xl font-bold text-center">{experience.company}</p>
-				<div className="flex flex-wrap justify-center">
+				<div className="flex flex-wrap justify-center gap-2">
 					{experience?.technologies
 						? experience.technologies.map(
 								(technology) =>
 									technology?.image && (
-										<img
+										<Image
+											width={45}
+											height={45}
 											key={technology._id}
-											className="h-8 m-1 rounded-full"
+											className="h-8 m-2 rounded-full"
 											src={urlFor(technology.image).url()}
+											alt=""
 										/>
 									)
 						  )
