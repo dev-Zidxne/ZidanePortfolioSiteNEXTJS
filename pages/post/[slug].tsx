@@ -25,6 +25,7 @@ const Post = ({ socials, post, pageInfo }: Props) => {
 	const { slug } = router.query;
 	const baseUrl = 'https://devzidane.vercel.app';
 	const fullUrl = slug ? `${baseUrl}/post/${slug}` : baseUrl;
+
 	const {
 		title = 'Missing title',
 		name = 'Missing name',
@@ -63,6 +64,7 @@ const Post = ({ socials, post, pageInfo }: Props) => {
 			</>
 		);
 	}
+
 	return (
 		<div className="bg-[rgb(35,35,35)] flex-grow text-white h-screen overflow-x-hidden    scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80  flex flex-col min-h-screen ">
 			{pageHeadData}
