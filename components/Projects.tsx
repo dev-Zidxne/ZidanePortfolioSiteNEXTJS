@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Project } from '../typings';
 import Link from 'next/link';
 import { urlFor } from '../sanity';
+import Image from 'next/image';
 
 type Props = {
 	projects: Project[];
@@ -39,8 +40,7 @@ const Projects = ({ projects }: Props) => {
 									target="_blank "
 									className="hover:opacity-80 transition-all duration-500"
 								>
-									<motion.img
-										className="inline-block rounded-xl "
+									<motion.div
 										initial={{
 											y: -300,
 											opacity: 0,
@@ -49,9 +49,15 @@ const Projects = ({ projects }: Props) => {
 										whileInView={{ opacity: 1, y: 0 }}
 										viewport={{ once: true }}
 										key={project.toString()}
-										src={urlFor(project?.image).url()}
-										alt=""
-									/>
+									>
+										<Image
+											className="inline-block rounded-xl "
+											src={urlFor(project?.image).url()}
+											alt="Zidane Innis Project Images Preview"
+											width={720}
+											height={420}
+										/>
+									</motion.div>
 								</a>
 							</Link>
 
@@ -66,11 +72,13 @@ const Projects = ({ projects }: Props) => {
 								>
 									{/* Map through technologies if available */}
 									{project.technologies.map((technology) => (
-										<img
-											className="h-10 rounded-full rounded-sm bg-[#d9d9d9]  text-sm font-semibold  "
+										<Image
+											className="rounded-lg bg-[#d9d9d9]     "
 											key={technology._id}
 											src={urlFor(technology.image).url()}
 											alt=""
+											width={50}
+											height={40}
 										/>
 									))}
 								</div>

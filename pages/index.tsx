@@ -41,26 +41,12 @@ const Home = ({
 			<Head>
 				<title>Home | {pageInfo.name}</title>
 				<meta
-					property="og:description"
-					content={`${pageInfo.name} is and expert software engineer proficient in JavaScript, TypeScript, React.js with Next, and Node.js.`}
+					name="description"
+					content={` Proficient in JavaScript, TypeScript, React.js with Next, and Node.js. ${pageInfo.name} is a collaborative developer focused on enhancing product delivery timelines and optimizing web application performance."`}
 				/>
-				<meta
-					property="og:title"
-					content={`${pageInfo.name} | Portfolio`}
-					key="title"
-				/>
-				<meta name="twitter:card" content="summary_large_image" />
-				<meta name="twitter:site" content="@dev-Zidxne" />
-				<meta name="twitter:creator" content="@zidxne_" />
-				<meta
-					name="twitter:description"
-					content={`${pageInfo.name} is and expert software engineer proficient in JavaScript, TypeScript, React.js with Next, and Node.js.`}
-				/>
-				<meta name="twitter:title" content="Zidane Innis" />
-				<meta name="twitter:image" />
 			</Head>
 			<NavBar socials={socials} />
-			<main className="pb-10g">
+			<main className="pb-10">
 				<section id="home" className="snap-start">
 					<Hero pageInfo={pageInfo} />
 				</section>

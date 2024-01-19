@@ -22,10 +22,8 @@ interface Props {
 const Post = ({ socials, post, pageInfo }: Props) => {
 	const router = useRouter();
 	const { slug } = router.query;
-	if (!post) {
-		return <div>Loading post data or post not found...</div>;
-	}
-
+	const baseUrl = 'https://devzidane.vercel.app';
+	const fullUrl = slug ? `${baseUrl}/post/${slug}` : baseUrl;
 	const {
 		title = 'Missing title',
 		name = 'Missing name',
@@ -36,31 +34,37 @@ const Post = ({ socials, post, pageInfo }: Props) => {
 		body,
 	} = post;
 
-	const baseUrl = 'https://devzidane.vercel.app';
-	const fullUrl = slug ? `${baseUrl}/post/${slug}` : baseUrl;
-
+	const pageHeadData = (
+		<Head>
+			<meta name="description" />
+			<title>
+				{title} | {pageInfo.name}
+			</title>
+			<meta property="title" content={title} />
+			<meta property="description" content={title} />
+			<meta property="url" content={`${baseUrl}/post/${slug}`} />
+			{post.mainImage && (
+				<meta property="og:image" content={urlFor(post.mainImage).url()} />
+			)}
+			<meta name="twitter:title" content={title} />
+			<meta name="twitter:description" content={title} />
+			<meta name="robots" content="all" />
+			{post.mainImage && (
+				<meta name="twitter:image" content={urlFor(post.mainImage).url()} />
+			)}
+		</Head>
+	);
+	if (!post) {
+		return (
+			<>
+				{pageHeadData}
+				<p>Loading post data or post not found...</p>
+			</>
+		);
+	}
 	return (
 		<div className="bg-[rgb(35,35,35)] flex-grow text-white h-screen overflow-x-hidden    scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80  flex flex-col min-h-screen ">
-			<Head>
-				<meta name="description" />
-				<title>
-					{title} | {pageInfo.name}
-				</title>
-				<meta property="og:title" content={title} />
-				<meta property="og:description" content={body} />
-				<meta property="og:type" content="article" />
-				<meta property="og:url" content={`${baseUrl}/post/${post.slug}`} />
-				{post.mainImage && (
-					<meta property="og:image" content={urlFor(post.mainImage).url()} />
-				)}
-				<meta name="twitter:card" content="summary_large_image" />
-				<meta name="twitter:title" content={title} />
-				<meta name="twitter:description" content={title} />
-				<meta name="robots" content="all" />
-				{post.mainImage && (
-					<meta name="twitter:image" content={urlFor(post.mainImage).url()} />
-				)}
-			</Head>
+			{pageHeadData}
 			<NavBar socials={socials} />
 			<main className="flex-grow pb-20">
 				<article key={title} className="max-w-4xl mx-auto p-5 text-white">

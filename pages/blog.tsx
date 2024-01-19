@@ -36,7 +36,7 @@ const Blog = ({ posts, socials, pageInfo }: Props) => {
 					key="title"
 				/>
 				<meta
-					property="og:description"
+					name="description"
 					content="Explore topics on web development and general topics on Zidane Innis' Blog. Discover latest trends, tech insights, and tutorials. Ideal for anyone and developers at all levels."
 				/>
 				<meta name="twitter:title" content="Zidane Innis | Blog" />

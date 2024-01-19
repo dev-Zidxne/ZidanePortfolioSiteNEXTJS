@@ -4,7 +4,7 @@ import { Cursor, useTypewriter } from 'react-simple-typewriter';
 import { urlFor } from '../sanity';
 import { PageInfo } from '../typings';
 import BackgroundCircles from './BackgroundCircles';
-import Head from 'next/head';
+import Image from 'next/image';
 
 type Props = {
 	pageInfo: PageInfo;
@@ -47,26 +47,17 @@ function Hero({ pageInfo }: Props) {
 	return (
 		<div className="flex flex-col items-center justify-center  space-y-10 overflow-hidden text-center">
 			<BackgroundCircles />
-			<Head>
-				<meta property="og:title" content={pageInfo.name} />
-				<meta
-					property="og:description"
-					content={pageInfo.backgroundInformation}
+			<div className="mt-4">
+				{' '}
+				{/* Adjust the margin top to move the picture down */}
+				<Image
+					className="object-cover mx-auto rounded-full"
+					src={urlFor(pageInfo?.heroImage).url()}
+					alt="Zidane Innis Profile Picture"
+					width={130}
+					height={130}
 				/>
-				<meta property="og:type" content="article" />
-
-				<meta name="twitter:card" content="summary_large_image" />
-				<meta name="twitter:title" content={pageInfo.name} />
-				<meta
-					name="twitter:description"
-					content={pageInfo.backgroundInformation}
-				/>
-			</Head>
-			<img
-				className="object-cover w-32 h-32 mx-auto rounded-full"
-				src={urlFor(pageInfo?.heroImage).url()}
-				alt=""
-			/>
+			</div>
 			<div className="z-10 h-20 ">
 				<h2 className="pb-2 text-sm uppercase tracking-[15px] text-gray-500 ">
 					Web Developer

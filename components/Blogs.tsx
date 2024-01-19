@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { urlFor } from '../sanity';
 import { Post } from '../typings';
+import Image from 'next/image';
 
 type Props = {
 	posts: Post[];
@@ -20,10 +21,12 @@ const Blogs = ({ posts }: Props) => {
 					{posts.map((post) => (
 						<Link href={`/post/${post.slug.current}`} key={post._id}>
 							<a className="flex flex-col overflow-hidden rounded-lg shadow-lg bg-[#292929] hover:opacity-80 opacity-100 transition-opacity duration-200 mx-auto max-w-sm">
-								<img
+								<Image
 									src={urlFor(post.mainImage).url()}
 									alt={post.title}
 									className="h-40 w-full object-cover rounded-lg"
+									width={360}
+									height={220}
 								/>
 								<div className="p-4">
 									<p className="mb-2 font-bold text-white">{post.title}</p>
@@ -46,10 +49,12 @@ const Blogs = ({ posts }: Props) => {
 				<Link href={`/blog`}>
 					<a className="inline-block rounded-md bg-[#F7AB0A] px-6 py-3  font-semibold text-black hover:opacity-80 duration-500 ">
 						View More{' '}
-						<img
-							src="https://assets.website-files.com/6458c625291a94a195e6cf3a/64b636d7c440a74b4076b278_button-link.svg"
+						<Image
+							src={`/public/button-link-arrow.svg`}
 							alt=""
 							className="inline-block bg-[#F7AB0A] rounded-full hover:opacity-80 duration-500"
+							width={20}
+							height={20}
 						/>
 					</a>
 				</Link>
