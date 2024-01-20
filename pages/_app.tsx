@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 				<title>Zidane Innis</title>
 				<meta
 					name="description"
-					content="Proficient in JavaScript, TypeScript, React.js with Next, and Node.js, Zidane Innis is a collaborative developer focused on enhancing product delivery timelines and optimizing web application performance."
+					content="Proficient in JavaScript, TypeScript, React.js, NextJS, and Node.js, Zidane Innis is a collaborative developer focused on enhancing product delivery timelines and optimizing web application performance."
 				/>
 				<link
 					rel="icon"

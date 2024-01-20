@@ -4,7 +4,7 @@ import { Project } from '../typings';
 import Link from 'next/link';
 import { urlFor } from '../sanity';
 import Image from 'next/image';
-import { arrowButton } from './PortableComponents';
+import ArrowIcon from './ArrowIcon';
 
 type Props = {
 	projects: Project[];
@@ -87,13 +87,9 @@ const Projects = ({ projects }: Props) => {
 									<Link href={project.linkToBuild}>
 										<a className="r flex max-w-full gap-2.5 text-sm font-bold uppercase text-white">
 											<p>VISIT WEBSITE</p>
-											<Image
-												src={arrowButton}
-												alt="Arrow Button Icon Link to Project done by Zidane Innis"
-												width={20}
-												height={20}
-												className="inline-block bg-[#F7AB0A] rounded-full hover:opacity-80 duration-500"
-											/>
+											<div className="inline-block bg-[#F7AB0A] rounded-full hover:opacity-80 duration-500">
+												<ArrowIcon />
+											</div>
 										</a>
 									</Link>
 									<Link href={project.linkToBuild}>

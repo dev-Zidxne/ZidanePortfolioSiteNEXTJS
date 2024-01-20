@@ -29,7 +29,6 @@ const Post = ({ socials, post, pageInfo }: Props) => {
 	if (!post || !post.title) {
 		return (
 			<>
-				{/* Add any necessary head data here */}
 				<p>Loading post data or post not found...</p>
 			</>
 		);

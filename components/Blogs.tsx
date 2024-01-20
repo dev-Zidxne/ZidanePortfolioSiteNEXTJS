@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { urlFor } from '../sanity';
 import { Post } from '../typings';
 import Image from 'next/image';
-import { arrowButton } from './PortableComponents';
+import ArrowIcon from './ArrowIcon';
 
 type Props = {
 	posts: Post[];
@@ -49,14 +49,10 @@ const Blogs = ({ posts }: Props) => {
 			<div className="text-center">
 				<Link href={`/blog`}>
 					<a className="inline-block rounded-md bg-[#F7AB0A] px-6 py-3  font-semibold text-black hover:opacity-80 duration-500 ">
-						View More{' '}
-						<Image
-							src={arrowButton}
-							alt="Arrow Button Linking To Blogs"
-							width={20}
-							height={20}
-							className="inline-block bg-[#F7AB0A] rounded-full hover:opacity-80 duration-500"
-						/>
+						View More
+						<div className="inline-block">
+							<ArrowIcon />
+						</div>
 					</a>
 				</Link>
 			</div>

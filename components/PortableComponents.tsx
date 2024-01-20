@@ -8,9 +8,6 @@ interface ImageType {
 	alt?: string;
 }
 
-export const arrowButton =
-	'https://assets.website-files.com/6458c625291a94a195e6cf3a/64b636d7c440a74b4076b278_button-link.svg';
-
 export const ptComponents = {
 	types: {
 		image: ({ value }: { value: ImageType }) => {
