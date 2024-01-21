@@ -45,7 +45,7 @@ function Hero({ pageInfo }: Props) {
 		delaySpeed: 2000,
 	});
 	return (
-		<div className="flex flex-col items-center justify-center  space-y-10 overflow-hidden text-center">
+        <div className="flex flex-col items-center justify-center  space-y-10 overflow-hidden text-center">
 			<BackgroundCircles />
 			<div className="mt-4">
 				{' '}
@@ -69,7 +69,7 @@ function Hero({ pageInfo }: Props) {
 			</div>
 			<div className="z-10 pt-1 space-x-1">
 				{links.map((link) => (
-					<Link key={link.name} href={link.url}>
+					<Link key={link.name} href={link.url} legacyBehavior>
 						<button type="button" className="heroButton custom-underline  ">
 							{link.name}
 						</button>
@@ -77,7 +77,7 @@ function Hero({ pageInfo }: Props) {
 				))}
 			</div>
 		</div>
-	);
+    );
 }
 
 export default Hero;

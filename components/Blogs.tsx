@@ -18,43 +18,46 @@ const Blogs = ({ posts }: Props) => {
 						? 'The Latest Blogs'
 						: 'No latest blogs found.'}
 				</h2>
-				<div className="mx-auto grid max-w-4xl gap-6 sm:grid-cols-1 md:grid-cols-3">
+				<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4 lg:px-32">
 					{posts.map((post) => (
-						<Link href={`/post/${post.slug.current}`} key={post._id}>
-							<a className="flex flex-col overflow-hidden rounded-lg shadow-lg bg-[#292929] hover:opacity-80 opacity-100 transition-opacity duration-200 mx-auto max-w-sm">
-								<Image
-									src={urlFor(post.mainImage).url()}
-									alt={post.title}
-									priority={true}
-									className="object-cover rounded-lg"
-									width={360}
-									height={220}
-								/>
-								<div className="p-4">
-									<p className="mb-2 font-bold text-white">{post.title}</p>
-									<p className="text-xs text-gray-500">
-										{post.publishedAt
-											? new Date(post.publishedAt).toLocaleDateString('en-US', {
-													month: 'long',
-													day: 'numeric',
-													year: 'numeric',
-											  })
-											: 'Date not available'}
-									</p>
-								</div>
-							</a>
+						<Link
+							href={`/post/${post.slug.current}`}
+							key={post._id}
+							className="flex flex-col overflow-hidden rounded-lg shadow-lg bg-[#292929] hover:opacity-80 opacity-100 transition-opacity duration-200 mx-auto max-w-sm"
+						>
+							<Image
+								src={urlFor(post.mainImage).url()}
+								alt={post.title}
+								priority={true}
+								className="h-44 w-full object-cover rounded-lg"
+								width={360}
+								height={220}
+							/>
+							<div className="p-4">
+								<p className="mb-2 font-bold text-white">{post.title}</p>
+								<p className="text-xs text-gray-500">
+									{post.publishedAt
+										? new Date(post.publishedAt).toLocaleDateString('en-US', {
+												month: 'long',
+												day: 'numeric',
+												year: 'numeric',
+										  })
+										: 'Date not available'}
+								</p>
+							</div>
 						</Link>
 					))}
 				</div>
 			</div>
 			<div className="text-center">
-				<Link href={`/blog`}>
-					<a className="inline-block rounded-md bg-[#F7AB0A] px-6 py-3  font-semibold text-black hover:opacity-80 duration-500 ">
-						View More
-						<div className="inline-block">
-							<ArrowIcon />
-						</div>
-					</a>
+				<Link
+					href={`/blog`}
+					className="inline-block rounded-md bg-[#F7AB0A] px-6 py-3  font-semibold text-black hover:opacity-80 duration-500 "
+				>
+					View More
+					<div className="inline-block">
+						<ArrowIcon />
+					</div>
 				</Link>
 			</div>
 		</section>

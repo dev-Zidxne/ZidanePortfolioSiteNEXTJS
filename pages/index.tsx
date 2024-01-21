@@ -40,7 +40,7 @@ const Home = ({
 	posts,
 }: Props) => {
 	return (
-		<div className="bg-[rgb(35,35,35)] flex-grow text-white h-screen overflow-x-hidden    scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80  flex flex-col min-h-screen scroll-smooth">
+        <div className="bg-[rgb(35,35,35)] flex-grow text-white h-screen overflow-x-hidden    scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80  flex flex-col min-h-screen scroll-smooth">
 			<Head>
 				<title>Home | {pageInfo.name}</title>
 				<meta
@@ -74,7 +74,7 @@ const Home = ({
 						<ContactMe pageInfo={pageInfo} />
 					</section>
 				</Suspense>
-				<Link href="#home">
+				<Link href="#home" legacyBehavior>
 					<div className="sticky w-10 h-10 ml-auto mr-2 cursor-pointer bottom-96">
 						<div className="">
 							<Image
@@ -90,7 +90,7 @@ const Home = ({
 			</main>
 			<Footer />
 		</div>
-	);
+    );
 };
 
 export default Home;

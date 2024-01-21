@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { PageInfo } from '../typings';
 import { SocialIcon } from 'react-social-icons';
+const emailjs = await import('@emailjs/browser');
 
 type Props = {
 	pageInfo: PageInfo;
@@ -105,8 +106,6 @@ function ContactMe({ pageInfo }: Props) {
 	};
 	const sendEmail = async (e: any) => {
 		try {
-			const emailjs = await import('@emailjs/browser');
-
 			if (emailValid && nameValid && subjectValid && messageValid) {
 				emailjs
 					.sendForm(

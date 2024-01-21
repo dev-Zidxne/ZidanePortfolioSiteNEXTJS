@@ -51,22 +51,24 @@ const Blog = ({ posts, socials, pageInfo }: Props) => {
 
 						<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4 lg:px-32">
 							{currentPosts.map((post) => (
-								<Link href={`/post/${post.slug.current}`} key={post._id}>
-									<a className="flex flex-col overflow-hidden rounded-lg shadow-lg bg-[#292929] hover:opacity-80 opacity-100 transition-opacity duration-200 mx-auto max-w-sm">
-										<Image
-											src={urlFor(post.mainImage).url()}
-											alt={post.title}
-											className="h-40 w-full object-cover rounded-lg"
-											width={360}
-											height={220}
-										/>
-										<div className="p-4">
-											<p className="mb-2 font-bold">{post.title}</p>
-											<p className="text-xs text-gray-500">
-												{new Date(post.publishedAt).toLocaleDateString()}
-											</p>
-										</div>
-									</a>
+								<Link
+									href={`/post/${post.slug.current}`}
+									key={post._id}
+									className="flex flex-col overflow-hidden rounded-lg shadow-lg bg-[#292929] hover:opacity-80 opacity-100 transition-opacity duration-200 mx-auto max-w-sm"
+								>
+									<Image
+										src={urlFor(post.mainImage).url()}
+										alt={post.title}
+										className="h-44 w-full object-cover rounded-lg"
+										width={360}
+										height={220}
+									/>
+									<div className="p-4">
+										<p className="mb-2 font-bold">{post.title}</p>
+										<p className="text-xs text-gray-500">
+											{new Date(post.publishedAt).toLocaleDateString()}
+										</p>
+									</div>
 								</Link>
 							))}
 						</div>

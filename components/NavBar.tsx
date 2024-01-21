@@ -11,7 +11,7 @@ type Props = {
 
 export default function NavBar({ socials }: Props) {
 	return (
-		<header className="sticky top-0 z-50 w-full backdrop-blur-md backdrop-brightness-125">
+        <header className="sticky top-0 z-50 w-full backdrop-blur-md backdrop-brightness-125">
 			<div className="flex items-center justify-between px-5 mx-auto max-w-7xl ">
 				<motion.div
 					initial={{ x: -500, opacity: 0, scale: 0.5 }}
@@ -20,7 +20,7 @@ export default function NavBar({ socials }: Props) {
 					className="flex items-center"
 				>
 					{/* Logo Image */}
-					<Link href={`/#home`}>
+					<Link href={`/#home`} legacyBehavior>
 						<Image
 							src="/favicon.ico"
 							className="cursor-pointer"
@@ -46,7 +46,7 @@ export default function NavBar({ socials }: Props) {
 				</motion.div>
 
 				{/* Right Side Content */}
-				<Link href="/#contact">
+				<Link href="/#contact" legacyBehavior>
 					<motion.div
 						initial={{ x: 500, opacity: 0, scale: 0.5 }}
 						animate={{ x: 0, opacity: 1, scale: 1 }}
@@ -66,5 +66,5 @@ export default function NavBar({ socials }: Props) {
 				</Link>
 			</div>
 		</header>
-	);
+    );
 }
