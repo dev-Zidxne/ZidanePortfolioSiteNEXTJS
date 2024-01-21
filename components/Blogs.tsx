@@ -25,6 +25,7 @@ const Blogs = ({ posts }: Props) => {
 								<Image
 									src={urlFor(post.mainImage).url()}
 									alt={post.title}
+									priority={true}
 									className="h-40 w-full object-cover rounded-lg"
 									width={360}
 									height={220}

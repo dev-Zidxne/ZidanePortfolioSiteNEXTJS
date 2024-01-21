@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { PageInfo } from '../typings';
-import emailjs from '@emailjs/browser';
 import { SocialIcon } from 'react-social-icons';
 
 type Props = {
@@ -104,26 +103,32 @@ function ContactMe({ pageInfo }: Props) {
 			setIsDisabled(true);
 		}
 	};
-	const sendEmail = (e: any) => {
-		if (emailValid && nameValid && subjectValid && messageValid) {
-			emailjs
-				.sendForm(
-					'service_c2i43fi',
-					'template_2hcql09',
-					e.currentTarget,
-					'tDGyBqf16EkmbUFVk'
-				)
-				.then(() => {
-					alert('Message sent. Thank you.');
-				})
-				.catch(() => {
-					alert('Message not sent. Please check internet connection.');
-				});
-		} else if (!nameValid) {
-			alert('10 digit dialing');
+	const sendEmail = async (e: any) => {
+		try {
+			const emailjs = await import('@emailjs/browser');
+
+			if (emailValid && nameValid && subjectValid && messageValid) {
+				emailjs
+					.sendForm(
+						'service_c2i43fi',
+						'template_2hcql09',
+						e.currentTarget,
+						'tDGyBqf16EkmbUFVk'
+					)
+					.then(() => {
+						alert('Message sent. Thank you.');
+					})
+					.catch(() => {
+						alert('Message not sent. Please check internet connection.');
+					});
+			} else if (!nameValid) {
+				alert('10 digit dialing');
+			}
+			e.currentTarget.reset();
+			setIsDisabled(true);
+		} catch (error) {
+			console.error('Error loading emailjs:', error);
 		}
-		e.currentTarget.reset();
-		setIsDisabled(true);
 	};
 
 	return (

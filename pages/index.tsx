@@ -1,11 +1,13 @@
 import type { GetServerSideProps } from 'next';
+import Hero from '../components/Hero';
 import Head from 'next/head';
 import Link from 'next/link';
 import About from '../components/About';
-import ContactMe from '../components/ContactMe';
-import Hero from '../components/Hero';
-import Skills from '../components/Skills';
-import WorkExperience from '../components/WorkExperience';
+const WorkExperience = React.lazy(() => import('../components/WorkExperience'));
+const Projects = React.lazy(() => import('../components/Projects'));
+const Skills = React.lazy(() => import('../components/Skills'));
+const ContactMe = React.lazy(() => import('../components/ContactMe'));
+
 import { urlFor } from '../sanity';
 import { Experience, PageInfo, Post, Project, Skill, Social } from '../typings';
 import { fetchExperience } from '../utils/fetchExperiences';
@@ -17,8 +19,8 @@ import { fetchPosts } from '../utils/fetchPosts';
 import Footer from '../components/Footer';
 import Blogs from '../components/Blogs';
 import NavBar from '../components/NavBar';
-import Projects from '../components/Projects';
 import Image from 'next/image';
+import React, { Suspense } from 'react';
 
 type Props = {
 	pageInfo: PageInfo;
@@ -57,20 +59,21 @@ const Home = ({
 				<section id="about" className="snap-center">
 					<About pageInfo={pageInfo} />
 				</section>
-				<section id="experience" className="snap-center">
-					<WorkExperience experiences={experiences} />
-				</section>
-				<section id="projects" className="snap-start">
-					<Projects projects={projects} />
-				</section>
-				<section id="skills" className="snap-start">
-					<Skills skills={skills} />
-				</section>
+				<Suspense fallback={<div>Loading...</div>}>
+					<section id="experience" className="snap-center">
+						<WorkExperience experiences={experiences} />
+					</section>
+					<section id="projects" className="snap-start">
+						<Projects projects={projects} />
+					</section>
+					<section id="skills" className="snap-start">
+						<Skills skills={skills} />
+					</section>
 
-				<section id="contact" className="snap-start">
-					<ContactMe pageInfo={pageInfo} />
-				</section>
-
+					<section id="contact" className="snap-start">
+						<ContactMe pageInfo={pageInfo} />
+					</section>
+				</Suspense>
 				<Link href="#home">
 					<div className="sticky w-10 h-10 ml-auto mr-2 cursor-pointer bottom-96">
 						<div className="">
