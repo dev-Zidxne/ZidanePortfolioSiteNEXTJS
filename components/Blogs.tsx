@@ -30,7 +30,7 @@ const Blogs = ({ posts }: Props) => {
 								alt={post.title}
 								priority={true}
 								className="h-44 w-full object-cover rounded-lg"
-								width={250}
+								width={300}
 								height={0}
 							/>
 							<div className="p-4">
