@@ -3,7 +3,8 @@ import Link from 'next/link';
 import { urlFor } from '../sanity';
 import { Post } from '../typings';
 import Image from 'next/image';
-import ArrowIcon from './ArrowIcon';
+import dynamic from 'next/dynamic';
+const ArrowIcon = dynamic(import('./ArrowIcon'));
 
 type Props = {
 	posts: Post[];

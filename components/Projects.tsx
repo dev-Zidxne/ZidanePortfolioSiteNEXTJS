@@ -1,10 +1,11 @@
 import React from 'react';
+import dynamic from 'next/dynamic';
 import { motion } from 'framer-motion';
 import { Project } from '../typings';
 import Link from 'next/link';
 import { urlFor } from '../sanity';
 import Image from 'next/image';
-import ArrowIcon from './ArrowIcon';
+const ArrowIcon = dynamic(import('./ArrowIcon'));
 
 type Props = {
 	projects: Project[];
@@ -12,7 +13,7 @@ type Props = {
 
 const Projects = ({ projects }: Props) => {
 	return (
-        <section>
+		<section>
 			<motion.div
 				initial={{
 					opacity: 0,
@@ -37,30 +38,29 @@ const Projects = ({ projects }: Props) => {
 							className="mb-12 inline-block border border-solid border-[#cdcdcd] md:mb-8 lg:mb-10 rounded-xl bg-[#292929] hover:opacity-80 opacity-100 transition-opacity duration-200"
 						>
 							<Link
-                                href={project.linkToBuild}
-                                target="_blank "
-                                className="hover:opacity-80 transition-all duration-500">
-
-                                <motion.div
-                                    initial={{
-                                        y: -300,
-                                        opacity: 0,
-                                    }}
-                                    transition={{ duration: 1.2 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    key={project.toString()}
-                                >
-                                    <Image
-                                        className="inline-block rounded-xl "
-                                        src={urlFor(project?.image).url()}
-                                        alt="Zidane Innis Project Images Preview"
-                                        width={720}
-                                        height={420}
-                                    />
-                                </motion.div>
-
-                            </Link>
+								href={project.linkToBuild}
+								target="_blank "
+								className="hover:opacity-80 transition-all duration-500"
+							>
+								<motion.div
+									initial={{
+										y: -300,
+										opacity: 0,
+									}}
+									transition={{ duration: 1.2 }}
+									whileInView={{ opacity: 1, y: 0 }}
+									viewport={{ once: true }}
+									key={project.toString()}
+								>
+									<Image
+										className="inline-block rounded-xl "
+										src={urlFor(project?.image).url()}
+										alt="Zidane Innis Project Images Preview"
+										width={720}
+										height={420}
+									/>
+								</motion.div>
+							</Link>
 
 							<div className="px-5 py-8 sm:px-6">
 								<h5 className="mb-3 text-xl font-bold">
@@ -85,21 +85,19 @@ const Projects = ({ projects }: Props) => {
 								</div>
 								<div className="flex flex-wrap items-center justify-between gap-4">
 									<Link
-                                        href={project.linkToBuild}
-                                        className="r flex max-w-full gap-2.5 text-sm font-bold uppercase text-white">
-
-                                        <p>VISIT WEBSITE</p>
-                                        <div className="inline-block bg-[#F7AB0A] rounded-full hover:opacity-80 duration-500">
-                                            <ArrowIcon />
-                                        </div>
-
-                                    </Link>
+										href={project.linkToBuild}
+										className="r flex max-w-full gap-2.5 text-sm font-bold uppercase text-white"
+									>
+										<p>VISIT WEBSITE</p>
+										<div className="inline-block bg-[#F7AB0A] rounded-full hover:opacity-80 duration-500">
+											<ArrowIcon />
+										</div>
+									</Link>
 									<Link
-                                        href={project.linkToBuild}
-                                        className="inline-block rounded-md bg-[#F7AB0A] px-6 py-3 text-center font-semibold text-black hover:opacity-80 duration-500 ">
-										
-											View Project
-										
+										href={project.linkToBuild}
+										className="inline-block rounded-md bg-[#F7AB0A] px-6 py-3 text-center font-semibold text-black hover:opacity-80 duration-500 "
+									>
+										View Project
 									</Link>
 								</div>
 							</div>
@@ -108,7 +106,7 @@ const Projects = ({ projects }: Props) => {
 				</div>
 			</motion.div>
 		</section>
-    );
+	);
 };
 
 export default Projects;

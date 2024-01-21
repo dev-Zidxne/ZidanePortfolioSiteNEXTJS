@@ -1,7 +1,4 @@
 // ArrowIcon.js
-
-import React from 'react';
-
 const ArrowIcon = () => {
 	return (
 		<svg

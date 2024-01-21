@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { PageInfo } from '../typings';
 import { SocialIcon } from 'react-social-icons';
+
 const emailjs = await import('@emailjs/browser');
 
 type Props = {

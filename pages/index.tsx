@@ -3,10 +3,11 @@ import Hero from '../components/Hero';
 import Head from 'next/head';
 import Link from 'next/link';
 import About from '../components/About';
-const WorkExperience = React.lazy(() => import('../components/WorkExperience'));
-const Projects = React.lazy(() => import('../components/Projects'));
-const Skills = React.lazy(() => import('../components/Skills'));
-const ContactMe = React.lazy(() => import('../components/ContactMe'));
+import dynamic from 'next/dynamic';
+const WorkExperience = dynamic(import('../components/WorkExperience'));
+const Projects = dynamic(import('../components/Projects'));
+const Skills = dynamic(import('../components/Skills'));
+const ContactMe = dynamic(import('../components/ContactMe'));
 
 import { urlFor } from '../sanity';
 import { Experience, PageInfo, Post, Project, Skill, Social } from '../typings';
@@ -40,7 +41,7 @@ const Home = ({
 	posts,
 }: Props) => {
 	return (
-        <div className="bg-[rgb(35,35,35)] flex-grow text-white h-screen overflow-x-hidden    scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80  flex flex-col min-h-screen scroll-smooth">
+		<div className="bg-[rgb(35,35,35)] flex-grow text-white h-screen overflow-x-hidden    scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80  flex flex-col min-h-screen scroll-smooth">
 			<Head>
 				<title>Home | {pageInfo.name}</title>
 				<meta
@@ -90,7 +91,7 @@ const Home = ({
 			</main>
 			<Footer />
 		</div>
-    );
+	);
 };
 
 export default Home;
