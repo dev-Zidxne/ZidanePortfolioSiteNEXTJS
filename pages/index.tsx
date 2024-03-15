@@ -48,6 +48,11 @@ const Home = ({
 					name="description"
 					content={`Proficient in JavaScript, TypeScript, React.js, NextJS, and Node.js, ${pageInfo.name} is a collaborative developer focused on enhancing product delivery timelines and optimizing web application performance.`}
 				/>
+				<script
+					async
+					src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1036547207880021"
+					crossOrigin="anonymous"
+				></script>
 			</Head>
 			<NavBar socials={socials} />
 			<main className="pb-10">
@@ -55,7 +60,7 @@ const Home = ({
 					<Hero pageInfo={pageInfo} />
 				</section>
 				<section id="blog" className="snap-start">
-					<Blogs posts={posts} />
+					<Blogs posts={posts.slice(0, 3)} />
 				</section>
 				<section id="about" className="snap-center">
 					<About pageInfo={pageInfo} />
