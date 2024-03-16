@@ -38,11 +38,6 @@ const Blog = ({ posts, socials, pageInfo }: Props) => {
 					content="Explore topics on web development and general topics on Zidane Innis' Blog. Discover latest trends, tech insights, and tutorials. Ideal for anyone and developers at all levels."
 				/>
 				<meta name="twitter:title" content="Zidane Innis | Blog" />
-				<script
-					async
-					src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1036547207880021"
-					crossOrigin="anonymous"
-				></script>
 			</Head>
 			<NavBar socials={socials} />
 			<main className="flex-grow">

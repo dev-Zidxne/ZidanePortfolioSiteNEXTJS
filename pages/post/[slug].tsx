@@ -61,11 +61,6 @@ const Post = ({ socials, post, pageInfo }: Props) => {
 			{post.mainImage && (
 				<meta name="twitter:image" content={urlFor(post.mainImage).url()} />
 			)}
-			<script
-				async
-				src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1036547207880021"
-				crossOrigin="anonymous"
-			></script>
 		</Head>
 	);
 
